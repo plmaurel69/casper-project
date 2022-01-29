@@ -1,24 +1,43 @@
+
+
+.centered-text-img {
+  text-decoration: none;
+  font-size: 36px;
+}
+
+
 h1 {
     font-size: 36px;
     line-height: 40px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    a {
+      text-decoration: none;
+      color: black;
+    }
 }
 
 h2 {
     font-size: 30px;
     line-height: 40px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
 
 h3 {
     font-size: 24px;
     line-height: 40px;
+    font-family: 'Roboto', sans-serif;
 }
 
 h4 {
     font-size: 18px;
     line-height: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
 h5 {
     font-size: 14px;
     line-height: 20px;
+    font-family: 'Roboto', sans-serif;
 }

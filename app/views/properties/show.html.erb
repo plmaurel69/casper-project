@@ -1,6 +1,63 @@
-<h1><%= @property.property_name %></h1>
-  <p><%= @property.address %></p>
-  <p><%= @property.size %></p>
-  <p><%= @property.rental_status %></p>
-  <p><%= @property.property_type %></p>
-  <p><%= @property.property_amount %></p>
+<h1>Dashboard <%= @property.property_name %></h1>
+
+<div class="card-kpis">
+  <div class="dashboard-card stat">
+    <div class="dashboard-card-content">
+      <p>Global ROI</p>
+      <h3>300€</h3>
+    </div>
+  </div>
+  <div class="dashboard-card stat">
+    <div class="dashboard-card-content">
+      <p>Expenses trends (%)</p>
+      <h3>5%</h3>
+    </div>
+  </div>
+  <div class="dashboard-card stat">
+    <div class="dashboard-card-content">
+      <p>Occupation rate (%)</p>
+      <h3>20%</h3>
+    </div>
+  </div>
+</div>
+
+<h2>Your calendar</h2>
+<h2>Your important</h2>
+  <div class="action-property">
+      <p>Rent due</p>
+      <p class="btn btn-flat-index"><%= link_to 'Send a message' %> </p>
+
+  </div>
+  <div class="action-property">
+      <p>Refund plumbing work</p>
+      <p class="btn btn-flat-index"><%= link_to 'Send a refund' %> </p>
+  </div>
+
+<h2>Your flat information</h2>
+<div class="cards-contract-info"></div>
+  <div class="card-contract-info">
+    <h2>Your tenant</h2>
+    <p><%= @property.user.first_name %><%= @property.user.last_name %></p>
+    <%# <p><%= @property_contract.start_date %></p> %>
+  </div>
+  <div class="card-contract-info">
+    <h2>Your flat</h2>
+    <p><%= @property.address %></p>
+    <p><%= @property.size %>m2</p>
+  </div>
+  <div class="card-contract-info">
+    <h2>Your Document</h2>
+    <p>Current Renting Contract</p>
+    <p>Bills</p>
+  </div>
+  <div class="card-contract-info">
+    <h2>Earnings</h2>
+    <p><%= @property.size %></p>
+    <p>Bills</p>
+  </div>
+</div>
+
+<% @balances.each do |balance| %>
+<br>
+<%= balance.amount %>
+<% end %>
