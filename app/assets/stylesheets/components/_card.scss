@@ -5,15 +5,14 @@
 
 .card-article {
   border-radius: 1em;
-  width: 200px;
+  width: 350px;
   text-align: center;
   margin: 0 auto;
   background: #fff;
 }
 
-.card:hover {
-  transform: scale(1.2);
-  z-index: 3;
+.card-title {
+  font-weight: bold;
 }
 
 .card p {
@@ -22,8 +21,7 @@
   font-weight: 700;
 }
 
-.card img {
-  width: 200px;
+.card-img-top {
   border-radius: 1em 1em 0px 0px;
 }
 
