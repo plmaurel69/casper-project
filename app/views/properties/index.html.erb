@@ -1,22 +1,27 @@
-<div>
-  <h1>Mon Dashboard</h1>
+<div class = container>
+  <div class = dashboard>
+    <div>
+      <h1>Mon Dashboard</h1>
 
-  <div class = card-kpis>
-  <%= "Global ROI" %>
-  <%= "Expenses trends" %>
-  <%= "Occupation rate" %>
-  </div>
-</div>
+      <div class = card-kpis>
+      <%= "Global ROI" %>
+      <%= "Expenses trends" %>
+      <%= "Occupation rate" %>
+      </div>
+    </div>
 
-<div>
-  <h2>Mes Propriétés</h2>
+    <div>
+      <h2>Mes Propriétés</h2>
 
-  <div class = card-properties>
-    <ul>
-      <li><% @properties.each do |property|%>
-      <%= property.property_name %>
-      <%= property.address %></li>
-      <% end %>
-    </ul>
+      <div class = card-properties>
+      <ul>
+      <% @properties.each do |property| %>
+        <li><%= property.property_name %>
+              <%= property.address %>
+              <%= "ROI annuel :"  %></li>
+        <% end %>
+      </ul>
+      </div>
+    </div>
   </div>
 </div>
