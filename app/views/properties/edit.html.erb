@@ -1,0 +1,9 @@
+ <h3>Edit the information of your property </h3>
+      <%= simple_form_for @property do |f| %>
+        <%= f.input :property_name %>
+        <%= f.input :property_type %>
+        <%= f.input :address %>
+        <%= f.input :property_amount %>
+        <%= f.input :size %>
+        <%= f.button :submit, class: "btn-flat" %>
+      <% end %>

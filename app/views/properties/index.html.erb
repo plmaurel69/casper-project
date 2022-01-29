@@ -1,16 +1,22 @@
-<h1>Mon Dashboard</h1>
+<div>
+  <h1>Mon Dashboard</h1>
 
-<div class = card-kpis>
-<%= "Global ROI" %>
-<%= "Expenses trends" %>
-<%= "Occupation rate" %>
+  <div class = card-kpis>
+  <%= "Global ROI" %>
+  <%= "Expenses trends" %>
+  <%= "Occupation rate" %>
+  </div>
 </div>
 
-<h2>Mes Propriétés</h2>
+<div>
+  <h2>Mes Propriétés</h2>
 
-<div class = card-properties>
-  <ul>
-    <li><%= @property.property_name %>
-    <%= @property.property_address %></li>
-  </ul>
+  <div class = card-properties>
+    <ul>
+      <li><% @properties.each do |property|%>
+      <%= property.property_name %>
+      <%= property.address %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>

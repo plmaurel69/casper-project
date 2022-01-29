@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
 
 
   def index
-    @property = Property.all.where(user_id: current_user)
+    @properties = Property.all.where(user_id: current_user)
   end
 
   def new
@@ -15,7 +15,7 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
     @property.user = current_user
     @property.save!
-    redirect_to property_path
+    redirect_to properties_path
   end
 
   def edit
@@ -32,7 +32,7 @@ class PropertiesController < ApplicationController
   private
 
   def property_params
-    params.require(:property).permit(:end_date, :start_date, :scheduled_payment_date, :billing_frequency, :rent_price, :rent_payment_status)
+    params.require(:property).permit(:address, :rental_status, :size, :property_name, :property_type, :property_amount)
   end
 
   def find_property
