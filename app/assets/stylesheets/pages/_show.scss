@@ -3,9 +3,11 @@
   grid-template-columns: 300px 1fr 1fr 1fr;
   grid-template-rows: 50% 50%;
   margin-top: 20px;
+  justify-content: center;
 }
 
 .dashboard-card {
+  width: 200px;
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   padding: 10px;
@@ -22,15 +24,35 @@
 }
 
 
-.dashboard h2 {
-  font-size: 25px;
-}
-.dashboard h3 {
+.card-kpis h3 {
   color: #37B686;
-  font-size: 25px;
+  font-size: 40px;
   margin-bottom: 15px;
+  font-weight: bold;
 }
-.dashboard p {
+.card-kpis p {
   color: rgba(0,0,0,0.5);
   font-size: 16px;
+}
+
+.action-property {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+.action-property .action-property-info {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.action-property-info .action-property-btn {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
 }

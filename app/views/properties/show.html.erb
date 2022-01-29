@@ -22,42 +22,43 @@
 </div>
 
 <h2>Your calendar</h2>
+
 <h2>Your important</h2>
   <div class="action-property">
+    <div class="action-property-info">
       <p>Rent due</p>
-      <p class="btn btn-flat-index"><%= link_to 'Send a message' %> </p>
-
+        <p><%= link_to 'Send a message' %> </p>
+    </div>
   </div>
   <div class="action-property">
+    <div class="action-property-info">
       <p>Refund plumbing work</p>
-      <p class="btn btn-flat-index"><%= link_to 'Send a refund' %> </p>
+        <p><%= link_to 'Send a refund' %> </p>
+    </div>
   </div>
 
-<h2>Your flat information</h2>
-<div class="cards-contract-info"></div>
-  <div class="card-contract-info">
-    <h2>Your tenant</h2>
-    <p><%= @property.user.first_name %><%= @property.user.last_name %></p>
-    <%# <p><%= @property_contract.start_date %></p> %>
-  </div>
-  <div class="card-contract-info">
-    <h2>Your flat</h2>
-    <p><%= @property.address %></p>
-    <p><%= @property.size %>m2</p>
-  </div>
-  <div class="card-contract-info">
-    <h2>Your Document</h2>
-    <p>Current Renting Contract</p>
-    <p>Bills</p>
-  </div>
-  <div class="card-contract-info">
-    <h2>Earnings</h2>
-    <p><%= @property.size %></p>
-    <p>Bills</p>
-  </div>
+<div class="card-flat-info">
+  <h2>Your flat information</h2>
+    <div class="cards-contract-info"></div>
+      <div class="card-contract-info">
+        <h2>Your tenant</h2>
+        <p><%= @property.user.first_name %> <%= @property.user.last_name %></p>
+      </div>
+      <div class="card-contract-info">
+        <h2>Your flat</h2>
+        <p><%= @property.address %></p>
+        <p><%= @property.size %>m2</p>
+      </div>
+      <div class="card-contract-info">
+        <h2>Your Document</h2>
+        <p>Current Renting Contract</p>
+        <p>Bills</p>
+      </div>
+      <div class="card-contract-info">
+        <h2>Earnings</h2>
+        <% @balances.each do |balance| %>
+        <%= balance.amount %>
+        <% end %>
+      </div>
+    </div>
 </div>
-
-<% @balances.each do |balance| %>
-<br>
-<%= balance.amount %>
-<% end %>
