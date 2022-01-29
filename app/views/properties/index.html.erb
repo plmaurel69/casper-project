@@ -1,14 +1,27 @@
-<h1>Hello</h1>
+<div class = container>
+  <div class = dashboard>
+    <div>
+      <h1>Mon Dashboard</h1>
 
-<%= month_calendar do |date| %>
-  <%= date %>
-<% end %>
+      <div class = card-kpis>
+      <%= "Global ROI" %>
+      <%= "Expenses trends" %>
+      <%= "Occupation rate" %>
+      </div>
+    </div>
 
-<%= @properties.each do |property| %>
-<%=  property.size %>
-<% end %>
+    <div>
+      <h2>Mes Propriétés</h2>
 
-
-<%= @balances.each do |balance| %>
-<%=  balance.property_contract.payment_date%>
-<% end %>
+      <div class = card-properties>
+      <ul>
+      <% @properties.each do |property| %>
+        <li><%= property.property_name %>
+              <%= property.address %>
+              <%= "ROI annuel :"  %></li>
+        <% end %>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
