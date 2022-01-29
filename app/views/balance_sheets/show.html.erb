@@ -1,0 +1,14 @@
+<h1>Regulariser mon compte </h1>
+<p><%= @balance.property_contract.property.property_name %> </p>
+<%= @balance.type_description %>
+<button id="pay" class="btn btn-primary">Pay</button>
+
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+          });
+        });
+      </script> -->

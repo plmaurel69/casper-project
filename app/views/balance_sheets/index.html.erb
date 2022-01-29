@@ -1,0 +1,22 @@
+<h1>Bilan</h1>
+
+<h2>En attente</h2>
+    <% @balances.each do |balance| %>
+    <% if balance.paid == false %>
+        <li><%= balance.type %>
+              <%= balance.type_description %>
+              <%= balance.amount %>
+              <%= balance.paid %>
+    <p><%= link_to 'Payer', property_balance_sheet_path(balance.property_contract.property.id, balance.id) %></p></li>
+    <% end %>
+    <% end %>
+
+<h2>Etat de mon compte</h2>
+    <% @balances.each do |balance| %>
+    <% if balance.paid == true %>
+        <li><%= balance.type %>
+              <%= balance.type_description %>
+              <%= balance.amount %>
+              <%= balance.paid %></li>
+    <% end %>
+    <% end %>
