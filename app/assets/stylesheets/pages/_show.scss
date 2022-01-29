@@ -1,0 +1,36 @@
+.card-kpis {
+  display: flex;
+  grid-template-columns: 300px 1fr 1fr 1fr;
+  grid-template-rows: 50% 50%;
+  margin-top: 20px;
+}
+
+.dashboard-card {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dashboard .stat {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 3;
+}
+
+
+.dashboard h2 {
+  font-size: 25px;
+}
+.dashboard h3 {
+  color: #37B686;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.dashboard p {
+  color: rgba(0,0,0,0.5);
+  font-size: 16px;
+}

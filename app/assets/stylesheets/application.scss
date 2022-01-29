@@ -7,9 +7,12 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "simple_calendar";
 
 // Your CSS partials
 @import "components/index";
 @import "components/footer";
 @import "pages/index";
-@import "components/home";
+@import "pages/home";
+@import "components/card";
+@import "components/title";
