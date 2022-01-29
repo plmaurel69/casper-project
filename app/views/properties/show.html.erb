@@ -56,3 +56,8 @@
     <p>Bills</p>
   </div>
 </div>
+
+<% @balances.each do |balance| %>
+<br>
+<%= balance.amount %>
+<% end %>
