@@ -1,1 +1,14 @@
 <h1>Hello</h1>
+
+<%= month_calendar do |date| %>
+  <%= date %>
+<% end %>
+
+<%= @properties.each do |property| %>
+<%=  property.size %>
+<% end %>
+
+
+<%= @balances.each do |balance| %>
+<%=  balance.property_contract.payment_date%>
+<% end %>
