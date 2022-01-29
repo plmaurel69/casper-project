@@ -1,8 +1,10 @@
 class PropertiesController < ApplicationController
-skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: :index
+  before_action :find_property, only: %i[update destroy show edit]
+
 
   def index
-    @property = Property.all
+    @property = Property.all.where(user_id: current_user)
   end
 
   def new
