@@ -1,1 +1,29 @@
-// Specific CSS for your home-page
+.home-banner {
+  background-image: url('justin-eisner-ZOG7Zj7cfR8-unsplash.jpg');
+  background-size: cover;
+  width: 100%;
+  margin: auto;
+  justify-content : space-around;
+  height: 600px;
+  padding: 200px;
+  .fit-picture {
+    height: auto;
+    width: auto;
+    width: 100%;
+  }
+}
+
+.home-banner-container {
+  width: 900px;
+  margin: auto;
+}
+
+.home-articles {
+  width: 100%;
+  padding: 150px;
+}
+
+.home-articles-container {
+  width: 900px;
+  margin: auto;
+}
