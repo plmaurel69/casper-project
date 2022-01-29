@@ -59,13 +59,13 @@ puts "Message 3 saved"
 
 balance = BalanceSheet.new(amount: '123', type: 'Dépense', type_description: 'Charges de copropriétés', paid: 'true', payment_date: '01/12/2022', balance: '-123', property_contract_id: 1)
 balance.save!
-puts "Balance 1 saved"
+
+puts "BalanceSheet 1 saved"
 
 balance = BalanceSheet.new(amount: '2300', type: 'Recette', type_description: 'Loyer', paid: 'true', payment_date: '12/12/2022', balance: '2177', property_contract_id: 1)
 balance.save!
-puts "Balance 2 saved"
-
+puts "BalanceSheet 2 saved"
 
 balance = BalanceSheet.new(amount: '89', type: 'Dépense', type_description: 'Charge exceptionnelle', paid: 'false', payment_date: '28/12/2022', balance: '2177', property_contract_id: 1)
 balance.save!
-puts "Balance 3 saved"
+puts "BalanceSheet 3 saved"
