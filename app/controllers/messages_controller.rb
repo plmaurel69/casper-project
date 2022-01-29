@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   before_action :find_message, only: %i[update destroy show edit]
 
   def index
-      @messages = Messsage.all
+    @messages = Messsage.all
   end
 
   def new
@@ -22,12 +22,12 @@ class MessagesController < ApplicationController
 
   def update
     @message.update(message_params)
-    redirect_to animals_path
+    redirect_to messages_path
   end
 
   def destroy
     @message.destroy
-    redirect_to animals_path
+    redirect_to messages_path
   end
 
   def show
@@ -39,7 +39,7 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:content)
   end
 
-  def find_animal
+  def find_message
     @message = Message.find(params[:id])
   end
 end
