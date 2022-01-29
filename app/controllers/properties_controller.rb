@@ -1,9 +1,11 @@
 class PropertiesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
+
   before_action :find_property, only: %i[update destroy show edit]
 
+
   def index
-    @properties = Property.all
+    @properties = Property.all.where(user_id: current_user)
   end
 
   def new
@@ -26,6 +28,10 @@ class PropertiesController < ApplicationController
   end
 
   def show
+  end
+
+  def user_first_name
+  @user = Property.find(params[:id]).user_id
   end
 
   private
