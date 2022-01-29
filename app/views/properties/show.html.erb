@@ -36,7 +36,7 @@
 <h2>Your flat information</h2>
 <div class="cards-contract-info"></div>
   <div class="card-contract-info">
-    <h2>Your tenant</h2>
+    <h2>Landlord</h2>
     <p><%= @property.user.first_name %><%= @property.user.last_name %></p>
     <%# <p><%= @property_contract.start_date %></p> %>
   </div>
@@ -57,7 +57,20 @@
   </div>
 </div>
 
+
+<h2>Balance Sheet</h2>
+
 <% @balances.each do |balance| %>
 <br>
 <%= balance.amount %>
 <% end %>
+
+<h2>Property_Contract</h2>
+<% @contracts.each do |contract| %>
+  <%= contract.rent_payment_status %>
+  <%= contract.rent_price %>
+  <%= contract.billing_frequency %>
+<% end %>
+
+<h2>Locataire</h2>
+<%# <%= @user.first_name %> %>

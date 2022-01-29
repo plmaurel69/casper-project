@@ -29,7 +29,8 @@ class PropertiesController < ApplicationController
 
   def show
     @balances = BalanceSheet.all.where(property_contract_id: @property.id)
-    # @contract = PropertyContract.all.where(property_contract_id: @property.id)
+    @contracts = PropertyContract.all.where(property_id: @property.id)
+    # @users = PropertyContract.all.where(property_id: @property_contract.user.id)
   end
 
   def user_first_name
