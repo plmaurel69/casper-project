@@ -1,0 +1,10 @@
+  <h1>Create a property </h1>
+    <%= simple_form_for @property do |f| %>
+      <%= f.input :property_name %>
+      <%= f.input :property_type %>
+      <%= f.input :address %>
+      <%= f.input :rental_status %>
+      <%= f.input :size %>
+      <%= f.input :property_amount %>
+      <%= f.button :submit, class: "btn-flat" %>
+    <% end %>
