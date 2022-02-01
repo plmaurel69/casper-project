@@ -32,6 +32,9 @@ gem 'devise'
 
 gem 'stripe'
 gem "simple_calendar", "~> 2.4"
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
+
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'

@@ -1,3 +1,7 @@
+/*
+  *= require fullcalendar
+*/
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -17,3 +21,4 @@
 @import "components/card";
 @import "components/title";
 @import "components/button";
+@import 'fullcalendar';
