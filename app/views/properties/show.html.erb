@@ -82,4 +82,7 @@
 <% end %>
 
 <h2>Locataire</h2>
-<%# <%= @user.first_name %> %>
+<% @property.renters.each do |property| %>
+  <%= property.first_name%> <%=  property.last_name%>
+  <%= property.profession%> <%=  property.professional_status%>
+<% end %>
