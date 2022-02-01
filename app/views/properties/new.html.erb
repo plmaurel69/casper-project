@@ -1,10 +1,25 @@
-  <h1>Create a property </h1>
-    <%= simple_form_for @property do |f| %>
-      <%= f.input :property_name %>
-      <%= f.input :property_type %>
-      <%= f.input :address %>
-      <%= f.input :rental_status %>
-      <%= f.input :size %>
-      <%= f.input :property_amount %>
-      <%= f.button :submit, class: "btn-flat" %>
-    <% end %>
+<div class="container-general">
+  <div class="container py-5 padding-top-3">
+    <div class="row">
+        <div class="card-signup">
+          <div class="card-signup-infos">
+            <h1>Create a property </h1>
+              <br>
+                <%= simple_form_for @property do |f| %>
+                <%= f.input :property_name %>
+                <%= f.input :property_type %>
+                <%= f.input :address %>
+                <%= f.input :rental_status %>
+                <%= f.input :size %>
+                <%= f.input :property_amount %>
+                <br>
+                <%= f.button :submit, class: "btn-flat" %>
+                <% end %>
+          </div>
+          <div class="card-signup-illu">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
