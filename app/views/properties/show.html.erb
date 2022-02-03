@@ -32,8 +32,10 @@
   </div>
   <div class="action-property">
     <div class="action-property-info">
-      <p>Refund plumbing work</p>
-        <p><%= link_to 'Send a refund' %> </p>
+      <p>Refund <% @balance_sheets_outstanding.each do |balance_sheet_outstanding|%> </p>
+        <%= balance_sheet_outstanding.type_description %>
+        <p><%= link_to 'Send a refund', property_balance_sheet_path(balance_sheet_outstanding) %> </p>
+        <% end %>
     </div>
   </div>
 
