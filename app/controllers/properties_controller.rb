@@ -30,7 +30,7 @@ class PropertiesController < ApplicationController
   def show
     @balances = BalanceSheet.all.where(property_contract_id: @property.id)
     @contracts = PropertyContract.all.where(property_id: @property.id)
-    @balance_sheets_outstanding = @property.balance_sheets.where(paid: false)
+    @expenses = Expense.where(paid: false)
     # @users = PropertyContract.all.where(property_id: @property_contract.user.id)
   end
 

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
     resources :balance_sheets, only: [:index, :show, :update, :create]
   end
+  resources :expenses, only: [:show]
 end

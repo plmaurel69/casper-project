@@ -32,7 +32,13 @@
   </div>
   <div class="action-property">
     <div class="action-property-info">
-      <p>Refund</p>
+    <% @balances.each do |balance| %>
+        <h2><% balance.expenses.each do |expense| %></h2>
+            <h2><%= expense.type %></h2>
+            <p><%= expense.amount %></p>
+        <% end %>
+    <% end %>
+      <p><%= link_to 'Refund', expense_path(id: @expenses.first.id) %></p>
     </div>
   </div>
 
