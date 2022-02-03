@@ -21,8 +21,6 @@
   </div>
 </div>
 
-<h2>Your calendar</h2>
-
 <h2>Your important</h2>
   <div class="action-property">
     <div class="action-property-info">
@@ -36,47 +34,9 @@
     </div>
   </div>
 
-<div class="card-flat-info">
-  <h2>Your flat information</h2>
-    <div class="cards-contract-info"></div>
-        <div class="card-contract-info">
-      <h2>Landlord</h2>
-      <p><%= @property.user.first_name %><%= @property.user.last_name %></p>
-      <%# <p><%= @property_contract.start_date %></p> %>
-      </div>
-      <div class="card-contract-info">
-        <h2>Your tenant</h2>
-        <p><%= @property.user.first_name %> <%= @property.user.last_name %></p>
-      </div>
-      <div class="card-contract-info">
-        <h2>Your flat</h2>
-        <p><%= @property.address %></p>
-        <p><%= @property.size %>m2</p>
-      </div>
-      <div class="card-contract-info">
-        <h2>Your Document</h2>
-        <p>Current Renting Contract</p>
-        <p>Bills</p>
-      </div>
-      <div class="card-contract-info">
-        <h2>Earnings</h2>
 
-      </div>
-    </div>
+    <br>
+    <h2>Your calendar</h2>
+    <%= render 'shared/calendar-show' %>
+    <%= render 'shared/flat-info' %>
 </div>
-<h2>Balance Sheet</h2>
-
-<h2>Property_Contract</h2>
-<% @contracts.each do |contract| %>
-  <%= contract.rent_payment_status %>
-  <%= contract.rent_price %>
-  <%= contract.billing_frequency %>
-<% end %>
-
-<h2>Locataire</h2>
-<% @property.renters.each do |property| %>
-  <%= property.first_name%> <%=  property.last_name%>
-  <%= property.profession%> <%=  property.professional_status%>
-<% end %>
-
-<%= render 'shared/calendar' %>
