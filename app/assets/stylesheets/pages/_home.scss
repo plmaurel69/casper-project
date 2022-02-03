@@ -1,5 +1,5 @@
 .home-banner {
-  background-image: url('justin-eisner-ZOG7Zj7cfR8-unsplash.jpg');
+  background-image: url('home-image.jpg');
   background-size: cover;
   width: 100%;
   margin: auto;
@@ -22,6 +22,7 @@
 .home-banner-container {
   width: 900px;
   margin: auto;
+  padding: 50px;
 }
 
 .home-articles {
@@ -32,4 +33,18 @@
 .home-articles-container {
   width: 1200px;
   margin: auto;
+}
+
+.home-title {
+  color: white;
+}
+
+.home-description {
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+a {
+  color: white;
 }

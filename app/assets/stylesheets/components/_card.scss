@@ -9,6 +9,18 @@
   text-align: center;
   margin: 0 auto;
   background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.card-article:hover {
+  border-radius: 1em;
+  width: 350px;
+  text-align: center;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
 }
 
 .card-title {
@@ -28,6 +40,7 @@
 .cards-kpi {
   display: flex;
   justify-content: space-between;
+  width: auto;
 }
 
 .card-kpi {
@@ -37,4 +50,66 @@
   margin: 0 auto;
   background: #fff;
   height: 300px;
+  padding: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.card-kpi:hover {
+  border-radius: 1em;
+  width: 360px;
+  text-align: center;
+  margin: 0 auto;
+  background: #fff;
+  height: 300px;
+  padding: 25px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container-general {
+  align-items: center;
+}
+
+.properties-container {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.card-property {
+  border-radius: 1em;
+  width: 1125px;
+  text-align: center;
+  background: #fff;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  padding-bottom: 65px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.card-property:hover {
+  border-radius: 1em;
+  width: 1130px;
+  text-align: center;
+  background: #fff;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  padding-bottom: 65px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.title-card-element {
+  margin-left: 200px;
 }
