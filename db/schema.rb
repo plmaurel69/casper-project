@@ -10,22 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_01_193558) do
+ActiveRecord::Schema.define(version: 2022_02_01_194859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "balance_sheets", force: :cascade do |t|
-    t.integer "amount"
-    t.string "type"
-    t.string "type_description"
-    t.boolean "paid"
-    t.date "payment_date"
-    t.integer "balance"
+    t.float "balance"
     t.bigint "property_contract_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["property_contract_id"], name: "index_balance_sheets_on_property_contract_id"
+  end
+
+  create_table "expenses", force: :cascade do |t|
+    t.float "amount"
+    t.string "type"
+    t.boolean "paid"
+    t.date "payment_date"
+    t.bigint "balance_sheet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["balance_sheet_id"], name: "index_expenses_on_balance_sheet_id"
+  end
+
+  create_table "incomes", force: :cascade do |t|
+    t.float "amount"
+    t.string "type"
+    t.boolean "paid"
+    t.date "payment_date"
+    t.bigint "balance_sheet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["balance_sheet_id"], name: "index_incomes_on_balance_sheet_id"
   end
 
   create_table "property_contracts", force: :cascade do |t|
@@ -94,6 +111,8 @@ ActiveRecord::Schema.define(version: 2022_02_01_193558) do
   end
 
   add_foreign_key "balance_sheets", "property_contracts"
+  add_foreign_key "expenses", "balance_sheets"
+  add_foreign_key "incomes", "balance_sheets"
   add_foreign_key "messages", "property_contracts"
   add_foreign_key "messages", "users"
   add_foreign_key "properties", "users"

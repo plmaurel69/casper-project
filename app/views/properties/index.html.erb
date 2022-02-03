@@ -1,6 +1,5 @@
 <div class = container>
   <div class = dashboard>
-<<<<<<< HEAD
     <h1>Mon Dashboard</h1>
       <div class ="index-kpis">
         <div class="card-kpis-container">
@@ -20,16 +19,15 @@
 
     <div>
       <h2>Mes Propriétés</h2>
-
-      <div class = card-properties>
       <ul>
       <% @properties.each do |property| %>
-        <li><%= property.property_name %>
-              <%= property.address %>
-              <%= "ROI annuel :"  %></li>
-        <% end %>
+        <p><%=link_to property.property_name, property_path(property) %>
+        <%= property.address %></p>
+          <% end %>
       </ul>
       </div>
     </div>
   </div>
 </div>
+
+<%= render 'shared/calendar-show' %>

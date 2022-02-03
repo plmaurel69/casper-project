@@ -21,8 +21,6 @@
   </div>
 </div>
 
-<h2>Your calendar</h2>
-
 <h2>Your important</h2>
   <div class="action-property">
     <div class="action-property-info">
@@ -32,6 +30,7 @@
   </div>
   <div class="action-property">
     <div class="action-property-info">
+
       <p>Refund plumbing work</p>
         <p><%= link_to 'Send a refund' %> </p>
     </div>
@@ -63,16 +62,16 @@
         <h2>Earnings</h2>
         <% @balances.each do |balance| %>
         <%= balance.amount %>
-        <% end %>
-      </div>
-    </div>
-</div>
-<h2>Balance Sheet</h2>
 
-<% @balances.each do |balance| %>
-<br>
-<%= balance.amount %>
-<% end %>
+    <% @balances.each do |balance| %>
+        <h2><% balance.expenses.each do |expense| %></h2>
+            <h2><%= expense.type %></h2>
+            <p><%= expense.amount %></p>
+        <% end %>
+    <% end %>
+      <p><%= link_to 'Refund', expense_path(id: @expenses.first.id) %></p>
+    </div>
+  </div>
 
 <h2>Property_Contract</h2>
 <% @contracts.each do |contract| %>
@@ -100,8 +99,8 @@
 
 <% end %>
 
-<h2>Locataire</h2>
-<% @property.renters.each do |property| %>
-  <%= property.first_name%> <%=  property.last_name%>
-  <%= property.profession%> <%=  property.professional_status%>
-<% end %>
+    <br>
+    <h2>Your calendar</h2>
+    <%= render 'shared/calendar-show' %>
+    <%= render 'shared/flat-info' %>
+</div>
