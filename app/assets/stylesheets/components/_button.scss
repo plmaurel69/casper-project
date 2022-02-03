@@ -1,0 +1,31 @@
+// 3 types de boutons
+
+// primaire
+
+button {
+  color: var(--color);
+  margin-bottom: 1.5em;
+  padding: 0.4em 1em;
+  border: 1px solid var(--color);
+  background: transparent;
+  cursor: pointer;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.7em;
+  font-weight: 900;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #167FFB;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 20px rgba(0,0,0,0.2);
+}
+
+// secondaire
+
+// tertiaire

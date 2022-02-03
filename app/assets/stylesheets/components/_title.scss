@@ -17,6 +17,12 @@ h1 {
     }
 }
 
+h1 a:hover {
+  text-decoration: none;
+  color: grey;
+  transition-duration: 0.3s;
+}
+
 h2 {
     font-size: 30px;
     line-height: 40px;
