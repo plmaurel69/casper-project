@@ -32,10 +32,7 @@
   </div>
   <div class="action-property">
     <div class="action-property-info">
-      <p>Refund <% @balance_sheets_outstanding.each do |balance_sheet_outstanding|%> </p>
-        <%= balance_sheet_outstanding.type_description %>
-        <p><%= link_to 'Send a refund', property_balance_sheet_path(balance_sheet_outstanding) %> </p>
-        <% end %>
+      <p>Refund</p>
     </div>
   </div>
 
@@ -63,18 +60,13 @@
       </div>
       <div class="card-contract-info">
         <h2>Earnings</h2>
-        <% @balances.each do |balance| %>
-        <%= balance.amount %>
-        <% end %>
+
       </div>
     </div>
 </div>
 <h2>Balance Sheet</h2>
 
-<% @balances.each do |balance| %>
-<br>
-<%= balance.amount %>
-<% end %>
+
 
 <h2>Property_Contract</h2>
 <% @contracts.each do |contract| %>
