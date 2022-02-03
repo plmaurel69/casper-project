@@ -62,17 +62,11 @@
       <div class="card-contract-info">
         <h2>Earnings</h2>
         <% @balances.each do |balance| %>
-        <%= balance.amount %>
         <% end %>
       </div>
     </div>
 </div>
 <h2>Balance Sheet</h2>
-
-<% @balances.each do |balance| %>
-<br>
-<%= balance.amount %>
-<% end %>
 
 <h2>Property_Contract</h2>
 <% @contracts.each do |contract| %>
