@@ -6,6 +6,8 @@ class PropertyContractsController < ApplicationController
   end
 
   def show
+    @property_contract = PropertyContract.find(params[:id])
+    @message = Message.new
   end
 
   def new
