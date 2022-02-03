@@ -1,6 +1,9 @@
 .index-kpis {
-  padding: 150px;
+  padding-top: 100px;
+  padding-left: auto;
+  padding-right: auto;
   height: 400px;
+  width: 1200px;
 }
 
 .card-kpis-container {
@@ -11,4 +14,10 @@
 .card-kpis {
   width: 900px;
   margin: auto;
+}
+
+.title-card-properties {
+  display: flex;
+  justify-content: space-between;
+
 }
