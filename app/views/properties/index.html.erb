@@ -1,5 +1,6 @@
 <div class = container>
   <div class = dashboard>
+<<<<<<< HEAD
   <br>
   <br>
   <br>
@@ -41,7 +42,7 @@
       <% @properties.each do |property| %>
       <div class="card-property">
         <div class="property-name">
-        <%= property.property_name %>
+        <%=link_to property.property_name, property_path(property) %>
         </div>
         <div class="property-status">
         <%= property.rental_status%>
@@ -57,3 +58,5 @@
     </div>
   </div>
 </div>
+
+<%= render 'shared/calendar-show' %>
