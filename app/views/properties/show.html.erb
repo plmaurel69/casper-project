@@ -81,9 +81,6 @@
         <%= contract.rent_price %>
         <%= contract.billing_frequency %>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="chatroom">
-          Launch demo modal
-        </button>
 
         <div id="messages" data-property-contract-id="<%= contract.id %>">
           <% contract.messages.each do |message| %>
@@ -102,3 +99,9 @@
         <h2>Your calendar</h2>
         <%= render 'shared/calendar-show' %>
         <%= render 'shared/flat-info' %>
+
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" render 'properties/chatroom' >
+          <%= render 'properties/chatroom' %>
+          Launch demo modal
+        </button>
