@@ -13,15 +13,14 @@
 
 /* The side navigation menu */
 .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
+  height: 100%; /* 100% Full-height *//* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #046CE7; /* Black*/
+  background-color: black; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
+  padding-top: 0px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
@@ -29,15 +28,20 @@
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: black;
+  font-size: 18px;
+  color: white;
   display: block;
   transition: 0.3s;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 15px;
+  transition: 0.5s ease-in-out;
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
+.sidenav .button-navbar a:hover {
   color: #f1f1f1;
+  background-color: rgb(180, 180, 180);
+  border-radius: 1rem;
 }
 
 /* Position and style the close button (top right corner) */
@@ -45,8 +49,9 @@
   position: absolute;
   top: 0;
   right: 25px;
-  font-size: 36px;
+  font-size: 30px;
   margin-left: 50px;
+  margin-bottom: 50px;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -59,4 +64,10 @@
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+
+.navbar-light .navbar-brand {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
 }

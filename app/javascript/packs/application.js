@@ -9,6 +9,8 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "fullcalendar"
+import "chartkick/chart.js"
+
 
 Rails.start()
 Turbolinks.start()
@@ -25,16 +27,22 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initChatroomCable } from '../channels/property_contract_channel';
 
 
 document.addEventListener('turbolinks:load', () => {
+  initChatroomCable();
   if (document.getElementById('calendar-property-show') != null) {
-    setCalendarPropertyShow();
+    // setCalendarPropertyShow();
   }
   else if (document.getElementById('calendar-property-index') != null) {
-    setCalendarPropertiesIndex();
+    // setCalendarPropertiesIndex();
   }
 });
 
 import { setCalendarPropertiesIndex } from '../packs/fullcalendar_property_show.js';
 import { setCalendarPropertyShow } from '../packs/fullcalendar_property_show.js';
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})

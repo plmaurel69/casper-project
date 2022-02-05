@@ -3,6 +3,6 @@ class Property < ApplicationRecord
   has_many :property_contracts
   has_many :renters, through: :property_contracts, source: :user #as a renter
   has_many :balance_sheets, through: :property_contracts
-
   has_many :messages, through: :users
+  has_one_attached :photo
 end

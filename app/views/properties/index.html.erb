@@ -1,6 +1,5 @@
 <div class = container>
   <div class = dashboard>
-<<<<<<< HEAD
   <br>
   <br>
   <br>
@@ -11,13 +10,19 @@
         <div class="card-kpis-container">
           <div class="cards-kpi">
             <div class="card-kpi">
-              <%= "Global ROI" %>
+              <div>
+                <%= column_chart(@data, xtitle: 'KPI') %>
+              </div>
             </div>
             <div class="card-kpi">
-              <%= "Expenses trends (%)" %>
+              <div>
+                <%= column_chart(@data, xtitle: 'KPI') %>
+              </div>
             </div>
             <div class="card-kpi">
-              <%= "Occupation rate" %>
+              <div>
+                <%= column_chart(@data, xtitle: 'KPI') %>
+              </div>
             </div>
           </div>
         </div>
@@ -42,6 +47,8 @@
       <% @properties.each do |property| %>
       <div class="card-property">
         <div class="property-name">
+        <img class="card-img-top" src="<%= image_path('Property1_Picture.jpg') %>" width="10"
+     height="50" alt="Card image cap">
         <%=link_to property.property_name, property_path(property) %>
         </div>
         <div class="property-status">
@@ -57,6 +64,19 @@
     </div>
     </div>
   </div>
+                <% @balances.each do |balance| %>
+                  <h2><% balance.expenses.each do |expense| %></h2>
+                      <h2><%= expense.type %></h2>
+                      <p><%= expense.amount %></p>
+                  <% end %>
+              <% end %>
+
+                <% @balances.each do |balance| %>
+                  <h2><% balance.incomes.each do |income| %></h2>
+                      <h2><%= income.type %></h2>
+                      <p><%= income.amount %></p>
+                  <% end %>
+              <% end %>
 </div>
 
 <%= render 'shared/calendar-show' %>
