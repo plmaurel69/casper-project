@@ -18,89 +18,92 @@
       <p>Occupation rate (%)</p>
       <h3>20%</h3>
     </div>
-  </div>
-</div>
-
-<h2>Your important</h2>
-  <div class="action-property">
-    <div class="action-property-info">
-      <p>Rent due</p>
-        <p><%= link_to 'Send a message' %> </p>
-    </div>
-  </div>
-  <div class="action-property">
-    <div class="action-property-info">
-
-      <p>Refund plumbing work</p>
-        <p><%= link_to 'Send a refund' %> </p>
+    <div class="dashboard-card-stat">
+      <div class="dashboard-card-content">
+        <p>Occupation rate (%)</p>
+        <h3>20%</h3>
+      </div>
     </div>
   </div>
 
-<div class="card-flat-info">
-  <h2>Your flat information</h2>
-    <div class="cards-contract-info"></div>
-        <div class="card-contract-info">
-      <h2>Landlord</h2>
-      <p><%= @property.user.first_name %><%= @property.user.last_name %></p>
-      <%# <p><%= contract.start_date %></p> %>
+  <h2>Your important</h2>
+    <div class="action-property">
+      <div class="action-property-info">
+        <p>Rent due</p>
+          <p><%= link_to 'Send a message' %> </p>
       </div>
-      <div class="card-contract-info">
-        <h2>Your tenant</h2>
-        <p><%= @property.user.first_name %> <%= @property.user.last_name %></p>
+    </div>
+    <div class="action-property">
+      <div class="action-property-info">
+
+        <p>Refund plumbing work</p>
+          <p><%= link_to 'Send a refund' %> </p>
       </div>
-      <div class="card-contract-info">
-        <h2>Your flat</h2>
-        <p><%= @property.address %></p>
-        <p><%= @property.size %>m2</p>
+    </div>
+
+    <div class="card-flat-info">
+      <h2>Your flat information</h2>
+        <div class="cards-contract-info"></div>
+            <div class="card-contract-info">
+          <h2>Landlord</h2>
+          <p><%= @property.user.first_name %><%= @property.user.last_name %></p>
+          <%# <p><%= contract.start_date %></p> %>
+          </div>
+          <div class="card-contract-info">
+            <h2>Your tenant</h2>
+            <p><%= @property.user.first_name %> <%= @property.user.last_name %></p>
+          </div>
+          <div class="card-contract-info">
+            <h2>Your flat</h2>
+            <p><%= @property.address %></p>
+            <p><%= @property.size %>m2</p>
+          </div>
+          <div class="card-contract-info">
+            <h2>Your Document</h2>
+            <p>Current Renting Contract</p>
+            <p>Bills</p>
+          </div>
+          <div class="card-contract-info">
+            <h2>Earnings</h2>
+            <% @balances.each do |balance| %>
+            <%= balance.balance %>
+
+              <% @balances.each do |balance| %>
+                  <h2><% balance.expenses.each do |expense| %></h2>
+                      <h2><%= expense.type %></h2>
+                      <p><%= expense.amount %></p>
+                  <% end %>
+              <% end %>
+            <% end %>
+
+          <p><%= link_to 'Refund', expense_path(id: @expenses.first.id) %></p>
+        </div>
       </div>
-      <div class="card-contract-info">
-        <h2>Your Document</h2>
-        <p>Current Renting Contract</p>
-        <p>Bills</p>
-      </div>
-      <div class="card-contract-info">
-        <h2>Earnings</h2>
-        <% @balances.each do |balance| %>
-        <%= balance.amount %>
+
+    <h2>Property_Contract</h2>
+      <% @contracts.each do |contract| %>
+        <%= contract.rent_payment_status %>
+        <%= contract.rent_price %>
+        <%= contract.billing_frequency %>
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="chatroom">
+          Launch demo modal
+        </button>
+
+        <div id="messages" data-property-contract-id="<%= contract.id %>">
+          <% contract.messages.each do |message| %>
+            <%= render "messages/message", message: message %>
+          <% end %>
+        </div>
+
+
+        <%= simple_form_for ([contract, Message.new]), remote: true  do |form| %>
+          <%= form.input :content, label: false, placeholder: "Message" %>
+          <%= form.button :submit, class: "btn btn-lg btn-block btn-flat" %>
         <% end %>
+      <% end %>
 
-    <% @balances.each do |balance| %>
-        <h2><% balance.expenses.each do |expense| %></h2>
-            <h2><%= expense.type %></h2>
-            <p><%= expense.amount %></p>
-        <% end %>
-    <% end %>
-    </div>
-  </div>
-
-<h2>Property_Contract</h2>
-<% @contracts.each do |contract| %>
-  <%= contract.rent_payment_status %>
-  <%= contract.rent_price %>
-  <%= contract.billing_frequency %>
-
-  <div id="messages" data-property_contract-id="<%= contract.id %>">
-    <% contract.messages.each do |message| %>
-      <div class="message-container" id="message-<%= message.id %>">
-        <i class="author">
-          <span><%= message.user.first_name %></span>
-          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-        </i>
-        <p><%= message.content %></p>
-      </div>
-    <% end %>
-  </div>
-
-
-  <%= simple_form_for ([contract, Message.new]), remote: true  do |form| %>
-    <%= form.input :content, label: false, placeholder: "Message" %>
-    <%= form.button :submit, class: "btn btn-lg btn-block btn-flat" %>
-  <% end %>
-
-<% end %>
-
-    <br>
-    <h2>Your calendar</h2>
-    <%= render 'shared/calendar-show' %>
-    <%= render 'shared/flat-info' %>
-</div>
+        <br>
+        <h2>Your calendar</h2>
+        <%= render 'shared/calendar-show' %>
+        <%= render 'shared/flat-info' %>
