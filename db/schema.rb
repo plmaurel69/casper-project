@@ -45,20 +45,12 @@ ActiveRecord::Schema.define(version: 2022_02_01_194859) do
     t.index ["balance_sheet_id"], name: "index_incomes_on_balance_sheet_id"
   end
 
-  create_table "property_contracts", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id", null: false
     t.bigint "property_contract_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "property_contract_id"
-    t.index ["property_contract_id"], name: "index_messages_on_property_contract_id"
     t.index ["property_contract_id"], name: "index_messages_on_property_contract_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
