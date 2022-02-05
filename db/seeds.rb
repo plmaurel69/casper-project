@@ -69,3 +69,7 @@ puts "BalanceSheet 2 saved"
 balance = BalanceSheet.new(balance: '2177', property_contract_id: 1)
 balance.save!
 puts "BalanceSheet 3 saved"
+
+income = Income.new(amount: '2300', type: 'Loyer', paid: 'true', payment_date: '2021-11-01', balance_sheet_id: 1)
+income.save!
+puts "Income 1 saved"
