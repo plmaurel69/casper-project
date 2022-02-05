@@ -62,21 +62,6 @@
         </div>
       </div>
     </div>
-    <div class="balance-infos">
-      <% @balances.each do |balance| %>
-          <h2><% balance.expenses.each do |expense| %></h2>
-          <h2><%= expense.type %></h2>
-          <p><%= expense.amount %></p>
-          <% end %>
-        <% end %>
-
-        <% @balances.each do |balance| %>
-          <h2><% balance.incomes.each do |income| %></h2>
-            <h2><%= income.type %></h2>
-            <p><%= income.amount %></p>
-          <% end %>
-        <% end %>
-    </div>
   </div>
 </div>
 <div class="calendar">
