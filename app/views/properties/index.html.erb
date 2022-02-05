@@ -19,12 +19,12 @@
 
     <div>
       <h2>Mes Propriétés</h2>
-      <ul>
-      <% @properties.each do |property| %>
-        <p><%=link_to property.property_name, property_path(property) %>
-        <%= property.address %></p>
-          <% end %>
-      </ul>
+
+      <div class = card-properties>
+        <ul><% @properties.each do |property| %>
+          <p><%=link_to property.property_name, property_path(property) %>
+          <%= property.address %></p>
+            <% end %></ul>
       </div>
     </div>
   </div>
