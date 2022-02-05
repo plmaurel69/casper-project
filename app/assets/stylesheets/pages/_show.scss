@@ -1,17 +1,14 @@
 .card-kpis {
   display: flex;
-  grid-template-columns: 300px 1fr 1fr 1fr;
+  // grid-template-columns: 300px 1fr 1fr 1fr;
   grid-template-rows: 50% 50%;
-  margin-top: 20px;
   justify-content: center;
 }
 
 .dashboard-card {
-  width: 200px;
+  // width: 200px;
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  padding: 10px;
-  margin: 10px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -39,11 +36,9 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 10px;
 }
 
 .action-property .action-property-info {
-  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -54,24 +49,33 @@
   position: absolute;
   right: 16px;
   top: -20px;
-  width: 40px;
+  // width: 40px;
 }
 
 
 .action-property {
   border-radius: 1em;
-  width: 1125px;
+  // width: 1125px;
   text-align: center;
   background: #fff;
   height: 100px;
   display: flex;
   justify-content: space-between;
-  padding: 50px;
-  padding-bottom: 65px;
-  margin-top: 20px;
-  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: all 0.3s ease;
+}
+
+.container-general-show {
+  display: flex;
+}
+
+.body {
+  margin: 0;
+}
+
+.content-show {
+  float: left;
+  position: absolute;
 }
