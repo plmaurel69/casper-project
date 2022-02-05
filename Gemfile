@@ -35,6 +35,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 
 gem 'stripe'
+gem 'stripe_event'
 gem "simple_calendar", "~> 2.4"
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'

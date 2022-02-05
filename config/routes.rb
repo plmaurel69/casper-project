@@ -14,4 +14,5 @@ Rails.application.routes.draw do
     end
     resources :payments, only: :new
   end
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 end
