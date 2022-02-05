@@ -1,36 +1,24 @@
 class MessagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
-  before_action :find_message, only: %i[update destroy show edit]
+  # skip_before_action :authenticate_user!, only: :index
+  # before_action :find_message, only: %i[update destroy show edit]
 
-  def index
-    @messages = Messsage.all
-  end
-
-  def new
-    @message = Message.new
-  end
-
-  def create
-    @message = Message.new(animal_params)
+   def create
+    @property_contract = PropertyContract.find(params[:property_contract_id])
+    @message = Message.new(message_params)
+    @message.property_contract = PropertyContract.first
+    @message.property_contract = @property_contract
     @message.user = current_user
-    @message.save!
-    redirect_to messages_path
-  end
+    if @message.save!
+      redirect_to property_path(@property_contract.property, anchor: "message-#{@message.id}")
+    else
+      render "properties/show"
+    end
 
-  def edit
-  end
-
-  def update
-    @message.update(message_params)
-    redirect_to messages_path
   end
 
   def destroy
     @message.destroy
     redirect_to messages_path
-  end
-
-  def show
   end
 
   private

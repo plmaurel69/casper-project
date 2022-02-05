@@ -1,7 +1,12 @@
 <div class = container>
   <div class = dashboard>
 <<<<<<< HEAD
-    <h1>Mon Dashboard</h1>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+    <h1>Money money money... 🤑</h1>
       <div class ="index-kpis">
         <div class="card-kpis-container">
           <div class="cards-kpi">
@@ -9,7 +14,7 @@
               <%= "Global ROI" %>
             </div>
             <div class="card-kpi">
-              <%= "Expenses trends" %>
+              <%= "Expenses trends (%)" %>
             </div>
             <div class="card-kpi">
               <%= "Occupation rate" %>
@@ -17,19 +22,41 @@
           </div>
         </div>
       </div>
-
     <div>
-      <h2>Mes Propriétés</h2>
-
+    <div class="properties-container">
+      <h1>Mes propriétés 🏘️</h1>
+    <br>
+    <div class="title-card-properties">
+    <div class="title-card-element">
+    <h5>                   </h5>
+    </div>
+    <div class="title-card-element">
+    <h5>Last month rent status</h5>
+    </div>
+    <div class="title-card-element">
+    <h5>Annual ROI net</h5>
+    </div>
+    </div>
       <div class = card-properties>
       <ul>
       <% @properties.each do |property| %>
-        <li><%= property.property_name %>
-              <%= property.address %>
-              <%= "ROI annuel :"  %></li>
+      <div class="card-property">
+        <div class="property-name">
+        <%=link_to property.property_name, property_path(property) %>
+        </div>
+        <div class="property-status">
+        <%= property.rental_status%>
+        </div>
+        <div class="property-ROI">
+        <%= "-7.7%"  %>
+        </div>
+        </div>
         <% end %>
       </ul>
       </div>
     </div>
+    </div>
   </div>
 </div>
+
+<%= render 'shared/calendar-show' %>

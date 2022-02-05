@@ -21,8 +21,6 @@
   </div>
 </div>
 
-<h2>Your calendar</h2>
-
 <h2>Your important</h2>
   <div class="action-property">
     <div class="action-property-info">
@@ -32,10 +30,9 @@
   </div>
   <div class="action-property">
     <div class="action-property-info">
-      <p>Refund <% @balance_sheets_outstanding.each do |balance_sheet_outstanding|%> </p>
-        <%= balance_sheet_outstanding.type_description %>
-        <p><%= link_to 'Send a refund', property_balance_sheet_path(balance_sheet_outstanding) %> </p>
-        <% end %>
+
+      <p>Refund plumbing work</p>
+        <p><%= link_to 'Send a refund' %> </p>
     </div>
   </div>
 
@@ -45,7 +42,7 @@
         <div class="card-contract-info">
       <h2>Landlord</h2>
       <p><%= @property.user.first_name %><%= @property.user.last_name %></p>
-      <%# <p><%= @property_contract.start_date %></p> %>
+      <%# <p><%= contract.start_date %></p> %>
       </div>
       <div class="card-contract-info">
         <h2>Your tenant</h2>
@@ -65,26 +62,45 @@
         <h2>Earnings</h2>
         <% @balances.each do |balance| %>
         <%= balance.amount %>
-        <% end %>
-      </div>
-    </div>
-</div>
-<h2>Balance Sheet</h2>
 
-<% @balances.each do |balance| %>
-<br>
-<%= balance.amount %>
-<% end %>
+    <% @balances.each do |balance| %>
+        <h2><% balance.expenses.each do |expense| %></h2>
+            <h2><%= expense.type %></h2>
+            <p><%= expense.amount %></p>
+        <% end %>
+    <% end %>
+      <p><%= link_to 'Refund', expense_path(id: @expenses.first.id) %></p>
+    </div>
+  </div>
 
 <h2>Property_Contract</h2>
 <% @contracts.each do |contract| %>
   <%= contract.rent_payment_status %>
   <%= contract.rent_price %>
   <%= contract.billing_frequency %>
+
+  <div id="messages" data-property_contract-id="<%= contract.id %>">
+    <% contract.messages.each do |message| %>
+      <div class="message-container" id="message-<%= message.id %>">
+        <i class="author">
+          <span><%= message.user.first_name %></span>
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </i>
+        <p><%= message.content %></p>
+      </div>
+    <% end %>
+  </div>
+
+
+  <%= simple_form_for ([contract, Message.new]), remote: true  do |form| %>
+    <%= form.input :content, label: false, placeholder: "Message" %>
+    <%= form.button :submit, class: "btn btn-lg btn-block btn-flat" %>
+  <% end %>
+
 <% end %>
 
-<h2>Locataire</h2>
-<% @property.renters.each do |property| %>
-  <%= property.first_name%> <%=  property.last_name%>
-  <%= property.profession%> <%=  property.professional_status%>
-<% end %>
+    <br>
+    <h2>Your calendar</h2>
+    <%= render 'shared/calendar-show' %>
+    <%= render 'shared/flat-info' %>
+</div>
