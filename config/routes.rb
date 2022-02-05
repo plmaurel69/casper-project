@@ -8,5 +8,10 @@ Rails.application.routes.draw do
   resources :property_contracts, only: [:show] do
     resources :messages, only: [:create]
   end
-  resources :expenses, only: [:show]
+  resources :expenses, only: [:show, :update] do
+    member do
+      get :checkout
+    end
+    resources :payments, only: :new
+  end
 end

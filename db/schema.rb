@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2022_02_05_114611) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +60,8 @@ ActiveRecord::Schema.define(version: 2022_02_05_114611) do
     t.bigint "balance_sheet_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "checkout_session_id"
+    t.string "state"
     t.index ["balance_sheet_id"], name: "index_expenses_on_balance_sheet_id"
   end
 
