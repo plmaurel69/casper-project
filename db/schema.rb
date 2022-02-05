@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_01_194859) do
+ActiveRecord::Schema.define(version: 2022_02_05_102445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2022_02_01_194859) do
     t.bigint "balance_sheet_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "checkout_session_id"
+    t.string "state"
     t.index ["balance_sheet_id"], name: "index_expenses_on_balance_sheet_id"
   end
 
@@ -45,20 +47,12 @@ ActiveRecord::Schema.define(version: 2022_02_01_194859) do
     t.index ["balance_sheet_id"], name: "index_incomes_on_balance_sheet_id"
   end
 
-  create_table "property_contracts", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id", null: false
     t.bigint "property_contract_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "property_contract_id"
-    t.index ["property_contract_id"], name: "index_messages_on_property_contract_id"
     t.index ["property_contract_id"], name: "index_messages_on_property_contract_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end

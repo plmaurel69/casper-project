@@ -78,18 +78,18 @@ balance = BalanceSheet.new(balance: '2177', property_contract_id: 2)
 balance.save!
 puts "BalanceSheet 3 saved"
 
-expense = Expense.new(balance_sheet_id: 1, amount: '45', type: 'plombier', paid: false)
+expense = Expense.new(balance_sheet_id: 1, amount: '45', type: 'plombier', paid: false, state: 'pending')
 expense.save!
 
 puts "Expense 1 saved"
 
-expense = Expense.new(balance_sheet_id: 2, amount: '55', type: 'garage', paid: false)
+expense = Expense.new(balance_sheet_id: 2, amount: '55', type: 'garage', paid: false, state: 'pending')
 expense.save!
 
 puts "Expense 2 saved"
 
 
-expense = Expense.new(balance_sheet_id: 3, amount: '15', type: 'Admin', paid: false)
+expense = Expense.new(balance_sheet_id: 3, amount: '15', type: 'Admin', paid: false, state: 'pending')
 expense.save!
 
 puts "Expense 3 saved"

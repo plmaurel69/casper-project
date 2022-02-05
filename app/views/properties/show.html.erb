@@ -61,13 +61,14 @@
       <div class="card-contract-info">
         <h2>Earnings</h2>
         <% @balances.each do |balance| %>
-        <%= balance.amount %>
+        <%= balance.balance %>
 
     <% @balances.each do |balance| %>
         <h2><% balance.expenses.each do |expense| %></h2>
             <h2><%= expense.type %></h2>
             <p><%= expense.amount %></p>
         <% end %>
+    <% end %>
     <% end %>
       <p><%= link_to 'Refund', expense_path(id: @expenses.first.id) %></p>
     </div>
