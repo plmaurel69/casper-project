@@ -25,3 +25,8 @@
 @import 'fullcalendar';
 @import "pages/indexv2";
 @import "pages/new";
+
+.main-container {
+  margin-left: $navbar-width;
+  max-width: calc(100vw - $navbar-width);
+}
