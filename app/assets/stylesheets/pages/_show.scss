@@ -60,7 +60,7 @@
 
 .action-property {
   border-radius: 1em;
-  width: 1125px;
+  width: 900px;
   text-align: center;
   background: #fff;
   height: 100px;
@@ -74,4 +74,44 @@
   margin-right: auto;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: all 0.3s ease;
+}
+
+.secondary-container {
+  width: 900px;
+  margin: auto;
+}
+
+.earnings-content {
+  font-size: 18px;
+}
+
+.smaller-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-message {
+  border-radius: 1em;
+  width: 900px;
+  text-align: center;
+  margin: 0 auto;
+  background: #fff;
+  height: 300px;
+  padding: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 100px;
+}
+
+#calendar-properties-index {
+  margin-top: 100px;
+}
+
+.calendar-show {
+  margin-top: 100px;
+}
+.flat-info {
+  margin-top: 100px;
 }
