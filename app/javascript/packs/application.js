@@ -33,14 +33,14 @@ import { initChatroomCable } from '../channels/property_contract_channel';
 document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   if (document.getElementById('calendar-property-show') != null) {
-    // setCalendarPropertyShow();
+    setCalendarPropertyShow();
   }
-  else if (document.getElementById('calendar-property-index') != null) {
-    // setCalendarPropertiesIndex();
+  else if (document.getElementById('calendar-properties-index') != null) {
+    setCalendarPropertiesIndex();
   }
 });
 
-import { setCalendarPropertiesIndex } from '../packs/fullcalendar_property_show.js';
+import { setCalendarPropertiesIndex } from '../packs/fullcalendar_properties_index.js';
 import { setCalendarPropertyShow } from '../packs/fullcalendar_property_show.js';
 
 $('#myModal').on('shown.bs.modal', function () {

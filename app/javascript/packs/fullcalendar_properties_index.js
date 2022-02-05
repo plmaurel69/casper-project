@@ -7,7 +7,7 @@ import { whenTransitionDone } from 'fullcalendar';
 
 
 const setCalendarPropertiesIndex = () => {
-  var calendarEl = document.getElementById('calendar-property-index');
+  var calendarEl = document.getElementById('calendar-properties-index');
   var calendar = new Calendar(calendarEl, {
     plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
 
