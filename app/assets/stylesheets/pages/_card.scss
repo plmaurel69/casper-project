@@ -5,7 +5,7 @@
 
 .card-article {
   border-radius: 1em;
-  // width: 350px;
+  width: 350px;
   text-align: center;
   margin: 0 auto;
   background: #fff;
@@ -45,7 +45,7 @@
 
 .card-kpi {
   border-radius: 1rem;
-  // width: 350px;
+  width: 100px;
   text-align: center;
   margin: 0 auto;
   background: #fff;
@@ -62,7 +62,18 @@
   justify-content: space-between;
   margin-top: 100px;
   padding-top: 50px;
-  margin-right: auto;
+  margin-right: 50px;
+}
+
+.card-kpi:hover {
+  border-radius: 1em;
+  // width: 360px;
+  text-align: center;
+  margin: 0 auto;
+  background: #fff;
+  height: 300px;
+  // padding: 25px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .properties-container {

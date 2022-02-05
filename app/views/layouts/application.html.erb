@@ -17,7 +17,9 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="<%= 'main-container' unless params[:controller] == 'pages' && params[:action] == 'home' %>">
+      <%= yield %>
+    </div>
     <%= render "shared/footer" %>
   </body>
 </html>
