@@ -16,6 +16,8 @@ Message.destroy_all
 puts 'Messages destroyed'
 User.destroy_all
 puts 'User destroyed'
+Expense.destroy_all
+puts 'Expense destroyed'
 
 user = User.new(first_name: 'Pierre', last_name: 'Dupond', gender: 'Homme', profession: 'Sales', professional_status: 'CDI', birth_date: '30/07/1991', user_type: 'Propriétaire', email: 'papa@gmail.com', password: 'papa@gmail.com' )
 user.save!
@@ -69,18 +71,23 @@ puts "BalanceSheet 2 saved"
 balance = BalanceSheet.new(balance: '2177', property_contract_id: 1)
 balance.save!
 puts "BalanceSheet 3 saved"
+
 income = Income.new(amount: '2300', type: 'Loyer', paid: 'true', payment_date: '2021-11-01', balance_sheet_id: 1)
 income.save!
 puts "Income 1 saved"
 
-expense = Expense.new(balance_sheet_id: 1, amount: '45', type: 'plombier', paid: false)
+income = Income.new(amount: '2300', type: 'Loyer', paid: 'true', payment_date: '2021-12-01', balance_sheet_id: 1)
+income.save!
+puts "Income 2 saved"
+
+expense = Expense.new(balance_sheet_id: 1, payment_date: '2022/01/01', amount: '45', type: 'Charges', paid: false)
 expense.save!
 puts "Expense 1 saved"
 
-expense = Expense.new(balance_sheet_id: 2, amount: '55', type: 'garage', paid: false)
+expense = Expense.new(balance_sheet_id: 2, payment_date: '2022/02/01', amount: '1780', type: 'Emprunt', paid: false)
 expense.save!
 puts "Expense 2 saved"
 
-expense = Expense.new(balance_sheet_id: 3, amount: '15', type: 'Admin', paid: false)
+expense = Expense.new(balance_sheet_id: 3, payment_date: '2022/03/01', amount: '15', type: 'Admin', paid: false)
 expense.save!
 puts "Expense 3 saved"
