@@ -2,19 +2,19 @@
 
 <div class="card-kpis">
   <div class="dashboard-card-stat">
-    <div class="dashboard-card-content">
+    <div class="card-kpi">
       <p>Global ROI</p>
       <h3>300€</h3>
     </div>
   </div>
   <div class="dashboard-card-stat">
-    <div class="dashboard-card-content">
+    <div class="card-kpi">
       <p>Expenses trends (%)</p>
       <h3>5%</h3>
     </div>
   </div>
   <div class="dashboard-card-stat">
-    <div class="dashboard-card-content">
+    <div class="card-kpi">
       <p>Occupation rate (%)</p>
       <h3>20%</h3>
     </div>
@@ -62,6 +62,7 @@
         <h2>Earnings</h2>
         <% @balances.each do |balance| %>
         <%= balance.amount %>
+        <% end %>
 
     <% @balances.each do |balance| %>
         <h2><% balance.expenses.each do |expense| %></h2>
@@ -69,7 +70,6 @@
             <p><%= expense.amount %></p>
         <% end %>
     <% end %>
-      <p><%= link_to 'Refund', expense_path(id: @expenses.first.id) %></p>
     </div>
   </div>
 

@@ -7,8 +7,7 @@
 }
 
 .card-kpis-container {
-  width: 1200px;
-  margin: auto;
+  width: 900px;
 }
 
 .card-kpis {
@@ -19,5 +18,14 @@
 .title-card-properties {
   display: flex;
   justify-content: space-between;
+  margin-right: 80px;
 
+}
+
+.dashboard {
+  margin-left: 200px;
+}
+
+.container {
+  margin-right: 80px;
 }

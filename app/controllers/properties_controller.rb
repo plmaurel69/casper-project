@@ -32,7 +32,6 @@ class PropertiesController < ApplicationController
     @contracts = PropertyContract.all.where(property_id: @property.id)
     @expenses = Expense.where(paid: false)
     # @users = PropertyContract.all.where(property_id: @property_contract.user.id)
-    @property_contract = PropertyContract.find(params[:id])
     @message = Message.new
   end
 
