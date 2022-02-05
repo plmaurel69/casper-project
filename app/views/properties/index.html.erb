@@ -1,82 +1,84 @@
 <div class = container>
   <div class = dashboard>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-    <h1>Money money money... 🤑</h1>
-      <div class ="index-kpis">
-        <div class="card-kpis-container">
-          <div class="cards-kpi">
-            <div class="card-kpi">
-              <div>
-                <%= column_chart(@data, xtitle: 'KPI') %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+      <h1>Money money money... 🤑</h1>
+        <div class ="index-kpis">
+          <div class="card-kpis-container">
+            <div class="cards-kpi">
+              <div class="card-kpi">
+                <div>
+                  <%= column_chart(@data, xtitle: 'KPI') %>
+                </div>
               </div>
-            </div>
-            <div class="card-kpi">
-              <div>
-                <%= column_chart(@data, xtitle: 'KPI') %>
+              <div class="card-kpi">
+                <div>
+                  <%= column_chart(@data, xtitle: 'KPI') %>
+                </div>
               </div>
-            </div>
-            <div class="card-kpi">
-              <div>
-                <%= column_chart(@data, xtitle: 'KPI') %>
+              <div class="card-kpi">
+                <div>
+                  <%= column_chart(@data, xtitle: 'KPI') %>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      <div class="properties-container">
+        <h1>Mes propriétés 🏘️</h1>
+        <br>
+        <div class="title-card-properties">
+          <div class="title-card-element">
+            <h5>                   </h5>
+          </div>
+          <div class="title-card-element">
+            <h5>Last month rent status</h5>
+          </div>
+        <div class="title-card-element">
+          <h5>Annual ROI net</h5>
+        </div>
       </div>
-    <div>
-    <div class="properties-container">
-      <h1>Mes propriétés 🏘️</h1>
-    <br>
-    <div class="title-card-properties">
-    <div class="title-card-element">
-    <h5>                   </h5>
-    </div>
-    <div class="title-card-element">
-    <h5>Last month rent status</h5>
-    </div>
-    <div class="title-card-element">
-    <h5>Annual ROI net</h5>
-    </div>
-    </div>
-      <div class = card-properties>
-      <ul>
-      <% @properties.each do |property| %>
-      <div class="card-property">
-        <div class="property-name">
-        <img class="card-img-top" src="<%= image_path('Property1_Picture.jpg') %>" width="10"
-     height="50" alt="Card image cap">
-        <%=link_to property.property_name, property_path(property) %>
+        <div class = card-properties>
+          <ul>
+          <% @properties.each do |property| %>
+            <div class="card-property">
+              <div class="property-name">
+                <img class="card-img-top" src="<%= image_path('Property1_Picture.jpg') %>" width="10"
+                height="50" alt="Card image cap">
+                <%=link_to property.property_name, property_path(property) %>
+              </div>
+              <div class="property-status">
+                <%= property.rental_status%>
+              </div>
+              <div class="property-ROI">
+                <%= "-7.7%"  %>
+              </div>
+            </div>
+          <% end %>
+          </ul>
         </div>
-        <div class="property-status">
-        <%= property.rental_status%>
-        </div>
-        <div class="property-ROI">
-        <%= "-7.7%"  %>
-        </div>
-        </div>
+      </div>
+    </div>
+    <div class="balance-infos">
+      <% @balances.each do |balance| %>
+          <h2><% balance.expenses.each do |expense| %></h2>
+          <h2><%= expense.type %></h2>
+          <p><%= expense.amount %></p>
+          <% end %>
         <% end %>
-      </ul>
-      </div>
-    </div>
+
+        <% @balances.each do |balance| %>
+          <h2><% balance.incomes.each do |income| %></h2>
+            <h2><%= income.type %></h2>
+            <p><%= income.amount %></p>
+          <% end %>
+        <% end %>
     </div>
   </div>
-                <% @balances.each do |balance| %>
-                  <h2><% balance.expenses.each do |expense| %></h2>
-                      <h2><%= expense.type %></h2>
-                      <p><%= expense.amount %></p>
-                  <% end %>
-              <% end %>
-
-                <% @balances.each do |balance| %>
-                  <h2><% balance.incomes.each do |income| %></h2>
-                      <h2><%= income.type %></h2>
-                      <p><%= income.amount %></p>
-                  <% end %>
-              <% end %>
 </div>
-
-<%= render 'shared/calendar-show' %>
+<div class="calendar">
+  <%= render 'shared/calendar-show' %>
+</div>

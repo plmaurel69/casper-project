@@ -3,7 +3,7 @@
   padding-left: auto;
   padding-right: auto;
   height: 400px;
-  width: 1200px;
+  width: 900px;
 }
 
 .card-kpis-container {
@@ -23,9 +23,16 @@
 }
 
 .dashboard {
-  margin-left: 200px;
+  width: 900px;
+  margin: auto;
 }
 
-.container {
-  margin-right: 80px;
+.balance-infos {
+  width: 900px;
+  margin: auto;
+}
+
+.calendar {
+  width: 700px;
+  margin: auto;
 }
