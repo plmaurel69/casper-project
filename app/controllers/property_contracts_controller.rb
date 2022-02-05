@@ -1,24 +1,29 @@
 class PropertyContractsController < ApplicationController
-  before_action :find_contract, only: %i[update destroy show edit]
+  before_action :find_contract, only: %i[new update destroy edit]
 
   def index
     @contracts = PropertyContract.all
   end
 
   def show
-    @property_contract = PropertyContract.find(params[:id])
-    @message = Message.new
+    @contract = PropertyContract.all.where(property_id: @property)
   end
 
   def new
-    @contract = PropertyContract.new
+    @property_contract = PropertyContract.new
   end
 
   def create
     @contract = PropertyContract.new(contract_params)
-    @propery = Property.find(params[:property_id])
+    @property = Property.find(params[:property_id])
     @contract.property = @property
-    @contract.save!
+    @user = User.new(user_params)
+    @user.password = 'testtest'
+
+    if @user.save!
+      @contract.user = @user
+      @contract.save!
+    end
   end
 
   def edit
@@ -35,11 +40,14 @@ class PropertyContractsController < ApplicationController
   private
 
   def contract_params
-    params.require(:propertycontract).permit(:end_date, :start_date, :scheduled_payment_date, :billing_frequency, :rent_price, :rent_payment_status)
+    params.require(:property_contract).permit(:end_date, :start_date, :scheduled_payment_date, :billing_frequency, :rent_price, :rent_payment_status)
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :first_name, :last_name, :gender, :profession, :professional_status, :birth_date, :user_type)
   end
 
   def find_contract
-    @contract = PropertyContract.find(params[:id])
+    @property = Property.find(params[:property_id])
   end
-
 end

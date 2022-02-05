@@ -1,0 +1,26 @@
+<h1>Générer un contrat de location</h1>
+      <%= simple_form_for [ @property, @property_contract ] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.input :scheduled_payment_date %>
+        <%= f.input :billing_frequency %>
+        <%= f.input :rent_price %>
+
+        <%= simple_fields_for :user do |p| %>
+          <%= p.input :email %>
+          <%= p.input :first_name %>
+          <%= p.input :last_name %>
+          <%= p.input :gender %>
+          <%= p.input :profession %>
+          <%= p.input :professional_status %>
+          <%= p.input :birth_date %>
+          <%= p.input :user_type %>
+
+        <% end %>
+
+        <%= f.button :submit%>
+
+          <% end %>
+
+
+<h1><%= link_to 'Générer contrat de location' %></h1>
