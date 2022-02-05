@@ -48,6 +48,8 @@
       <% @properties.each do |property| %>
       <div class="card-property">
         <div class="property-name">
+        <img class="card-img-top" src="<%= image_path('Property1_Picture.jpg') %>" width="10"
+     height="50" alt="Card image cap">
         <%=link_to property.property_name, property_path(property) %>
         </div>
         <div class="property-status">
