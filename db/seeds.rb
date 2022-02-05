@@ -89,10 +89,14 @@ expense = Expense.new(balance_sheet_id: 2, amount: '55', type: 'garage', paid: f
 expense.save!
 puts "Expense 1 saved"
 
-expense = Expense.new(balance_sheet_id: 2, payment_date: '2022/02/01', amount: '1780', type: 'Emprunt', paid: false)
+expense = Expense.new(balance_sheet_id: 2, amount: '1780', type: 'Emprunt', paid: false, state: 'pending')
 expense.save!
 puts "Expense 2 saved"
 
+
+expense = Expense.new(balance_sheet_id: 3, amount: '15', type: 'Admin', paid: false, state: 'pending')
+expense.save!
+puts "Expense 3 saved"
 
 expense = Expense.new(balance_sheet_id: 3, amount: '15', type: 'Admin', paid: false, state: 'pending')
 expense.save!
