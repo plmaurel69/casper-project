@@ -22,6 +22,10 @@ gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem "chartkick"
+gem "groupdate"
+
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -34,14 +38,17 @@ gem 'stripe'
 gem "simple_calendar", "~> 2.4"
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem 'cloudinary', '~> 1.16.0'
 
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
-group :development, :test do  gem 'pry-byebug'
+group :development, :test do
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
+
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
