@@ -19,16 +19,16 @@ puts 'User destroyed'
 Expense.destroy_all
 puts 'Expense destroyed'
 
-user = User.new(first_name: 'Pierre', last_name: 'Dupond', gender: 'Homme', profession: 'Sales', professional_status: 'CDI', birth_date: '30/07/1991', user_type: 'Propriétaire', email: 'papa@gmail.com', password: 'papa@gmail.com' )
-user.save!
+user1 = User.new(first_name: 'Pierre', last_name: 'Dupond', gender: 'Homme', profession: 'Sales', professional_status: 'CDI', birth_date: '30/07/1991', user_type: 'Propriétaire', email: 'papa@gmail.com', password: 'papa@gmail.com' )
+user1.save!
 puts 'User 1 saved'
 
-user = User.new(first_name: 'Manon', last_name: 'Coulot', gender: 'Femme', profession: 'Product', professional_status: 'CDD', birth_date: '23/11/1993', user_type: 'Locataire', email: 'maman@gmail.com', password: 'maman@gmail.com' )
-user.save!
+user2 = User.new(first_name: 'Manon', last_name: 'Coulot', gender: 'Femme', profession: 'Product', professional_status: 'CDD', birth_date: '23/11/1993', user_type: 'Locataire', email: 'maman@gmail.com', password: 'maman@gmail.com' )
+user2.save!
 puts 'User 2 saved'
 
-user = User.new(first_name: 'Emma', last_name: 'Schmidt', gender: 'Femme', profession: 'Analyste', professional_status: 'Freelance', birth_date: '14/09/1984', user_type: 'Locataire', email: 'soeur@gmail.com', password: 'soeur@gmail.com' )
-user.save!
+user3 = User.new(first_name: 'Emma', last_name: 'Schmidt', gender: 'Femme', profession: 'Analyste', professional_status: 'Freelance', birth_date: '14/09/1984', user_type: 'Locataire', email: 'soeur@gmail.com', password: 'soeur@gmail.com' )
+user3.save!
 puts 'User 3 saved'
 
 property = Property.new(rental_status: 'Loué', size: '89', address: '4 Chemin du Bois, Caluire-et-Cuire', property_name: 'Maison en centre-ville de Caluire', property_type: 'Maison', property_amount: '370000', user_id: 1)
