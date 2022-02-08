@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :property_contracts
 
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
