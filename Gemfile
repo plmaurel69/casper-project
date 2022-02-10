@@ -40,6 +40,8 @@ gem "simple_calendar", "~> 2.4"
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'cloudinary', '~> 1.16.0'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 
 gem 'autoprefixer-rails', '10.2.5'

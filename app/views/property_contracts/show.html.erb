@@ -1,1 +1,93 @@
-<h1>TO DO </h1>
+<div>
+  <div class="préamnbule">
+    <h1>CONTRAT DE LOCATION/COLOCATION</h1>
+    <h3>LOGEMENT NON MEUBLÉ</h3>
+  </div>
+  <div class="titre">
+    <h2>I. Désignation des parties</h2>
+  </div>
+  <p>Le présent contrat est conclu entre les soussignés :</p>
+  <h3>Propriétaire</h3>
+  <p>Nom et prénom du bailleur : <%= @owner.first_name %></p>
+  <p>Adresse email : <%= @owner.email %></p>
+  <h3>Locataire</h3>
+  <p>Nom et prénom : <%= @user.last_name %> <%= @user.first_name %> </p>
+  <p>Adresse email : <%= @user.email %></p>
+  <p>Profession : <%= @user.profession %></p>
+  <p>Statut employé : <%= @user.professional_status %></p>
+  </p> Il a été convenu ce qui suit entre le locataire et le propriétaire : <p>
+  <div class="titre">
+    <h2>II.Objet du contrat</h2>
+  </div>
+  <p>Le présent contrat a pour objet la location d’un logement ainsi déterminé :</p>
+  <div class="petit-titre">
+    <h4>II.1. Consistance du logement</h4>
+    <p>Adresse du logement (ex : adresse / bâtiment / étage / porte etc.) :</p>
+    <p>Surface habitable : m2</p>
+  </div>
+  <div class="petit-titre">
+    <h4>II.2. Destination des locaux :</h4>
+    <div class="box-a-cocher">
+      <p>usage d’habitation</p>
+      <p>usage mixte professionnel et d’habitation</p>
+    </div>
+  </div>
+  <div class="titre">
+    <h2>III. Date de prise d’effet et durée du contrat</h2>
+  </div>
+  <p>La durée du contrat et sa date de prise d’effet sont ainsi définies :</p>
+  <p>Date de prise d’effet du contrat :</p>
+  <div class="titre">
+    <h2>IV. Conditions financières</h2>
+  </div>
+  <p>Les parties conviennent des conditions financières suivantes :</p>
+  <div class="petit-titre">
+    <p>IV.1. Loyer : Fixation du loyer initial</p>
+    <p>Montant du loyer mensuel : </p>
+  </div>
+  <div class="petit-titre">
+    <p>IV.6. Modalités de paiement :</p>
+    <p>Périodicité du paiement1 : </p>
+    <p>Date ou période de paiement :</p>
+  </div>
+
+  <div class="titre">
+    <h2>V. Signatures</h2>
+  </div>
+  <p>Fait le à</p>
+  <div class="signature">
+  <p>Signature du bailleur</p>
+  <p>Signature du locataire</p>
+  </div>
+
+</div>
+
+
+  <p> </p><%= @contract.start_date %>
+  <p> </p><%= @contract.end_date %>
+  <p> </p><%= @contract.scheduled_payment_date %>
+  <p> </p><%= @contract.billing_frequency %>
+  <p> </p><%= @contract.rent_price %>
+  <p> </p><%= @contract.rent_payment_status %>
+
+  <p> </p><%= @property.address %>
+  <p> </p><%= @property.rental_status %>
+  <p> </p><%= @property.size %>
+  <p> </p><%= @property.property_name %>
+  <p> </p><%= @property.property_type %>
+  <p> </p><%= @property.property_amount %>
+
+
+<p> </p>
+<p> </p>
+<p> </p><%= @user.gender %>
+<p> </p>
+<p> </p>
+<p> </p><%= @user.birth_date %>
+
+<p> </p>
+<p> </p><%= @owner.last_name %>
+<p> </p><%= @owner.gender %>
+<p> </p><%= @owner.profession %>
+<p> </p><%= @owner.professional_status %>
+<p> </p><%= @owner.birth_date %>

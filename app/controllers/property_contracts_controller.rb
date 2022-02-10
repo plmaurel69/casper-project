@@ -1,12 +1,22 @@
 class PropertyContractsController < ApplicationController
-  before_action :find_contract, only: %i[new update destroy edit]
+  before_action :find_property, only: %i[new update destroy edit show]
 
   def index
     @contracts = PropertyContract.all
   end
 
   def show
-    @contract = PropertyContract.all.where(property_id: @property)
+    @contract = PropertyContract.all.where(property_id: @property.id).first
+    @property = Property.find(@property.id)
+    @user = User.find(@contract.user.id)
+    @owner = User.find(@property.user_id)
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Contrat de Location", template: "property_contracts/show.html.erb"
+      end
+    end
   end
 
   def new
@@ -47,7 +57,12 @@ class PropertyContractsController < ApplicationController
     params.require(:user).permit(:email, :first_name, :last_name, :gender, :profession, :professional_status, :birth_date, :user_type)
   end
 
-  def find_contract
+  def property_params
+    params.require(:property).permit(:address, :rental_status, :size, :property_name, :property_type, :property_amount)
+  end
+
+  def find_property
     @property = Property.find(params[:property_id])
   end
+
 end
