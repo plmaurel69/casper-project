@@ -12,9 +12,12 @@ class PropertyContractsController < ApplicationController
     @owner = User.find(@property.user_id)
 
     respond_to do |format|
-      format.html
+      format.html { render template: 'property_contracts/show' }
       format.pdf do
-        render pdf: "Contrat de Location", template: "property_contracts/show.html.erb"
+        render  pdf: "Contrat de Location",
+                template: "property_contracts/show.html.erb",
+                formats: :HTML,
+                encoding: 'utf8'
       end
     end
   end
