@@ -85,19 +85,19 @@ income.save!
 puts "Income 2 saved"
 
 
-expense = Expense.new(balance_sheet_id: 2, amount: '55', type: 'garage', paid: false, state: 'pending')
+expense = Expense.new(balance_sheet_id: 2, amount: '55', type: 'garage', paid: false, state: 'paid')
 expense.save!
 puts "Expense 1 saved"
 
-expense = Expense.new(balance_sheet_id: 2, amount: '1780', type: 'Emprunt', paid: false, state: 'pending')
+expense = Expense.new(balance_sheet_id: 2, amount: '1780', type: 'Emprunt', paid: false, state: 'paid')
 expense.save!
 puts "Expense 2 saved"
 
 
-expense = Expense.new(balance_sheet_id: 3, amount: '15', type: 'Admin', paid: false, state: 'pending')
+expense = Expense.new(balance_sheet_id: 3, amount: '15', type: 'Admin', paid: false, state: 'paid')
 expense.save!
 puts "Expense 3 saved"
 
-expense = Expense.new(balance_sheet_id: 3, amount: '15', type: 'Admin', paid: false, state: 'pending')
+expense = Expense.new(balance_sheet_id: 3, amount: '15', type: 'Admin', paid: false, state: 'paid')
 expense.save!
 puts "Expense 3 saved"

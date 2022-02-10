@@ -1,6 +1,7 @@
-<h1>Régler votre dépense</h1>
+<h1>Here is your expenses to be paid</h1>
         <h2><%= @expense.type %></h2>
         <p><%= @expense.amount %></p>
         <p><%= @expense.state %></p>
 
 <h1><%= link_to 'pay', checkout_expense_path(@expense) %></h1>
+<p><%= link_to 'back to my property', property_path %></p>
