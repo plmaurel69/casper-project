@@ -1,26 +1,54 @@
 <h1>Dashboard <%= @property.property_name %></h1>
-<div class="card-kpis">
-  <div class="dashboard-card-stat">
-    <div class="card-kpi">
-      <p>Global ROI</p>
-      <h3>300€</h3>
-    </div>
-    <div class="card-kpi">
-      <p>Expenses trends (%)</p>
-      <h3>5%</h3>
-    </div>
-    <div class="card-kpi">
-      <p>Occupation rate (%)</p>
-      <h3>20%</h3>
+  <div class="card-kpis">
+    <div class="dashboard-card-stat">
+      <div class="card-kpi">
+        <p>Global ROI</p>
+        <h3>300€</h3>
+      </div>
+      <div class="card-kpi">
+        <p>Expenses trends (%)</p>
+        <h3>5%</h3>
+      </div>
+      <div class="card-kpi">
+        <p>Occupation rate (%)</p>
+        <h3>20%</h3>
+      </div>
     </div>
   </div>
-
   <div class="dashboard-card-stat">
     <h2>Your important</h2>
       <div class="action-property">
         <div class="action-property-info">
           <p>Rent due</p>
-            <p class= "btn-primary"><%= link_to 'Send a message' %> </p>
+            <% @contracts.each do |contract| %>
+              <button type="button" class="btn" data-toggle="modal" data-target="#staticBackdrop">
+                Launch static backdrop modal
+              </button>
+              <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="messages" data-property-contract-id="<%= contract.id %>">
+                          <% contract.messages.each do |message| %>
+                            <%= render "messages/message", message: message %>
+                          <% end %>
+                        </div>
+
+                    </div>
+                        <%= simple_form_for ([contract, Message.new]), remote: true do |form| %>
+                          <%= form.input :content, label: false, placeholder: "Type your message here.." %>
+                          <%= form.button :submit, value: "Send Message", class: "btn" %>
+                        <% end %>
+                      <% end %>
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
       <div class="action-property">
@@ -58,22 +86,8 @@
           <%= contract.rent_price %>
           <%= contract.billing_frequency %>
 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="chatroom">
-            Launch demo modal
-          </button>
-
-          <div id="messages" data-property-contract-id="<%= contract.id %>">
-            <% contract.messages.each do |message| %>
-              <%= render "messages/message", message: message %>
-            <% end %>
-          </div>
-
-          <%= simple_form_for ([contract, Message.new]), remote: true  do |form| %>
-            <%= form.input :content, label: false, placeholder: "Message" %>
-            <%= form.button :submit, class: "btn btn-lg btn-block btn-flat" %>
-          <% end %>
-        <% end %>
-          <h2>Your calendar</h2>
-          <%= render 'shared/calendar-show' %>
-          <%= render 'shared/flat-info' %>
-</div>
+              <% end %>
+            <h2>Your calendar</h2>
+            <%= render 'shared/calendar-show' %>
+            <%= render 'shared/flat-info' %>
+        </div>
