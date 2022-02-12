@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   # before_action :find_message, only: %i[update destroy show edit]
   skip_before_action :verify_authenticity_token, only: [:create]
 
-   def create
+  def create
     @property_contract = PropertyContract.find(params[:property_contract_id])
     @message = Message.new(message_params)
     @message.property_contract = PropertyContract.first
@@ -18,7 +18,6 @@ class MessagesController < ApplicationController
     else
       render "properties/show"
     end
-
   end
 
   # def destroy
