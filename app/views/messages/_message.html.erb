@@ -1,8 +1,6 @@
-<div class="message-container" id="message-<%= message.id %>">
-  <i class="author">
-    <span><%= message.user.first_name %></span>
-
-    <%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-  </i>
-  <p><%= message.content %></p>
+<div class="message-container <%= message.user == current_user ? 'class-container-proprio' : 'class-container-locataire' %>" id="message-<%= message.id %>">
+  <div class="author <%= message.user == current_user ? 'class-author-proprio' : 'class-author-locataire' %>">
+    <%= message.user.first_name %><div class="message-date"><%= message.created_at.strftime("%l:%M%p") %></div>
+  </div>
+  <p class="message-content <%= message.user == current_user ? 'class-proprio' : 'class-locataire' %>"><%= message.content %></p>
 </div>

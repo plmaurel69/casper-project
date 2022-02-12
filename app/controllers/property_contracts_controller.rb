@@ -11,19 +11,24 @@ class PropertyContractsController < ApplicationController
     @owner = User.find(@property.user_id)
 
     respond_to do |format|
-      format.html { render template: 'property_contracts/show' }
+      format.html
       format.pdf do
-        render  pdf: "Contrat_de_Location",
+        render  pdf: "Contrat de location #{@user.first_name} #{@user.last_name}",
                 template: "property_contracts/show.html.erb",
-                formats: :HTML,
-                encoding: 'utf8'
+                encoding: 'utf8',
+                outline: {  outline: true,
+                            outline_depth: 50 },
+                margin: { top: 25,
+                          bottom: 25,
+                          left: 20,
+                          right: 20 }
       end
     end
   end
 
   def new
+    @property = Property.find(params[:property_id])
     @property_contract = PropertyContract.new
-    @property = @property_contract.property
   end
 
   def create

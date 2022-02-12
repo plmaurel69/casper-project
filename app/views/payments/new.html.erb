@@ -1,9 +1,22 @@
-<div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Payment of <strong><%= @expense.type %></strong> for <strong><%= @expense.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+
+
+<div class = container-general-show>
+  <div class = container-payment>
+    <h1>Refund your lovely tenant </h1>
+      <br>
+      <br>
+            <h2><%= @expense.type %></h2>
+            <%= image_tag "image (1) (1).png", class: "card-plombier" %>
+            <h2><%= @expense.amount %> €</h2>
+            <h2><%= @expense.state %></h2>
+            <p class = description>Description: replacement of the hot water tank</p>
+            <%= image_tag "téléchargement (1).png", class: "card-invoice" %>
+            <p class = description>Download invoice</p>
+      <br>
+      <button id="pay" class="btn btn-primary">Refund</button>
+  </div>
+</div>
+
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');

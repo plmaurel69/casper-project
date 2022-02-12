@@ -22,10 +22,10 @@
           <p>Rent due</p>
             <% @contracts.each do |contract| %>
               <button type="button" class="btn" data-toggle="modal" data-target="#staticBackdrop">
-                Launch static backdrop modal
+                Send a message
               </button>
-              <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
+              <div class="modal fade" id="staticBackdrop" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
@@ -33,21 +33,28 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    <div class="modal-body">
-                        <div id="messages" data-property-contract-id="<%= contract.id %>">
-                          <% contract.messages.each do |message| %>
-                            <%= render "messages/message", message: message %>
+                    <div class="wrapper">
+                      <div class="modal-body">
+                        <div id="dialogue"></div>
+                          <div class="text-box">
+                            <div id="messages" data-property-contract-id="<%= contract.id %>">
+                              <% contract.messages.each do |message| %>
+                                <%= render "messages/message", message: message %>
+                              <% end %>
+                            </div>
+                          </div>
+                          <%= simple_form_for ([contract, Message.new]), remote: true do |form| %>
+                            <%= form.input :content, label: false, placeholder: "Type your message here.." %>
+                            <%= form.input :file, as: :file %>
+                            <%= form.button :submit, value: "Send", class: "btn" %>
                           <% end %>
-                        </div>
-
-                    </div>
-                        <%= simple_form_for ([contract, Message.new]), remote: true do |form| %>
-                          <%= form.input :content, label: false, placeholder: "Type your message here.." %>
-                          <%= form.button :submit, value: "Send Message", class: "btn" %>
                         <% end %>
-                      <% end %>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </div>
               </div>
         </div>
       </div>
@@ -57,7 +64,7 @@
                 <h2><% balance.expenses.each do |expense| %></h2>
                   <% if expense.state == "pending" %>
                     Refund <%= expense.type %>
-                <p class= "btn-primary"><%= link_to 'Refund', expense_path(id: expense.id) %></p>
+                <p class= "btn-primary"><%= link_to 'Refund', checkout_expense_path(id: expense.id) %></p>
                   <% end %>
               <% end %>
             <% end %>

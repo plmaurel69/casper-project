@@ -1,26 +1,52 @@
 <h1>Générer un contrat de location</h1>
+<div class="row">
+  <div class="col-md-6">
       <%= simple_form_for [ @property, @property_contract ] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.input :scheduled_payment_date %>
-        <%= f.input :billing_frequency %>
-        <%= f.input :rent_price %>
-
-        <%= simple_fields_for :user do |p| %>
-          <%= p.input :email %>
-          <%= p.input :first_name %>
-          <%= p.input :last_name %>
-          <%= p.input :gender %>
-          <%= p.input :profession %>
-          <%= p.input :professional_status %>
-          <%= p.input :birth_date %>
-          <%= p.input :user_type %>
+          <%= simple_fields_for :user do |p| %>
+          <%= f.input :start_date,      as: :date,
+                                        start_year: Date.today.year - 0,
+                                        end_year: Date.today.year + 5,
+                                        order: [:day, :month, :year],
+                                        label: 'Début du contrat' %>
+          <%= f.input :end_date,        as: :date, start_year: Date.today.year + 1,
+                                        end_year: Date.today.year + 5,
+                                        order: [:day, :month, :year],
+                                        label: 'Fin du contrat' %>
+          <%= f.input :billing_frequency, label: 'Paiement',
+                                          wrapper: :horizontal_form,
+                                          collection: ["Mensuel", "Hebdomadaire"] %>
+          <%= f.input :rent_price,  label: 'Prix du loyer',
+                                    wrapper: :horizontal_form %>
+          <%= p.input :first_name,  label: 'Prénom',
+                                    required: false,
+                                    wrapper: :horizontal_form %>
+          <%= p.input :last_name, label: 'Nom',
+                                  required: false,
+                                  wrapper: :horizontal_form %>
+          <%= p.input :birth_date,  as: :date,
+                                    start_year: Date.today.year - 20,
+                                    end_year: Date.today.year - 90,
+                                    order: [:day, :month, :year],
+                                    label: 'Date de Naissance',
+                                    required: false %>
+          <%= p.input :email, placeholder: 'locataire@domain.com',
+                              required: false,
+                              wrapper: :horizontal_form %>
+          <%= p.input :gender,  label: 'Genre',
+                                collection: ['Femme', "Homme"],
+                                wrapper: :horizontal_form,
+                                required: false %>
+          <%= p.input :profession,  label: 'Profession',
+                                    collection: ["Audit", "Comptabilité", "Gestion", "Bâtiment et travaux publics", "Commerce-distribution", "Environnement", "Hôtellerie restauration", "Paramédical", "Sport"],
+                                    required: false,
+                                    wrapper: :horizontal_form %>
+          <%= p.input :professional_status, label: 'Statut professionel',
+                                            collection: ["CDI", "CDD", "Étudiant", "Retraité", "Chomeur"],
+                                            required: false,
+                                            wrapper: :horizontal_form %>
 
         <% end %>
-
-        <%= f.button :submit%>
-
-          <% end %>
-
-
-<h1><%= link_to 'Générer contrat de location' %></h1>
+      <%= f.button :submit, "Visualiser mon contrat de location", class:"btn btn-primary"%>
+    <% end %>
+  </div>
+</div>

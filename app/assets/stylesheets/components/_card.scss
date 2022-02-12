@@ -122,8 +122,17 @@
   align-items: center;
   margin: auto;
 }
-
 .card-infos {
   display: flex;
   justify-content: space-between;
+}
+
+.card-invoice {
+  width: 55px;
+  height: 50px;
+}
+
+.card-plombier {
+  width: 100px;
+  height: 100px;
 }
