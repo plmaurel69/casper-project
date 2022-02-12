@@ -42,7 +42,7 @@ gem 'momentjs-rails'
 gem 'cloudinary', '~> 1.16.0'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
-
+gem "wkhtmltopdf-heroku"
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
