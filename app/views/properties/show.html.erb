@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Dashboard <%= @property.property_name %></h1>
   <div class="card-kpis">
     <div class="dashboard-card-stat">
@@ -15,63 +16,59 @@
       </div>
     </div>
   </div>
-  <div class="dashboard-card-stat">
-    <h2>Your important</h2>
+  <h2>Your calendar</h2>
+  <%= render 'shared/calendar-show' %>
+  <div class="dashboard-card-import-infos">
+    <h2>Your important informations</h2>
       <div class="action-property">
         <div class="action-property-info">
           <p>Rent due</p>
-            <% @contracts.each do |contract| %>
-              <button type="button" class="btn" data-toggle="modal" data-target="#staticBackdrop">
-                Send a message
-              </button>
-              <div class="modal fade" id="staticBackdrop" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="wrapper">
-                      <div class="modal-body">
-                        <div id="dialogue"></div>
-                          <div class="text-box">
-                            <div id="messages" data-property-contract-id="<%= contract.id %>">
-                              <% contract.messages.each do |message| %>
-                                <%= render "messages/message", message: message %>
-                              <% end %>
-                            </div>
+          <% @contracts.each do |contract| %>
+              <button type="button" class="btn" data-toggle="modal" data-target="#staticBackdrop">Send a message</button>
+            <div class="modal fade" id="staticBackdrop" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="wrapper">
+                    <div class="modal-body">
+                      <div id="dialogue"></div>
+                        <div class="text-box">
+                          <div id="messages" data-property-contract-id="<%= contract.id %>">
+                            <% contract.messages.each do |message| %>
+                              <%= render "messages/message", message: message %>
+                            <% end %>
                           </div>
-                          <%= simple_form_for ([contract, Message.new]), remote: true do |form| %>
-                            <%= form.input :content, label: false, placeholder: "Type your message here.." %>
-                            <%= form.input :file, as: :file %>
-                            <%= form.button :submit, value: "Send", class: "btn" %>
-                          <% end %>
-                        <% end %>
                         </div>
+                        <%= simple_form_for ([contract, Message.new]), remote: true do |form| %>
+                          <%= form.input :content, label: false, placeholder: "Type your message here.." %>
+                          <%= form.input :file, as: :file %>
+                          <%= form.button :submit, value: "Send", class: "btn" %>
+                        <% end %>
+                      <% end %>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              </div>
+            </div>
         </div>
       </div>
-      <div class="action-property">
+      <div class="action-property-refund">
         <div class="action-property-info">
             <% @balances.each do |balance| %>
                 <h2><% balance.expenses.each do |expense| %></h2>
+                <div></div>
                   <% if expense.state == "pending" %>
                     Refund <%= expense.type %>
                 <p class= "btn-primary"><%= link_to 'Refund', checkout_expense_path(id: expense.id) %></p>
                   <% end %>
               <% end %>
             <% end %>
-        </div>
-
-        <div class="card-contract-info">
-          <h2>Earnings</h2>
         </div>
       </div>
 
@@ -94,7 +91,6 @@
           <%= contract.billing_frequency %>
 
               <% end %>
-            <h2>Your calendar</h2>
-            <%= render 'shared/calendar-show' %>
             <%= render 'shared/flat-info' %>
         </div>
+</div>

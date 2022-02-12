@@ -1,4 +1,8 @@
 
+@font-face {
+  font-family: 'ApercuFont';
+  src: url('apercu_regular_pro.otf');
+}
 
 .centered-text-img {
   text-decoration: none;
@@ -9,8 +13,7 @@
 h1 {
     font-size: 36px;
     line-height: 40px;
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'ApercuFont';
     a {
       text-decoration: none;
       color: black;
