@@ -6,7 +6,28 @@ class PropertiesController < ApplicationController
 
   def index
     @properties = Property.all.where(user_id: current_user)
-    @balances = BalanceSheet.all
+    @balances = Income.sum(:amount) - Expense.where(state: 'paid').sum(:amount)
+    @expense_data_property1 = Expense.where(balance_sheet_id: 1).group_by_month(:payment_date).sum(:amount)
+    @income_data_property1 = Income.where(balance_sheet_id: 1).group_by_month(:payment_date).sum(:amount)
+    @balance_data_property1 = {}
+      @expense_data_property1.each_key do |key|
+        if @income_data_property1[key]
+          @balance_data_property1[key] = @income_data_property1[key] - @expense_data_property1[key]
+        else
+
+        end
+    end
+
+    @expense_data_property2 = Expense.where(balance_sheet_id: 2).group_by_month(:payment_date).sum(:amount)
+    @income_data_property2 = Income.where(balance_sheet_id: 2).group_by_month(:payment_date).sum(:amount)
+    @balance_data_property2 = {}
+      @expense_data_property2.each_key do |key|
+        if @income_data_property2[key]
+          @balance_data_property2[key] = @income_data_property2[key] - @expense_data_property2[key]
+        else
+
+        end
+    end
     @contracts = PropertyContract.all
     @expenses = Expense.all
     @incomes = Income.all

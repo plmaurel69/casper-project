@@ -4,6 +4,15 @@
 <div class = container>
   <div class = dashboard>
       <h1>Money money money... </h1>
+
+  <%= line_chart [
+  {name: "Property 1", data: @balance_data_property1},
+  {name: "Property 2", data: @balance_data_property2}
+  ]%>
+
+    </div>
+
+      <%= @balances %>
         <div class ="index-kpis">
           <div class="card-kpis-container">
             <div class="cards-kpi">
