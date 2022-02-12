@@ -1,14 +1,124 @@
-.message-box {
-  width: fit-content;
-  max-width: 40%;
+
+button {
+  background-color: rgba(255,255,255,.5);
   padding: 5px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  background-color: #555555 ;
-  padding: 10px
+  outline: none;
+  border: 1px solid rgba(0,0,0,.3);
+  border-radius: 5px;
 }
 
-.author p{
+.author {
+  color:#aaa;
+  size: 20px;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  margin: auto;
+  padding: 0;
+  background-color: rgba(255,255,255,.1);
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(255,255,255,.2);
+  border-right: 1px solid rgba(255,255,255,.2);
+}
+
+form {
+  flex: 5;
+  display: block;
+  padding: 15px;
+}
+.text-box {
+  font-size: 16px;
+  display: flex;
+  width: 100%;
+}
+
+// input.send-button {
+//   display: block;
+//   background-color: rgba(255,255,255,.6);
+//   flex: 1;
+//   border: 1px solid rgba(0,0,0,.2);
+//   height: 27px;
+//   box-sizing: border-box;
+//   font-size: 16px;
+//   line-height: 25px;
+//   padding: 0;
+//   border-radius: 13px;
+// }
+
+// div#dialogue {
+//   overflow-x: none;
+//   overflow-y: auto;
+//   display: block;
+//   flex: 95;
+//   box-sizing: border-box;
+//   width: 100%;
+//   padding: 15px;
+// }
+
+.class-proprio {
+  display: block;
+  flex: 10;
+  outline: none;
+  margin: 0 10px 0 0;
+  box-sizing: border-box;
+  border: 1px solid #aaa;
+  border-radius: 13px;
+}
+.class-proprio {
+  margin-left: 50%;
+  width: fit-content;
+  padding:3%;
+  color: white;
+  background-color: rgba(32, 46, 32, 0.493);
+  border-bottom-right-radius: 0;
+}
+
+
+.class-locataire {
+  display: block;
+  width: fit-content;
+  flex: 10;
+  outline: none;
+  margin: 0 10px 0 0;
+  box-sizing: border-box;
+  border: 1px solid rgba(218, 211, 211, 0.37);
+  border-radius: 13px;
+  justify-content: left;
+}
+.class-locataire {
+  margin-right: 50px;
+  padding:3%;
   color: black;
-  size: 10px;
+  background-color: rgba(218, 211, 211, 0.37);
+  border-bottom-left-radius: 0;
+}
+
+
+.modal-body{
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.message-date{
+  font-size: 60%;
+}
+
+// .class-container-proprio{
+//  margin-left: 10%;
+//  justify-content: right;
+// }
+
+// .class-container-locataire{
+//  margin-right: 10%;
+//  justify-content: right;
+// }
+
+.class-author-proprio{
+  text-align: right;
+}
+
+.class-author-locataire{
+  text-align: left;
 }
