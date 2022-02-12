@@ -1,6 +1,7 @@
-<div class="message-container <%= message.user == current_user ? 'class-container-proprio' : 'class-container-locataire' %>" id="message-<%= message.id %>">
+<div class="message-container d-flex flex-column <%= message.user == current_user ? 'class-container-proprio' : 'class-container-locataire' %>" id="message-<%= message.id %>">
   <div class="author <%= message.user == current_user ? 'class-author-proprio' : 'class-author-locataire' %>">
-    <%= message.user.first_name %><div class="message-date"><%= message.created_at.strftime("%l:%M%p") %></div>
+    <%= message.user.first_name %><div class="message-date">
+    <%= message.created_at.strftime("%l:%M%p") %></div>
   </div>
   <p class="message-content <%= message.user == current_user ? 'class-proprio' : 'class-locataire' %>"><%= message.content %></p>
 </div>

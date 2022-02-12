@@ -1,4 +1,5 @@
 <h1>Dashboard <%= @property.property_name %></h1>
+<div class="container">
   <div class="card-kpis">
     <div class="dashboard-card-stat">
       <div class="card-kpi">
@@ -15,47 +16,12 @@
       </div>
     </div>
   </div>
-  <div class="dashboard-card-stat">
+  <div class="card-actions-stat">
     <h2>Your important</h2>
       <div class="action-property">
         <div class="action-property-info">
           <p>Rent due</p>
-            <% @contracts.each do |contract| %>
-              <button type="button" class="btn" data-toggle="modal" data-target="#staticBackdrop">
-                Send a message
-              </button>
-              <div class="modal fade" id="staticBackdrop" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="wrapper">
-                      <div class="modal-body">
-                        <div id="dialogue"></div>
-                          <div class="text-box">
-                            <div id="messages" data-property-contract-id="<%= contract.id %>">
-                              <% contract.messages.each do |message| %>
-                                <%= render "messages/message", message: message %>
-                              <% end %>
-                            </div>
-                          </div>
-                          <%= simple_form_for ([contract, Message.new]), remote: true do |form| %>
-                            <%= form.input :content, label: false, placeholder: "Type your message here.." %>
-                            <%= form.input :file, as: :file %>
-                            <%= form.button :submit, value: "Send", class: "btn" %>
-                          <% end %>
-                        <% end %>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              </div>
+            <%= render 'shared/chatroom' %>
         </div>
       </div>
       <div class="action-property">
@@ -64,37 +30,13 @@
                 <h2><% balance.expenses.each do |expense| %></h2>
                   <% if expense.state == "pending" %>
                     Refund <%= expense.type %>
-                <p class= "btn-primary"><%= link_to 'Refund', checkout_expense_path(id: expense.id) %></p>
+                  <p class= "btn-primary"><%= link_to 'Refund', checkout_expense_path(id: expense.id) %></p>
                   <% end %>
               <% end %>
             <% end %>
         </div>
-
-        <div class="card-contract-info">
-          <h2>Earnings</h2>
-        </div>
       </div>
-
-
-      <div class="card-flat-info">
-      <h2>Your flat information</h2>
-        <div class="cards-contract-info"></div>
-          <div class="card-contract-info">
-            <p>Current Renting Contract</p>
-            <p>Bills</p>
-          </div>
-          <div class="card-contract-info">
-
-        </div>
-      </div>
-      <h2>Property_Contract</h2>
-        <% @contracts.each do |contract| %>
-          <%= contract.rent_payment_status %>
-          <%= contract.rent_price %>
-          <%= contract.billing_frequency %>
-
-              <% end %>
-            <h2>Your calendar</h2>
+  </div>
+</div>
             <%= render 'shared/calendar-show' %>
             <%= render 'shared/flat-info' %>
-        </div>

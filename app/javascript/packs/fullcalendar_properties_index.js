@@ -12,14 +12,12 @@ const setCalendarPropertiesIndex = () => {
     plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
 
     headerToolbar: {
-      left: 'prev,next',
-      center: 'title',
     },
     themeSystem: 'bootstrap',
     aspectRatio: 5,
     height: 650,
     initialDate: '2022-02-09',
-    navLinks: true, // can click day/week names to navigate views
+    // navLinks: true, // can click day/week names to navigate views
     editable: true,
     dayMaxEvents: true, // allow "more" link when too many events
     events: [
