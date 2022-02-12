@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Dashboard <%= @property.property_name %></h1>
 <div class="container">
   <div class="card-kpis">
@@ -24,10 +25,11 @@
             <%= render 'shared/chatroom' %>
         </div>
       </div>
-      <div class="action-property">
+      <div class="action-property-refund">
         <div class="action-property-info">
             <% @balances.each do |balance| %>
                 <h2><% balance.expenses.each do |expense| %></h2>
+                <div></div>
                   <% if expense.state == "pending" %>
                     Refund <%= expense.type %>
                   <p class= "btn-primary"><%= link_to 'Refund', checkout_expense_path(id: expense.id) %></p>

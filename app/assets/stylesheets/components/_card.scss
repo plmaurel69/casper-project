@@ -4,7 +4,7 @@
 }
 
 .card-article {
-  border-radius: 1em;
+  border-radius: 0.5em;
   // width: 350px;
   text-align: center;
   margin: 2%;
@@ -14,7 +14,7 @@
 }
 
 .card-article:hover {
-  border-radius: 1em;
+  border-radius: 0.5em;
   // width: 350px;
   text-align: center;
   background: #fff;
@@ -32,10 +32,14 @@
   font-weight: 700;
 }
 
+.property-name {
+  font-size: 0.7em;
+}
+
 .card-img-top {
-  border-radius: 1em;
-  height: 120px;
-  padding: 1%;
+  border-radius: 0.5em;
+  height: 82px;
+  width: auto;
 }
 
 .cards-kpi {
@@ -52,7 +56,7 @@
 
 .card-kpi {
       // width: auto;
-  border-radius: 1em;
+  border-radius: 0.5em;
   margin: 2%;
   background: #fff;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -66,44 +70,46 @@
 }
 
 .card-property {
-  border-radius: 1em;
+  border-radius: 0.5em;
   // width: 900px;
   text-align: center;
-  background: #fff;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-  padding: 1%;
-}
-
-.card-property:hover {
-  border-radius: 1em;
-  // width: 925px;
-  text-align: center;
-  background: #fff;
+  background: #FAFAFA;
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  padding: 1%;
+  transition: all 0.3s ease;
+}
+
+.card-property:hover {
+  border-radius: 0.5em;
+  // width: 925px;
+  text-align: center;
+  background: #FAFAFA;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.element-card-2 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20%;
+}
+
+.element-card-3 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
 }
 
 .property-status {
   color: green;
   background-color: lightgreen;
   border-radius: 1em;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  padding: 1%;
-  margin-right: 15%;
-  width: 10%;
 }
 
 .property-ROI {
@@ -135,4 +141,14 @@
 .card-plombier {
   width: 100px;
   height: 100px;
+}
+
+.ul {
+  padding-left: 0px;
+}
+
+.card-property-content {
+  padding: 1%;
+  display: flex;
+  justify-content: space-between;
 }

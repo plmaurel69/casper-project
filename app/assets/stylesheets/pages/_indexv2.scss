@@ -19,11 +19,6 @@
 
 }
 
-.dashboard {
-  width: 900px;
-  margin: auto;
-}
-
 .balance-infos {
   width: 900px;
   margin: auto;
@@ -32,4 +27,31 @@
 .calendar {
   width: 700px;
   margin: auto;
+}
+
+.properties-calendar {
+  display: flex;
+  justify-content: space-between;
+  margin: 10% 0 0 0;
+}
+
+.properties-container {
+  width: 50%;
+  border-radius: 1em;
+  margin: 2%;
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 2%;
+}
+
+.main-container {
+  background-color: #E1F0FF;
+}
+
+.header-index {
+  background-color: white;
+  height: 10%;
+  width: 100%;
+  padding: 3%;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
 }
