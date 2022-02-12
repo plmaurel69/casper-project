@@ -1,4 +1,4 @@
-<div class="row">
+  <div class="row">
   <div class="col-8">
     <div>
       <div class="préamnbule">
@@ -7,10 +7,10 @@
       </div>
       <div class="titre"><h3>I. Désignation des parties</h3></div>
         <p>Le présent contrat est conclu entre les soussignés :</p>
-        <h3>Propriétaire</h3>
+        <div class="petit-titre"><h4>I.2. Bailleur</h4></div>
         <p>Nom et prénom du bailleur : <strong> <%= @owner.first_name %> <%= @owner.last_name %></strong></p>
         <p>Adresse email : <%= @owner.email %></p>
-        <h3>Locataire</h3>
+        <div class="petit-titre"><h4>I.2. Locataire</h4></div>
         <p>Nom et prénom : <strong><%= @user.first_name %> <%= @user.last_name %> </p></strong>
         <p>Adresse email : <strong><%= @user.email %></p></strong>
         <p>Profession : <strong><%= @user.profession %></p></strong>
@@ -42,7 +42,7 @@
 
       <div class="titre"><h3>V. Signatures</h3></div>
 
-      <div class="signature" style="display: flex color: 'blue'">
+      <div class="signature">
         <p>Fait le à</p>
         <p>Signature du bailleur</p>
         <p>Fait le à</p>
