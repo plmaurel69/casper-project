@@ -13,7 +13,8 @@ class PropertyContractsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render  pdf: "Contrat de location #{@user.first_name} #{@user.last_name}",
+        render pdf: "Contrat de location #{@user.first_name} #{@user.last_name}",
+                layout:'pdf.html',
                 template: "property_contracts/show.html.erb",
                 encoding: 'utf8',
                 outline: {  outline: true,
