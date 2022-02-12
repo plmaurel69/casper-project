@@ -1,14 +1,14 @@
     <div id="mySidenav" class="sidenav <%= 'navbar-home' if params[:controller] == 'pages' %>">
       <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "kisspng-ghost-logo-clip-art-ghost-recon-phantoms-download-5b516d2a5232e9.1000094415320630183367.jpg" %> Casper Rent
-      <% end %>
+      <div class="img-navbar"><%= image_tag "casper-seeklogo.com.png" %>
+      <% end %></div>
       <br>
       <br>
       <div class="button-navbar">
       <a  href="/"><ion-icon name="home-outline"></ion-icon>  &nbsp Home</a>
       <a href="/properties"><ion-icon name="file-tray-stacked-outline"></ion-icon> &nbsp  My properties</a>
       <a href="/documents"><ion-icon name="receipt-outline"></ion-icon>  &nbsp My documents</a>
-      <a href="/faq"><ion-icon name="help-circle-outline"></ion-icon>  &nbsp FAQ</a>
       <a class="button-navbar" href="/messagerie"><ion-icon name="mail-unread-outline"></ion-icon>  &nbsp My messages</a>
+      <a href="/faq"><ion-icon name="help-circle-outline"></ion-icon>  &nbsp FAQ</a>
       </div>
     </div>
