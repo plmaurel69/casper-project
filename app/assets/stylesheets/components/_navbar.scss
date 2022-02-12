@@ -8,7 +8,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 15%;
 }
 
 /* The side navigation menu */
@@ -23,8 +23,11 @@
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
   max-width: $navbar-width;
+  width: 20%;
+  padding-left: 2%;
+  padding-right: 2%;
   img {
-    width: 100%;
+    width: 65%;
   }
   // padding-top: 0px; /* Place content 60px from the top */
   // width: 250px;

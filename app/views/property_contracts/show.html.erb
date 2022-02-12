@@ -62,6 +62,7 @@
 
 </div>
 
+<%= link_to 'PDF', property_contract_path(@property_contract, format: :pdf), target: '_blank' %>
 
   <p> </p><%= @property_contract.start_date %>
   <p> </p><%= @property_contract.end_date %>
@@ -78,14 +79,10 @@
   <p> </p><%= @property.property_amount %>
 
 
-<p> </p>
-<p> </p>
+
 <p> </p><%= @user.gender %>
-<p> </p>
-<p> </p>
 <p> </p><%= @user.birth_date %>
 
-<p> </p>
 <p> </p><%= @owner.last_name %>
 <p> </p><%= @owner.gender %>
 <p> </p><%= @owner.profession %>
