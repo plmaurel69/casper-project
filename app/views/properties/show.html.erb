@@ -57,7 +57,7 @@
                 <h2><% balance.expenses.each do |expense| %></h2>
                   <% if expense.state == "pending" %>
                     Refund <%= expense.type %>
-                <p class= "btn-primary"><%= link_to 'Refund', expense_path(id: expense.id) %></p>
+                <p class= "btn-primary"><%= link_to 'Refund', checkout_expense_path(id: expense.id) %></p>
                   <% end %>
               <% end %>
             <% end %>

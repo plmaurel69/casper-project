@@ -1,7 +1,15 @@
-<h1>Here is your expenses to be paid</h1>
-        <h2><%= @expense.type %></h2>
-        <p><%= @expense.amount %></p>
-        <p><%= @expense.state %></p>
-
-<h1><%= link_to 'pay', checkout_expense_path(@expense) %></h1>
-<p><%= link_to 'back to my property', property_path %></p>
+<div class = container-general-show>
+  <div class = container-payment>
+    <h1>Refund your lovely tenant </h1>
+      <br>
+      <br>
+            <h2><%= @expense.type %></h2>
+            <%= image_tag "image (1) (1).png", class: "card-plombier" %>
+            <h2><%= @expense.amount %> €</h2>
+            <p class = description>Description: replacement of the hot water tank</p>
+            <%= image_tag "téléchargement (1).png", class: "card-invoice" %>
+            <p class = description>Download invoice</p>
+      <br>
+    <p><%= link_to 'Go to payment', checkout_expense_path(@expense), class: "btn-primary"%></p>
+  </div>
+</div>

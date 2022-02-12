@@ -1,7 +1,18 @@
 .container-general-show {
-  min-height: 100vh;
+  min-height: 83vh;
   // margin-left: 250px;
   // padding-left: 80px;
   box-sizing: border-box;
   max-width: fit-content;
+}
+
+.container-payment {
+  background-color: white;
+  border-radius: 20px;
+  text-align: center;
+  padding: 30px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  margin-left: 220px;
+  margin-right: 50px;;
 }
