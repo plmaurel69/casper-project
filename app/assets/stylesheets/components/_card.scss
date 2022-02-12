@@ -34,14 +34,13 @@
 
 .card-img-top {
   border-radius: 1em;
-  height: 90px;
+  height: 120px;
   padding: 1%;
 }
 
 .cards-kpi {
   display: flex;
   justify-content: space-between;
-  // width: auto;
 }
 
 .card-kpis {
@@ -49,6 +48,16 @@
   margin-top: 100px;
   padding-top: 50px;
   margin-right: auto;
+}
+
+.card-kpi {
+      // width: auto;
+  border-radius: 1em;
+  margin: 2%;
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 1%;
+  width: 30%;
 }
 
 .properties-container {
@@ -90,7 +99,18 @@
   color: green;
   background-color: lightgreen;
   border-radius: 1em;
-  align-items: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 1%;
+  margin-right: 15%;
+  width: 10%;
+}
+
+.property-ROI {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: 2.5%;
+  color: rgb(63, 63, 63);
 }
 
 .title-card-element {
