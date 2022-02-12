@@ -39,13 +39,22 @@ property = Property.new(rental_status: 'Loué', size: '120', address: '6 Rue Mon
 property.save!
 puts "Property 2 saved"
 
-contract = PropertyContract.new(end_date: '12/12/2025', start_date: '12/12/2022', scheduled_payment_date: '12/12/2022', billing_frequency: 'monthly', rent_price: '2300', rent_payment_status: 'true', user_id: 2, property_id: 1)
+property = Property.new(rental_status: 'Loué', size: '100', address: '328 rue des pyrénées, 75020, Paris', property_name: 'Appartement 20eme', property_type: 'Appartement', property_amount: '300000', user_id: 1)
+property.save!
+puts "Property 3 saved"
+
+contract = PropertyContract.new(end_date: '12/12/2025', start_date: '12/12/2022', scheduled_payment_date: '12/12/2022', billing_frequency: 'monthly', rent_price: '2300', rent_payment_status: 'true', user_id: 1, property_id: 1)
 contract.save!
 puts "PropertyContract 1 saved"
 
-contract = PropertyContract.new(end_date: '19/05/2023', start_date: '19/05/2020', scheduled_payment_date: '19/05/2020', billing_frequency: 'weekly', rent_price: '1590', rent_payment_status: 'false', user_id: 3, property_id: 2)
+contract = PropertyContract.new(end_date: '19/05/2023', start_date: '19/05/2020', scheduled_payment_date: '19/05/2020', billing_frequency: 'weekly', rent_price: '1590', rent_payment_status: 'false', user_id: 1, property_id: 2)
 contract.save!
 puts "PropertyContract 2 saved"
+
+
+contract = PropertyContract.new(end_date: '19/05/2023', start_date: '19/05/2020', scheduled_payment_date: '19/05/2020', billing_frequency: 'weekly', rent_price: '1600', rent_payment_status: 'true', user_id: 1, property_id: 3)
+contract.save!
+puts "PropertyContract 3 saved"
 
 message = Message.new(content: 'Hello. Je viens de vous accepter pour habiter chez nous.', user_id: 1, property_contract_id: 1)
 message.save!
@@ -59,45 +68,72 @@ message = Message.new(content: 'Molo mon coco quand même !', user_id: 1, proper
 message.save!
 puts "Message 3 saved"
 
-balance = BalanceSheet.new(balance: '-123', property_contract_id: 1)
+balance = BalanceSheet.new(property_contract_id: 1)
 balance.save!
 
 puts "BalanceSheet 1 saved"
 
-balance = BalanceSheet.new(balance: '2177', property_contract_id: 1)
+balance = BalanceSheet.new(property_contract_id: 2)
 balance.save!
 puts "BalanceSheet 2 saved"
 
-balance = BalanceSheet.new(balance: '2177', property_contract_id: 1)
+balance = BalanceSheet.new(property_contract_id: 3)
 balance.save!
 puts "BalanceSheet 3 saved"
 
+#-----------------PROPERTY 1------------------------
 
-expense = Expense.new(balance_sheet_id: 1, amount: '45', type: 'plombier', paid: false, state: 'pending')
-expense.save!
-
-income = Income.new(amount: '2300', type: 'Loyer', paid: 'true', payment_date: '2021-11-01', balance_sheet_id: 1)
+income = Income.new(amount: '2300', type: 'Loyer', paid: 'true', payment_date: '2021-10-03', balance_sheet_id: 1)
 income.save!
-puts "Income 1 saved"
+puts "Income 1 saved "
 
-income = Income.new(amount: '2300', type: 'Loyer', paid: 'true', payment_date: '2021-12-01', balance_sheet_id: 1)
+income = Income.new(amount: '2300', type: 'Loyer', paid: 'true', payment_date: '2021-11-04', balance_sheet_id: 1)
 income.save!
 puts "Income 2 saved"
 
+income = Income.new(amount: '2300', type: 'Loyer', paid: 'true', payment_date: '2021-12-04', balance_sheet_id: 1)
+income.save!
+puts "Income 3 saved"
 
-expense = Expense.new(balance_sheet_id: 2, amount: '55', type: 'garage', paid: false, state: 'paid')
+expense = Expense.new(balance_sheet_id: 1, amount: '45', type: 'plumber', paid: false, state: 'pending')
 expense.save!
-puts "Expense 1 saved"
+puts "Expense 1 Property 1 saved"
 
-expense = Expense.new(balance_sheet_id: 2, amount: '1780', type: 'Emprunt', paid: false, state: 'paid')
+expense = Expense.new(balance_sheet_id: 1, amount: '300', type: 'building operation', paid: true, state: 'paid', payment_date: '2021-10-05')
 expense.save!
-puts "Expense 2 saved"
+puts "Expense 2 Property 1 saved"
 
-
-expense = Expense.new(balance_sheet_id: 3, amount: '15', type: 'Admin', paid: false, state: 'paid')
+expense = Expense.new(balance_sheet_id: 1, amount: '400', type: 'co-property charge', paid: true, state: 'paid', payment_date: '2021-12-03')
 expense.save!
-puts "Expense 3 saved"
+puts "Expense 3 Property 1 saved"
 
-expense = Expense.new(balance_sheet_id: 3, amount: '15', type: 'Admin', paid: false, state: 'paid')
+expense = Expense.new(balance_sheet_id: 1, amount: '200', type: 'building operation', paid: true, state: 'paid', payment_date: '2021-11-15')
 expense.save!
-puts "Expense 3 saved"
+puts "Expense 4 Property 1 saved"
+
+
+#-----------------PROPERTY 2------------------------
+
+income = Income.new(amount: '1590', type: 'Loyer', paid: 'true', payment_date: '2021-10-03', balance_sheet_id: 2)
+income.save!
+puts "Income 1 Property 2 saved "
+
+income = Income.new(amount: '1590', type: 'Loyer', paid: 'true', payment_date: '2021-11-04', balance_sheet_id: 2)
+income.save!
+puts "Income 2 Property 2 saved"
+
+income = Income.new(amount: '1590', type: 'Loyer', paid: 'true', payment_date: '2021-12-04', balance_sheet_id: 2)
+income.save!
+puts "Income 3 Property 2 saved"
+
+expense = Expense.new(balance_sheet_id: 2, amount: '150', type: 'Admin', paid: false, state: 'paid', payment_date: '2021-11-05')
+expense.save!
+puts "Expense 1 Property 1 saved"
+
+expense = Expense.new(balance_sheet_id: 2, amount: '800', type: 'building operation', paid: true, state: 'paid', payment_date: '2021-10-05')
+expense.save!
+puts "Expense 2 Property 1 saved"
+
+expense = Expense.new(balance_sheet_id: 2, amount: '220', type: 'co-property charge', paid: true, state: 'paid', payment_date: '2021-12-03')
+expense.save!
+puts "Expense 3 Property 1 saved"

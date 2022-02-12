@@ -3,12 +3,10 @@
     <h1>Refund your lovely tenant </h1>
       <br>
       <br>
-            <h2><%= @expense.type %></h2>
-            <%= image_tag "image (1) (1).png", class: "card-plombier" %>
-            <h2><%= @expense.amount %> €</h2>
-            <p class = description>Description: replacement of the hot water tank</p>
-            <%= image_tag "téléchargement (1).png", class: "card-invoice" %>
-            <p class = description>Download invoice</p>
+        <h2><%= @expense.type %></h2>
+        <%= image_tag "image (1) (1).png", class: "card-plombier" %>
+        <h2><%= @expense.amount %> €</h2>
+        <p class = description>Description: replacement of the hot water tank</p>
       <br>
     <p><%= link_to 'Go to payment', checkout_expense_path(@expense), class: "btn-primary"%></p>
   </div>
