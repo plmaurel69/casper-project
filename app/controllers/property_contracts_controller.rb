@@ -1,32 +1,35 @@
 class PropertyContractsController < ApplicationController
-  before_action :find_property, only: %i[new update destroy edit show]
 
   def index
     @contracts = PropertyContract.all
   end
 
   def show
-    @contract = PropertyContract.all.where(property_id: @property.id).first
-    @property = Property.find(@property.id)
-    @user = User.find(@contract.user.id)
+    @property_contract = PropertyContract.find(params[:id])
+    @property = @property_contract.property
+    @user = User.find(@property_contract.user.id)
     @owner = User.find(@property.user_id)
 
     respond_to do |format|
-      format.html
+      format.html { render template: 'property_contracts/show' }
       format.pdf do
-        render pdf: "Contrat de Location", template: "property_contracts/show.html.erb"
+        render  pdf: "Contrat_de_Location",
+                template: "property_contracts/show.html.erb",
+                formats: :HTML,
+                encoding: 'utf8'
       end
     end
   end
 
   def new
     @property_contract = PropertyContract.new
+    @property = @property_contract.property
   end
 
   def create
-    @contract = PropertyContract.new(contract_params)
+    @property_contract = PropertyContract.new(contract_params)
     @property = Property.find(params[:property_id])
-    @contract.property = @property
+    @property_contract.property = @property
     @user = User.new(user_params)
     @user.password = 'testtest'
 
@@ -40,11 +43,7 @@ class PropertyContractsController < ApplicationController
   end
 
   def update
-    @contract.update(contract_params)
-  end
-
-  def destroy
-    @contract.destroy
+    @property_contract.update(contract_params)
   end
 
   private
@@ -59,10 +58,6 @@ class PropertyContractsController < ApplicationController
 
   def property_params
     params.require(:property).permit(:address, :rental_status, :size, :property_name, :property_type, :property_amount)
-  end
-
-  def find_property
-    @property = Property.find(params[:property_id])
   end
 
 end
