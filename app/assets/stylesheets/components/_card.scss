@@ -33,27 +33,14 @@
 }
 
 .card-img-top {
-  border-radius: 1em 1em 0px 0px;
+  border-radius: 1em;
+  height: 120px;
+  padding: 1%;
 }
 
 .cards-kpi {
   display: flex;
   justify-content: space-between;
-  // width: auto;
-}
-
-.card-kpi {
-  border-radius: 1rem;
-  // width: 350px;
-  text-align: center;
-  margin: 0 auto;
-  background: #fff;
-  height: 300px;
-  // padding: 25px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .card-kpis {
@@ -61,6 +48,16 @@
   margin-top: 100px;
   padding-top: 50px;
   margin-right: auto;
+}
+
+.card-kpi {
+      // width: auto;
+  border-radius: 1em;
+  margin: 2%;
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 1%;
+  width: 30%;
 }
 
 .properties-container {
@@ -73,17 +70,14 @@
   // width: 900px;
   text-align: center;
   background: #fff;
-  height: 100px;
   display: flex;
   justify-content: space-between;
-  // padding: 50px;
-  padding-bottom: 65px;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: auto;
-  margin-right: 80px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: all 0.3s ease;
+  padding: 1%;
 }
 
 .card-property:hover {
@@ -91,16 +85,32 @@
   // width: 925px;
   text-align: center;
   background: #fff;
-  height: 100px;
   display: flex;
   justify-content: space-between;
-  // padding: 50px;
-  padding-bottom: 65px;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  padding: 1%;
+}
+
+.property-status {
+  color: green;
+  background-color: lightgreen;
+  border-radius: 1em;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 1%;
+  margin-right: 15%;
+  width: 10%;
+}
+
+.property-ROI {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: 2.5%;
+  color: rgb(63, 63, 63);
 }
 
 .title-card-element {
@@ -111,6 +121,10 @@
   // width: 900px;
   align-items: center;
   margin: auto;
+}
+.card-infos {
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-invoice {
