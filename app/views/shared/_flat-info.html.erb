@@ -1,42 +1,43 @@
-<div class="flat-info">
-  <div class="card-kpi"></div>
-  <h2>Your flat information</h2>
-  <ul class="nav nav-tabs nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
+<div class="container-flat-info">
+  <div class="flat-info">
+    <h2>Your flat information</h2>
+    <ul class="nav nav-tabs nav-pills mb-3 nav-justified" id="pills-tab">
 
-    <li class="nav-item">
-      <a class="nav-link active" id="pills-locataire-tab" data-toggle="pill" href="#pills-locataire" role="tab" aria-controls="pills-locataire" aria-selected="true">Locataire</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="pills-flat-tab" data-toggle="pill" href="#pills-flat" role="tab" aria-controls="pills-flat" aria-selected="false">Appartement</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="pills-document-tab" data-toggle="pill" href="#pills-document" role="tab" aria-controls="pills-document" aria-selected="false">Documents</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="pills-earn-tab" data-toggle="pill" href="#pills-earn" role="tab" aria-controls="pills-earn" aria-selected="false">Gains</a>
-    </li>
-  </ul>
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-locataire-tab" data-toggle="pill" href="#pills-locataire" aria-controls="pills-locataire" aria-selected="true">Locataire</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-flat-tab" data-toggle="pill" href="#pills-flat" aria-controls="pills-flat" aria-selected="false">Appartement</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-document-tab" data-toggle="pill" href="#pills-document" aria-controls="pills-document" aria-selected="false">Documents</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-earn-tab" data-toggle="pill" href="#pills-earn" aria-controls="pills-earn" aria-selected="false">Gains</a>
+      </li>
+    </ul>
 
-  <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-locataire" role="tabpanel" aria-labelledby="pills-locataire-tab">
-      <% @property.renters.each do |property| %>
-        <p>Prénom : <%= property.first_name%></p>
-        <p>Nom : <%= property.last_name%></p>
-        <p>Profession : <%= property.profession%></p>
-        <p>Statut Professionel : <%= property.professional_status%></p>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-locataire" role="tabpanel" aria-labelledby="pills-locataire-tab">
+        <% @property.renters.each do |property| %>
+          <p>Prénom : <%= property.first_name%></p>
+          <p>Nom : <%= property.last_name%></p>
+          <p>Profession : <%= property.profession%></p>
+          <p>Statut Professionel : <%= property.professional_status%></p>
+            <% end %>
+      </div>
+
+      <div class="tab-pane fade" id="pills-flat" role="tabpanel" aria-labelledby="pills-flat-tab">
+        <p>Adresse : <%= @property.address %></p>
+        <p>Taille de l'appartement : <%= @property.size %>m2</p>
+        <% @contracts.each do |contract| %>
+        <p>Prix HC : <%= contract.rent_price %></p>
+        <p>Fréquence de paiement : <%= contract.billing_frequency %></p>
+        <p>Paiement du mois en cours : <%= contract.rent_payment_status %></p>
           <% end %>
+      </div>
+      <div class="tab-pane fade" id="pills-document" role="tabpanel" aria-labelledby="pills-document-tab">...</div>
+      <div class="tab-pane fade" id="pills-earn" role="tabpanel" aria-labelledby="pills-earn-tab">..sdqfgergergergerg.</div>
     </div>
-
-    <div class="tab-pane fade" id="pills-flat" role="tabpanel" aria-labelledby="pills-flat-tab">
-      <p>Adresse : <%= @property.address %></p>
-      <p>Taille de l'appartement : <%= @property.size %>m2</p>
-      <% @contracts.each do |contract| %>
-      <p>Prix HC : <%= contract.rent_price %></p>
-      <p>Fréquence de paiement : <%= contract.billing_frequency %></p>
-      <p>Paiement du mois en cours : <%= contract.rent_payment_status %></p>
-        <% end %>
-    </div>
-    <div class="tab-pane fade" id="pills-document" role="tabpanel" aria-labelledby="pills-document-tab">...</div>
-    <div class="tab-pane fade" id="pills-earn" role="tabpanel" aria-labelledby="pills-earn-tab">..sdqfgergergergerg.</div>
   </div>
 </div>

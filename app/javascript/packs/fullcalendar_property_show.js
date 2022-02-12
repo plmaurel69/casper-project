@@ -12,8 +12,6 @@ const setCalendarPropertyShow = () => {
     plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
 
     headerToolbar: {
-      left: 'prev,next',
-      center: 'title',
     },
     themeSystem: 'bootstrap',
     aspectRatio: 5,
@@ -24,65 +22,39 @@ const setCalendarPropertyShow = () => {
     dayMaxEvents: true, // allow "more" link when too many events
     events: [
       {
-        title: 'All Day Event',
+        title: 'Plumber Flat #1',
         start: '2022-02-02',
-        backgroundColor: 'red',
-
       },
       {
-        title: 'Long Event',
+        title: 'Construction Flat #2',
         start: '2022-02-07',
         end: '2022-02-10',
-        backgroundColor: '#378006',
-        borderColor: 'pink',
-        textColor: 'white',
       },
       {
-        groupId: 999,
-        title: 'Repeating Event',
-        start: '2022-02-09T16:00:00'
+        title: 'Pay Rent Day',
+        start: '2022-02-09'
       },
       {
-        groupId: 999,
-        title: 'Repeating Event',
-        start: '2022-14-02',
-
+        title: 'Conference Landlords',
+        start: '2022-02-14',
       },
       {
-        title: 'Conference',
+        title: 'Buy new flat',
+        start: '2022-02-14'
+      },
+      {
+        title: 'OFF Vacation',
         start: '2022-02-15',
-        end: '2022-02-09T16:00:00'
+        end: '2022-02-25'
       },
       {
-        title: 'Meeting',
-        start: '2018-01-12T10:30:00',
-        end: '2018-01-12T12:30:00'
+        title: 'Pay Rent Day',
+        start: '2022-03-09'
       },
       {
-        title: 'Lunch',
-        start: '2018-01-12T12:00:00'
+        title: 'End of Contract Flat #3',
+        start: '2022-03-20'
       },
-      {
-        title: 'Meeting',
-        start: '2018-01-12T14:30:00'
-      },
-      {
-        title: 'Happy Hour',
-        start: '2018-01-12T17:30:00'
-      },
-      {
-        title: 'Dinner',
-        start: '2018-01-12T20:00:00'
-      },
-      {
-        title: 'Birthday Party',
-        start: '2018-01-13T07:00:00'
-      },
-      {
-        title: 'Click for Google',
-        url: 'http://google.com/',
-        start: '2018-01-28',
-      }
     ],
   });
   calendar.render();

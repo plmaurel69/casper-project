@@ -56,39 +56,36 @@ form {
 //   width: 100%;
 //   padding: 15px;
 // }
+.class-container-proprio{
+  align-items: end;
+}
+
+.class-container-locataire{
+  align-items: start;
+}
 
 .class-proprio {
-  display: block;
-  flex: 10;
-  outline: none;
   margin: 0 10px 0 0;
   box-sizing: border-box;
   border: 1px solid #aaa;
   border-radius: 13px;
-}
-.class-proprio {
-  margin-left: 50%;
   width: fit-content;
+  // margin-left: 50%;
   padding:3%;
   color: white;
   background-color: rgba(32, 46, 32, 0.493);
   border-bottom-right-radius: 0;
+  align-items: right;
+  max-width: 70%;
 }
 
 
 .class-locataire {
-  display: block;
-  width: fit-content;
-  flex: 10;
-  outline: none;
   margin: 0 10px 0 0;
   box-sizing: border-box;
   border: 1px solid rgba(218, 211, 211, 0.37);
   border-radius: 13px;
   justify-content: left;
-}
-.class-locataire {
-  margin-right: 50px;
   padding:3%;
   color: black;
   background-color: rgba(218, 211, 211, 0.37);
@@ -117,6 +114,7 @@ form {
 
 .class-author-proprio{
   text-align: right;
+
 }
 
 .class-author-locataire{

@@ -1,4 +1,13 @@
-<div class="row">
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <%= wicked_pdf_stylesheet_link_tag "application" -%>
+  <%= wicked_pdf_stylesheet_link_tag "bootstrap" %>
+</head>
+
+<body>
+  <div class="row">
   <div class="col-8">
     <div>
       <div class="préamnbule">
@@ -42,7 +51,7 @@
 
       <div class="titre"><h3>V. Signatures</h3></div>
 
-      <div class="signature" style="display: flex color: 'blue'">
+      <div class="signature">
         <p>Fait le à</p>
         <p>Signature du bailleur</p>
         <p>Fait le à</p>
@@ -56,3 +65,6 @@
 
 
 <%= link_to 'PDF', property_contract_path(@property_contract, format: :pdf), target: '_blank', class:'btn' %>
+
+</body>
+</html>
