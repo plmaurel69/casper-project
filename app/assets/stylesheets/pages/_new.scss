@@ -30,6 +30,7 @@
 .center-button-form {
   place-content: center;
   margin-bottom: 30px;
+  margin-top: 50px;
 }
 
 .btn-nice-proper {
@@ -41,6 +42,11 @@
 
 .btn-submit-right {
   margin-right: 20px;
+  float: right;
+}
+
+.btn-cancel-right {
+  float: right;
 }
 
 .box-shadow-white {
@@ -50,4 +56,25 @@
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.blockquote-footer {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.white-header {
+  background-color: #FFFFFF ;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 60px;
+}
+
+.displayContractOrLoc {
+  font-size: xx-large;
+  padding-bottom: 30px;
+}
+
+.form-group {
+  padding-top: 10px;
 }

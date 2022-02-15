@@ -40,8 +40,9 @@ class PropertyContractsController < ApplicationController
     @user.password = 'testtest'
 
     if @user.save!
-      @contract.user = @user
-      @contract.save!
+      @property_contract.user = @user
+      @property_contract.save!
+      redirect_to property_contract_path(@property_contract)
     end
   end
 
