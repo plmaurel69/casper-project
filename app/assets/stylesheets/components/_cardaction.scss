@@ -1,12 +1,40 @@
-.card-actions-stat{
-  margin-top: 5%;
-  margin-bottom: 5%;
+.card-kpis-action {
+  justify-content: space-between;
+  margin-right: auto;
 }
 
-.card-kpis {
-  // grid-template-columns: 300px 1fr 1fr 1fr;
-  grid-template-rows: 50% 50%;
-  justify-content: center;
+.action-property .action-property-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.kpis-actions {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.action-property-info .action-property-btn {
+  right: 16px;
+  top: -20px;
+}
+
+
+.action-property {
+  border-radius: 1em;
+  text-align: center;
+  background: #fff;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin:2%;
 }
 
 .dashboard-card {
