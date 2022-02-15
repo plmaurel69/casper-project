@@ -33,7 +33,8 @@
 }
 
 .property-name {
-  font-size: 0.7em;
+  font-size: 0.8em;
+  text-align: left;
 }
 
 .card-img-top {
@@ -57,16 +58,11 @@
 .card-kpi {
       // width: auto;
   border-radius: 0.5em;
-  margin: 2%;
+  margin: 1%;
   background: #fff;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   padding: 1%;
-  width: 30%;
-}
-
-.properties-container {
-  margin-top: 100px;
-  margin-bottom: 50px;
+  width: 33%;
 }
 
 .card-property {
@@ -97,13 +93,15 @@
 .element-card-2 {
   display: flex;
   flex-direction: column;
-  margin-right: 20%;
+  padding: 5%;
+  width: 60%;
 }
 
 .element-card-3 {
   display: flex;
   flex-direction: column;
   margin-left: 20%;
+  padding: 5%;
 }
 
 .property-status {

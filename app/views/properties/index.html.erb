@@ -1,9 +1,9 @@
 <div class="header-index">
   <H1>Dashboard</H1>
 </div>
-<div class = container>
+<div class = "container">
   <div class = dashboard>
-      <h1>Money money money... </h1>
+      <h1 id="titre-index-1">Money money money... 🤑 </h1>
 
   <%= line_chart [
   {name: "Property 1", data: @balance_data_property1},
@@ -41,10 +41,10 @@
           <div class = card-properties>
             <% @properties.each do |property| %>
               <div class="card-property">
+              <div class="card-property-content">
                 <div class="img-properties">
                   <img class="card-img-top" src="<%= image_path('Property1_Picture.jpg') %>" alt="Card image cap">
                 </div>
-                <div class="card-property-content">
                   <div class="element-card-2">
                     <div class="property-name">
                         <%= property.property_name %>
@@ -53,6 +53,7 @@
                       <ion-icon name="checkmark-outline"></ion-icon><%= property.rental_status%>
                     </div>
                   </div>
+                  </div>
                   <div class="element-card-3">
                     <div class="ROI-title">
                     <%= "ROI" %>
@@ -60,7 +61,7 @@
                     <div class="property-ROI">
                       <%= "-7.7%"  %>
                     </div>
-                  </div>
+
                 </div>
               </div>
             <% end %>
