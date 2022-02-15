@@ -1,37 +1,4 @@
 
-.action-property .action-property-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
-
-.action-property-info .action-property-btn {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  // width: 40px;
-}
-
-
-.action-property {
-  border-radius: 1em;
-  // width: 900px;
-  text-align: center;
-  background: #fff;
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-top: 5%;
-}
-
 .secondary-container {
   width: 900px;
   margin: auto;

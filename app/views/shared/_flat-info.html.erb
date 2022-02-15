@@ -20,18 +20,25 @@
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-locataire" role="tabpanel" aria-labelledby="pills-locataire-tab">
         <% @property.renters.each do |property| %>
-          <p>Prénom : <%= property.first_name%></p>
-          <p>Nom : <%= property.last_name%></p>
-          <p>Profession : <%= property.profession%></p>
-          <p>Statut Professionel : <%= property.professional_status%></p>
+          <h4>Prénom</h4>
+          <p><%= property.first_name%></p>
+          <h4>Nom</h4>
+          <p><%= property.last_name%></p>
+          <h4>Profession</h4>
+          <p><%= property.profession%></p>
+          <h4>Statut Professionel</h4>
+          <p><%= property.professional_status%></p>
             <% end %>
       </div>
 
       <div class="tab-pane fade" id="pills-flat" role="tabpanel" aria-labelledby="pills-flat-tab">
-        <p>Adresse : <%= @property.address %></p>
-        <p>Taille de l'appartement : <%= @property.size %>m2</p>
+        <h4>Adresse</h4>
+        <p><%= @property.address %></p>
+        <h4>Taille de l'appartement</h4>
+        <p><%= @property.size %>m2</p>
+
         <% @contracts.each do |contract| %>
-        <p>Prix HC : <%= contract.rent_price %></p>
+        <p>Prix HC  <%= contract.rent_price %></p>
         <p>Fréquence de paiement : <%= contract.billing_frequency %></p>
         <p>Paiement du mois en cours : <%= contract.rent_payment_status %></p>
           <% end %>
