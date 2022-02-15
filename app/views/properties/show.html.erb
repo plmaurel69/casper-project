@@ -1,9 +1,12 @@
-<div class="container">
-<h1>Dashboard <%= @property.property_name %></h1>
+<div class="header-index">
+  <H1>Dashboard <%= @property.property_name %>/H1>
+</div>
+<h1></h1>
 <div class="container">
   <div class="card-kpis">
     <div class="dashboard-card-stat">
       <div class="card-kpi">
+
         <p>My Expenses</p>
             <% @balances.each do |balance| %>
                 <h2><% balance.expenses.each do |expense| %></h2>
@@ -24,6 +27,7 @@
       <div class="card-kpi">
         <p>Global ROI</p>
         <h3>20%</h3>
+
       </div>
     </div>
   </div>
