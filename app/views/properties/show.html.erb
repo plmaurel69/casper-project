@@ -4,15 +4,25 @@
   <div class="card-kpis">
     <div class="dashboard-card-stat">
       <div class="card-kpi">
+        <p>My Expenses</p>
+            <% @balances.each do |balance| %>
+                <h2><% balance.expenses.each do |expense| %></h2>
+                  <% if expense.state == "paid" %>
+                    <%= expense.amount %>
+               <% end %>
+              <% end %>
+            <% end %>
+      </div>
+      <div class="card-kpi">
+        <p>My incomes</p>
+                    <% @balances.each do |balance| %>
+                <h2><% balance.incomes.each do |income| %></h2>
+                    <%= income.amount %>
+              <% end %>
+            <% end %>
+      </div>
+      <div class="card-kpi">
         <p>Global ROI</p>
-        <h3>300€</h3>
-      </div>
-      <div class="card-kpi">
-        <p>Expenses trends (%)</p>
-        <h3>5%</h3>
-      </div>
-      <div class="card-kpi">
-        <p>Occupation rate (%)</p>
         <h3>20%</h3>
       </div>
     </div>
