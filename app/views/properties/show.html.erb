@@ -29,13 +29,23 @@
       <div class="dashboard-card-stat">
         <div class="card-kpi">
         <h1><ion-icon name="analytics-outline"></ion-icon></h1>
-          <p>Global ROI</p>
-          <h3>300€</h3>
+          <p>My Expenses</p>
+            <% @balances.each do |balance| %>
+                <h3><% balance.expenses.each do |expense| %></h3>
+                  <% if expense.state == "paid" %>
+                    <%= expense.amount %>
+               <% end %>
+              <% end %>
+            <% end %>
         </div>
         <div class="card-kpi">
         <h1><ion-icon name="cash-outline"></ion-icon></h1>
-          <p>Expenses trends (%)</p>
-          <h3>5%</h3>
+           <p>My incomes</p>
+                    <% @balances.each do |balance| %>
+                <h3><% balance.incomes.each do |income| %></h3>
+                    <%= income.amount %>
+              <% end %>
+            <% end %>
         </div>
         <div class="card-kpi d-flex flex-row">
           <div class="card-kpi-symbol">

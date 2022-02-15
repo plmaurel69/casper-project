@@ -6,6 +6,9 @@ class PropertiesController < ApplicationController
 
   def index
     @properties = Property.all.where(user_id: current_user)
+    @property_1 = Property.find(1)
+    @property_2 = Property.find(2)
+    @property_3 = Property.find(3)
     @balances = Income.sum(:amount) - Expense.where(state: 'paid').sum(:amount)
     @expense_data_property1 = Expense.where(balance_sheet_id: 1).group_by_month(:payment_date).sum(:amount)
     @income_data_property1 = Income.where(balance_sheet_id: 1).group_by_month(:payment_date).sum(:amount)
@@ -13,21 +16,28 @@ class PropertiesController < ApplicationController
       @expense_data_property1.each_key do |key|
         if @income_data_property1[key]
           @balance_data_property1[key] = @income_data_property1[key] - @expense_data_property1[key]
-        else
-
         end
     end
 
     @expense_data_property2 = Expense.where(balance_sheet_id: 2).group_by_month(:payment_date).sum(:amount)
     @income_data_property2 = Income.where(balance_sheet_id: 2).group_by_month(:payment_date).sum(:amount)
     @balance_data_property2 = {}
-      @expense_data_property2.each_key do |key|
+    @expense_data_property2.each_key do |key|
         if @income_data_property2[key]
           @balance_data_property2[key] = @income_data_property2[key] - @expense_data_property2[key]
-        else
-
         end
     end
+
+    @expense_data_property3 = Expense.where(balance_sheet_id: 3).group_by_month(:payment_date).sum(:amount)
+    @income_data_property3 = Income.where(balance_sheet_id: 3).group_by_month(:payment_date).sum(:amount)
+    @balance_data_property3 = {}
+    @expense_data_property3.each_key do |key|
+      if @income_data_property3[key]
+      @balance_data_property3[key] = @income_data_property3[key] - @expense_data_property3[key]
+      end
+    end
+
+
     @contracts = PropertyContract.all
     @expenses = Expense.all
     @incomes = Income.all
