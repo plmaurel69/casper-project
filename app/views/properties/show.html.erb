@@ -1,19 +1,28 @@
-<div class="container">
-<h1>Dashboard <%= @property.property_name %></h1>
+<div class="header-index">
+  <H1>Dashboard <%= @property.property_name %>/H1>
+</div>
+<h1></h1>
 <div class="container">
   <div class="card-kpis">
     <div class="dashboard-card-stat">
       <div class="card-kpi">
+      <h1><ion-icon name="analytics-outline"></ion-icon></h1>
         <p>Global ROI</p>
         <h3>300€</h3>
       </div>
       <div class="card-kpi">
+      <h1><ion-icon name="cash-outline"></ion-icon></h1>
         <p>Expenses trends (%)</p>
         <h3>5%</h3>
       </div>
-      <div class="card-kpi">
-        <p>Occupation rate (%)</p>
-        <h3>20%</h3>
+      <div class="card-kpi d-flex flex-row">
+        <div class="card-kpi-symbol">
+          <h1><ion-icon name="people-outline"></ion-icon></h1>
+        </div>
+        <div class="card-kpi-info">
+          <p>Occupation rate (%)</p>
+          <h3>20%</h3>
+        </div>
       </div>
     </div>
   </div>
