@@ -16,20 +16,18 @@
                     </div>
                     <div class="wrapper">
                       <div class="modal-body">
-                        <div id="dialogue"></div>
-                          <div class="text-box">
-                            <div id="messages" data-property-contract-id="<%= contract.id %>">
-                              <% contract.messages.each do |message| %>
-                                <%= render "messages/message", message: message %>
-                              <% end %>
+                        <div data-controller="insert-in-list">
+                          <div id="dialogue"></div>
+                            <div class="text-box">
+                              <div id="messages" data-insert-in-list-target="items" data-property-contract-id="<%= contract.id %>">
+                                <% contract.messages.each do |message| %>
+                                  <%= render "messages/message", message: message %>
+                                <% end %>
+                              </div>
                             </div>
-                          </div>
-                          <%= simple_form_for ([contract, Message.new]), remote: true do |form| %>
-                            <%= form.input :content, label: false, placeholder: "Type your message here.." %>
-                            <%= form.input :file %>
-                            <%= form.button :submit, value: "Send" %>
+                              <%= render "messages/form", contract: contract %>
                           <% end %>
-                        <% end %>
+                          </div>
                         </div>
                       </div>
                     </div>
