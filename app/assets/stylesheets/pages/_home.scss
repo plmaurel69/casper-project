@@ -54,6 +54,38 @@ a:hover {
   color: white;
 }
 
-.container-general-home {
-  margin-left: 17%;
+.card-article-home {
+  border-radius: 0.5em;
+  // width: 350px;
+  text-align: center;
+  margin: 1%;
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 10%;
+}
+
+.card-article-home:hover {
+  border-radius: 0.5em;
+  // width: 350px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.card-title-home {
+  font-weight: bold;
+}
+
+.card p {
+  // padding: 10px;
+  font-size: 0.7em;
+  font-weight: 700;
+}
+
+.card-img-top-home {
+  width: 33vh;
+  border-radius: 0.5em;
+  padding-top: 4%;
 }
