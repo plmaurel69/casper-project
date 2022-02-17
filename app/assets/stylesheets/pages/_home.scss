@@ -1,18 +1,15 @@
 .home-banner {
-  background-image: url('home-image.jpg');
+  background-image: url("img-ville.png");
   background-size: cover;
   width: 100%;
   margin: auto;
   justify-content : space-around;
-  height: 50vh;
+  height: 80vh;
   padding: 10%;
-  // padding: 200px;
-  // padding-top: 250px;
   .fit-picture {
     height: auto;
     width: auto;
     width: 100%;
-    filter: brightness(50%);
   }
 }
 
@@ -38,6 +35,10 @@
   color: white;
   padding-top: 20px;
   padding-bottom: 20px;
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-top: 5%;
 }
 
 a {
@@ -51,4 +52,8 @@ a {
 a:hover {
   text-decoration: none;
   color: white;
+}
+
+.container-general-home {
+  margin-left: 17%;
 }
