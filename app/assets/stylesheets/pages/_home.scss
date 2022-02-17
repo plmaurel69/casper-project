@@ -1,18 +1,15 @@
 .home-banner {
-  background-image: url('home-image.jpg');
+  background-image: url("img-ville.png");
   background-size: cover;
   width: 100%;
   margin: auto;
   justify-content : space-around;
-  height: 50vh;
+  height: 80vh;
   padding: 10%;
-  // padding: 200px;
-  // padding-top: 250px;
   .fit-picture {
     height: auto;
     width: auto;
     width: 100%;
-    filter: brightness(50%);
   }
 }
 
@@ -38,6 +35,10 @@
   color: white;
   padding-top: 20px;
   padding-bottom: 20px;
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-top: 5%;
 }
 
 a {
@@ -51,4 +52,40 @@ a {
 a:hover {
   text-decoration: none;
   color: white;
+}
+
+.card-article-home {
+  border-radius: 0.5em;
+  // width: 350px;
+  text-align: center;
+  margin: 1%;
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 10%;
+}
+
+.card-article-home:hover {
+  border-radius: 0.5em;
+  // width: 350px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.card-title-home {
+  font-weight: bold;
+}
+
+.card p {
+  // padding: 10px;
+  font-size: 0.7em;
+  font-weight: 700;
+}
+
+.card-img-top-home {
+  width: 33vh;
+  border-radius: 0.5em;
+  padding-top: 4%;
 }

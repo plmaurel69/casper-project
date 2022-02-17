@@ -65,6 +65,9 @@ class PropertiesController < ApplicationController
 
   def show
     @balances = BalanceSheet.all.where(property_contract_id: @property.id)
+    @expense_data_property1 = Expense.where(balance_sheet_id: 1, state: 'paid').sum(:amount)
+    @income_data_property1 = Income.where(balance_sheet_id: 1).sum(:amount)
+    @roi = @income_data_property1 - @expense_data_property1
     @contracts = PropertyContract.all.where(property_id: @property.id)
     @expenses = Expense.all.where(property_contract_id: @property.id)
     # @users = PropertyContract.all.where(property_id: @property_contract.user.id)

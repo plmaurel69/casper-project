@@ -17,7 +17,6 @@
 @import "components/index";
 @import "components/footer";
 @import "pages/index";
-@import "pages/home";
 @import "components/card";
 @import "components/title";
 @import "components/button";
@@ -28,7 +27,7 @@
 @import "components/image";
 
 .main-container {
-  margin-left: $navbar-width;
-  max-width: calc(100vw - $navbar-width);
+  max-width: calc(100vw - 150px);
   background-color: #E1F0FF;
+  margin-left: 285px;
 }
