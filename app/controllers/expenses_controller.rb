@@ -18,7 +18,7 @@ class ExpensesController < ApplicationController
         quantity: 1
       }],
       mode: 'payment',
-      success_url: "https://www.yourcasper.com/properties/1",
+      success_url: expense_url(expense),
       cancel_url: "https://www.yourcasper.com/properties/1",
     )
     expense.update(checkout_session_id: session.id)
