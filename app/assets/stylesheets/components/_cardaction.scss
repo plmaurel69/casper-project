@@ -1,17 +1,20 @@
 .card-kpis-action {
   justify-content: space-between;
-  margin-right: auto;
+  width: 50em;
+  margin-right: 1em;
+  background-color: white;
+  border-radius:2%;
+  padding:20px;
+
 }
 
 .action-property .action-property-info {
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
   position: relative;
 }
 
 .kpis-actions {
-  display: flex;
   justify-content: space-between;
   align-self: center;
 }
@@ -26,15 +29,16 @@
   border-radius: 1em;
   text-align: center;
   background: #fff;
-  height: 100px;
+  height: 7em;
   display: flex;
-  justify-content: space-between;;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  align-items: center;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
   transition: all 0.3s ease;
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin:2%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-top: 1em;
+
 }
 
 .dashboard-card {

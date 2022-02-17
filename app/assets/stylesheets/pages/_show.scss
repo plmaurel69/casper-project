@@ -36,9 +36,6 @@
   margin-top: 100px;
   margin-left: 20%
 }
-.flat-info {
-  margin-top: 100px;
-}
 
 .signature {
   display: flex;
@@ -50,4 +47,69 @@
 .petit-titre {
   padding-left: 20px;
   background-color:#37B686;
+}
+
+.calendar-flex {
+  display: flex;
+  margin-top: 2em;
+}
+
+.action-property {
+  margin-right: 10px;
+}
+
+.calendar-full-size {
+  width: -webkit-fill-available;
+}
+
+.info-flat-full {
+  margin-top: 1em;
+}
+
+.bordure {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-bottom-style: ridge;
+}
+
+.flex-in-card {
+  display: flex;
+  border-radius: 0.5em;
+  margin: 2%;
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 1%;
+  width: 32%;
+  height: 11em;
+  align-items: center;
+}
+
+.logo-to-display {
+  margin-right: 1em;
+}
+
+.header-index {
+  display: flex;
+}
+
+.icon-back {
+  font-size: -webkit-xxx-large;
+  color: #CDDBE8;
+  margin-right: 1em;
+}
+
+.align-title-center{
+  align-self: center;
+}
+
+.flex-img {
+  display: flex;
+}
+
+.align-important-center {
+  align-self: center;
+}
+
+.flex-card-action {
+  display: flex;
 }
