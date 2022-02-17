@@ -46,3 +46,5 @@ import { setCalendarPropertyShow } from '../packs/fullcalendar_property_show.js'
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
+
+import "controllers"
