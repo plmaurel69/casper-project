@@ -1,7 +1,6 @@
 <div class="header-index">
-  <H1>Dashboard <%= @property.property_name %>
+  <H1><%= @property.property_name %></h1>
 </div>
-<h1></h1>
 <div class="container">
   <div class="kpis-actions">
     <div class="card-kpis-action">
@@ -30,22 +29,12 @@
         <div class="card-kpi">
         <h1><ion-icon name="analytics-outline"></ion-icon></h1>
           <p>My Expenses</p>
-            <% @balances.each do |balance| %>
-                <h3><% balance.expenses.each do |expense| %></h3>
-                  <% if expense.state == "paid" %>
-                    <%= expense.amount %>
-               <% end %>
-              <% end %>
-            <% end %>
+          <%= @expense_data_property1 %>
         </div>
         <div class="card-kpi">
         <h1><ion-icon name="cash-outline"></ion-icon></h1>
            <p>My incomes</p>
-                    <% @balances.each do |balance| %>
-                <h3><% balance.incomes.each do |income| %></h3>
-                    <%= income.amount %>
-              <% end %>
-            <% end %>
+            <%= @income_data_property1 %>
         </div>
         <div class="card-kpi d-flex flex-row">
           <div class="card-kpi-symbol">
@@ -53,7 +42,7 @@
           </div>
           <div class="card-kpi-info">
             <p>Occupation rate (%)</p>
-            <h3>20%</h3>
+            <h3><%= @roi %></h3>
           </div>
         </div>
       </div>
