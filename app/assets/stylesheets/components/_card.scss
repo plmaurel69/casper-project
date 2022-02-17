@@ -43,26 +43,27 @@
   width: auto;
 }
 
-.cards-kpi {
-  display: flex;
-  justify-content: space-between;
-}
+// .cards-kpi {
+//   display: flex;
+//   justify-content: space-between;
+// }
 
 .card-kpis {
   justify-content: space-between;
-  margin-top: 100px;
-  padding-top: 50px;
   margin-right: auto;
 }
 
 .card-kpi {
-      // width: auto;
   border-radius: 0.5em;
   margin: 1%;
   background: #fff;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   padding: 1%;
-  width: 33%;
+}
+
+.properties-container {
+  margin-top: 100px;
+  margin-bottom: 50px;
 }
 
 .card-property {

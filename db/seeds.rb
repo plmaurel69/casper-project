@@ -83,17 +83,33 @@ puts "BalanceSheet 3 saved"
 
 #-----------------PROPERTY 1------------------------
 
+income = Income.new(amount: '2300', type: 'Loyer', paid: 'true', payment_date: '2021-09-03', balance_sheet_id: 1)
+income.save!
+puts "Income 6 Property 1 saved "
+
 income = Income.new(amount: '2300', type: 'Loyer', paid: 'true', payment_date: '2021-10-03', balance_sheet_id: 1)
 income.save!
-puts "Income 1 saved "
+puts "Income 1 Property 1 saved "
 
 income = Income.new(amount: '2300', type: 'Loyer', paid: 'true', payment_date: '2021-11-04', balance_sheet_id: 1)
 income.save!
-puts "Income 2 saved"
+puts "Income 2 Property 1 saved"
 
 income = Income.new(amount: '2300', type: 'Loyer', paid: 'true', payment_date: '2021-12-04', balance_sheet_id: 1)
 income.save!
-puts "Income 3 saved"
+puts "Income 3 Property 1 saved"
+
+income = Income.new(amount: '2300', type: 'Loyer', paid: 'true', payment_date: '2022-01-04', balance_sheet_id: 1)
+income.save!
+puts "Income 4 Property 1 saved"
+
+income = Income.new(amount: '2300', type: 'Loyer', paid: 'true', payment_date: '2022-02-04', balance_sheet_id: 1)
+income.save!
+puts "Income 5 Property 1 saved"
+
+expense = Expense.new(balance_sheet_id: 1, amount: '18', type: 'Admin', paid: true, state: 'paid', payment_date: '2021-09-08')
+expense.save!
+puts "Expense 7 Property 1 saved"
 
 expense = Expense.new(balance_sheet_id: 1, amount: '45', type: 'plumber', paid: false, state: 'pending')
 expense.save!
@@ -111,6 +127,14 @@ expense = Expense.new(balance_sheet_id: 1, amount: '200', type: 'building operat
 expense.save!
 puts "Expense 4 Property 1 saved"
 
+expense = Expense.new(balance_sheet_id: 1, amount: '1200', type: 'building operation', paid: true, state: 'paid', payment_date: '2022-01-15')
+expense.save!
+puts "Expense 5 Property 1 saved"
+
+expense = Expense.new(balance_sheet_id: 1, amount: '400', type: 'co-property charge', paid: true, state: 'paid', payment_date: '2022-02-08')
+expense.save!
+puts "Expense 6 Property 1 saved"
+
 
 #-----------------PROPERTY 2------------------------
 
@@ -126,14 +150,88 @@ income = Income.new(amount: '1590', type: 'Loyer', paid: 'true', payment_date: '
 income.save!
 puts "Income 3 Property 2 saved"
 
+income = Income.new(amount: '1590', type: 'Loyer', paid: 'true', payment_date: '2022-01-04', balance_sheet_id: 2)
+income.save!
+puts "Income 4 Property 2 saved"
+
+income = Income.new(amount: '1590', type: 'Loyer', paid: 'true', payment_date: '2022-02-04', balance_sheet_id: 2)
+income.save!
+puts "Income 5 Property 2 saved"
+
+income = Income.new(amount: '1590', type: 'Loyer', paid: 'true', payment_date: '2021-09-04', balance_sheet_id: 2)
+income.save!
+puts "Income 6 Property 2 saved"
+
 expense = Expense.new(balance_sheet_id: 2, amount: '150', type: 'Admin', paid: false, state: 'paid', payment_date: '2021-11-05')
 expense.save!
-puts "Expense 1 Property 1 saved"
+puts "Expense 1 Property 2 saved"
 
 expense = Expense.new(balance_sheet_id: 2, amount: '800', type: 'building operation', paid: true, state: 'paid', payment_date: '2021-10-05')
 expense.save!
-puts "Expense 2 Property 1 saved"
+puts "Expense 2 Property 2 saved"
 
 expense = Expense.new(balance_sheet_id: 2, amount: '220', type: 'co-property charge', paid: true, state: 'paid', payment_date: '2021-12-03')
 expense.save!
-puts "Expense 3 Property 1 saved"
+puts "Expense 3 Property 2 saved"
+
+expense = Expense.new(balance_sheet_id: 2, amount: '100', type: 'admin', paid: true, state: 'paid', payment_date: '2022-01-22')
+expense.save!
+puts "Expense 4 Property 2 saved"
+
+expense = Expense.new(balance_sheet_id: 2, amount: '220', type: 'co-property charge', paid: true, state: 'paid', payment_date: '2022-02-12')
+expense.save!
+puts "Expense 5 Property 2 saved"
+
+expense = Expense.new(balance_sheet_id: 2, amount: '35', type: 'Admin', paid: true, state: 'paid', payment_date: '2021-09-12')
+expense.save!
+puts "Expense 6 Property 2 saved"
+
+#-----------------PROPERTY 3------------------------
+
+income = Income.new(amount: '1600', type: 'Loyer', paid: 'true', payment_date: '2021-10-05', balance_sheet_id: 3)
+income.save!
+puts "Income 1 Property 3 saved "
+
+income = Income.new(amount: '1600', type: 'Loyer', paid: 'true', payment_date: '2021-11-02', balance_sheet_id: 3)
+income.save!
+puts "Income 2 Property 3 saved"
+
+income = Income.new(amount: '1600', type: 'Loyer', paid: 'true', payment_date: '2021-12-03', balance_sheet_id: 3)
+income.save!
+puts "Income 3 Property 3 saved"
+
+income = Income.new(amount: '1600', type: 'Loyer', paid: 'true', payment_date: '2022-01-03', balance_sheet_id: 3)
+income.save!
+puts "Income 4 Property 3 saved"
+
+income = Income.new(amount: '1600', type: 'Loyer', paid: 'true', payment_date: '2022-02-03', balance_sheet_id: 3)
+income.save!
+puts "Income 5 Property 3 saved"
+
+income = Income.new(amount: '1600', type: 'Loyer', paid: 'true', payment_date: '2021-09-03', balance_sheet_id: 3)
+income.save!
+puts "Income 6 Property 3 saved"
+
+expense = Expense.new(balance_sheet_id: 3, amount: '400', type: 'Admin', paid: false, state: 'paid', payment_date: '2021-11-12')
+expense.save!
+puts "Expense 1 Property 3 saved"
+
+expense = Expense.new(balance_sheet_id: 3, amount: '34', type: 'building operation', paid: true, state: 'paid', payment_date: '2021-10-04')
+expense.save!
+puts "Expense 2 Property 3 saved"
+
+expense = Expense.new(balance_sheet_id: 3, amount: '483', type: 'co-property charge', paid: true, state: 'paid', payment_date: '2021-12-13')
+expense.save!
+puts "Expense 3 Property 3 saved"
+
+expense = Expense.new(balance_sheet_id: 3, amount: '60', type: 'Admin', paid: false, state: 'paid', payment_date: '2021-09-12')
+expense.save!
+puts "Expense 4 Property 3 saved"
+
+expense = Expense.new(balance_sheet_id: 3, amount: '489', type: 'building operation', paid: true, state: 'paid', payment_date: '2022-01-04')
+expense.save!
+puts "Expense 5 Property 3 saved"
+
+expense = Expense.new(balance_sheet_id: 3, amount: '483', type: 'co-property charge', paid: true, state: 'paid', payment_date: '2022-02-13')
+expense.save!
+puts "Expense 6 Property 3 saved"
