@@ -1,64 +1,98 @@
 <div class="header-index">
-  <H1>Dashboard <%= @property.property_name %>
+  <div class="icon-back"><i class="fas fa-backspace" href="/"></i></div>
+
+  <div class="align-title-center"><h1>Dashboard <%= @property.property_name %></h1></div>
 </div>
-<h1></h1>
 <div class="container">
   <div class="kpis-actions">
-    <div class="card-kpis-action">
-      <h2>Your important</h2>
-      <div class="dashboard-card-action">
-        <div class="action-property">
-            <p>Rent due</p>
-              <%= render 'shared/chatroom' %>
-        </div>
-        <div class="action-property">
-        <% @balances.each do |balance| %>
+    <div class="card-kpis">
+
+
+        <div class="flex-in-card">
+          <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
+            <div class="no-flex-in-card">
+            <p>My Expenses</p>
+            <% @balances.each do |balance| %>
             <% balance.expenses.each do |expense| %>
-              <% if expense.state == "pending" %>
-                Refund <%= expense.type %>
-                <button type="button" class="btn">
-                  <%= link_to 'Refund', checkout_expense_path(id: expense.id) %>
-                </button>
+              <% if expense.state == "paid" %>
+              <%= expense.amount %>
               <% end %>
+            <% end %>
+          <% end %>
+          </div>
+        </div>
+
+
+
+        <div class="flex-in-card">
+          <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
+            <div class="no-flex-in-card">
+            <p>My incomes</p>
+            <% @balances.each do |balance| %>
+            <% balance.incomes.each do |income| %>
+              <%= income.amount %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+
+      <div class="flex-in-card">
+        <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
+          <div class="no-flex-in-card">
+          <p>My Expenses</p>
+          <% @balances.each do |balance| %>
+          <% balance.expenses.each do |expense| %>
+            <% if expense.state == "paid" %>
+            <%= expense.amount %>
+            <% end %>
           <% end %>
         <% end %>
         </div>
       </div>
     </div>
-    <div class="card-kpis">
-      <div class="dashboard-card-stat">
-        <div class="card-kpi">
-        <h1><ion-icon name="analytics-outline"></ion-icon></h1>
-          <p>My Expenses</p>
+
+
+  <div class="calendar-flex">
+    <div class="card-kpis-action">
+      <div class="flex-img">
+        <img src=<%= image_path('bankruptcy.png') %> alt="" class="small-img-to">
+        <div class="align-important-center"><h2>Important info.</h2></div>
+      </div>
+
+      <div class="bordure"></div>
+
+        <div class="dashboard-card-action">
+
+          <div class="action-property in-green">
+          <div class="flex-card-action">
+          <i class="fas fa-exclamation"></i>
+            <p>Rent due</p>
+              <div class="action-to-do">
+                <%= render 'shared/chatroom' %>
+              </div>
+            </div>
+          </div>
+
+            <div class="action-property in-red">
             <% @balances.each do |balance| %>
-                <h3><% balance.expenses.each do |expense| %></h3>
-                  <% if expense.state == "paid" %>
-                    <%= expense.amount %>
-               <% end %>
+                <% balance.expenses.each do |expense| %>
+                  <% if expense.state == "pending" %>
+                    Refund <%= expense.type %>
+                    <button type="button" class="btn">
+                      <%= link_to 'Refund', checkout_expense_path(id: expense.id) %>
+                    </button>
+                  <% end %>
               <% end %>
             <% end %>
-        </div>
-        <div class="card-kpi">
-        <h1><ion-icon name="cash-outline"></ion-icon></h1>
-           <p>My incomes</p>
-                    <% @balances.each do |balance| %>
-                <h3><% balance.incomes.each do |income| %></h3>
-                    <%= income.amount %>
-              <% end %>
-            <% end %>
-        </div>
-        <div class="card-kpi d-flex flex-row">
-          <div class="card-kpi-symbol">
-            <h1><ion-icon name="people-outline"></ion-icon></h1>
-          </div>
-          <div class="card-kpi-info">
-            <p>Occupation rate (%)</p>
-            <h3>20%</h3>
+            </div>
           </div>
         </div>
+      <div class="calendar-full-size">
+        <%= render 'shared/calendar-show' %>
       </div>
     </div>
+  <div class="info-flat-full">
+    <%= render 'shared/flat-info' %>
   </div>
-            <%= render 'shared/calendar-show' %>
-            <%= render 'shared/flat-info' %>
 </div>
