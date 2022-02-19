@@ -20,7 +20,7 @@
 .home-articles {
   width: 100%;
   // padding: 150px;
-  padding: 10%;
+  padding: 5%;
 }
 
 .home-articles-container {
@@ -85,7 +85,10 @@ a:hover {
 }
 
 .card-img-top-home {
-  width: 33vh;
+  width: 100%;
   border-radius: 0.5em;
-  padding-top: 4%;
+}
+
+.reference-cards {
+  padding: 5%;
 }
