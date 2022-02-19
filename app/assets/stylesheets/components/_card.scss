@@ -50,6 +50,7 @@
 .property-name {
   font-size: 0.8em;
   text-align: left;
+  padding-bottom: 5%;
 }
 
 .card-img-top {
@@ -92,6 +93,8 @@
   margin-left: auto;
   margin-right: auto;
   transition: all 0.3s ease;
+  height: 95px;
+  padding-top: 0.75%;
 }
 
 .card-property:hover {
@@ -117,7 +120,6 @@
 }
 
 .element-card-3 {
-  display: flex;
   flex-direction: column;
   padding: 5%;
 }
@@ -127,7 +129,6 @@
   background-color: #6ED451;
   border-radius: 0.5em;
   width: 10vh;
-  margin-top: 10%;
   font-size: 12px;
 }
 
@@ -136,7 +137,6 @@
   background-color: #E63E33;
   border-radius: 0.5em;
   width: 10vh;
-  margin-top: 10%;
   font-size: 12px;
 }
 
