@@ -2,11 +2,19 @@
     <div class="home-banner">
       <div class="home-banner-container">
         <h1 class="home-description">Optimise the management of your properties</h1>
-        <button class="btn btn-primary"><%=link_to "Let's visit", properties_path %></button>
+        <button class="btn nav-link"><%=link_to "Manage my properties", properties_path %></button>
       </div>
     </div>
 
     <div class="home-articles">
+      <div class="home-articles-container">
+        <h2>A complete interface, easy to control</h2>
+        <br>
+        <p class="card-product">Manage the arrivals and departures of your tenants, refunds and even manage tenant's contracts in a few clicks with complete peace of mind.</p>
+        <p class="card-product">Refund a tenant? Refund your tenant from your space.</p>
+        <p><%=link_to "Discover the platform to find out more.", properties_path %></p>
+      </div>
+
       <div class="home-articles-container">
         <h2>Last news</h2>
         <br>
@@ -38,7 +46,7 @@
               <div class="card-body" src="https://www.service-public.fr/particuliers/vosdroits/F31272">
                 <h5 class="card-title">Public Service</h5>
                   <p class="card-text">Unpaid rent and tenant eviction</p>
-                </a>
+                <a href="https://www.journaldunet.fr/patrimoine/guide-de-l-immobilier/1202297-loi-cosse-2022-definition-logements-et-plafonds-de-loyer/" class="btn btn-primary">Read more</a>
               </div>
             </div>
           </div>
