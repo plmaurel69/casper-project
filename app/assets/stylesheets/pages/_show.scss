@@ -191,7 +191,7 @@
     font-size: 30px;
     line-height: 40px;
     font-weight: bold;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'ApercuFont', sans-serif;
 }
 
 .position-btn-bottom {
@@ -214,6 +214,13 @@
   margin-left: 1em;
 }
 
+.container-general-refund{
+  display:flex;
+  place-content: center;
+  min-height: 83vh;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
 .show-full-white {
   background-color: white;
 
