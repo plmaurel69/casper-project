@@ -1,18 +1,15 @@
 .home-banner {
-  background-image: url('home-image.jpg');
+  background-image: url("img-ville.png");
   background-size: cover;
   width: 100%;
   margin: auto;
   justify-content : space-around;
-  height: 50vh;
+  height: 80vh;
   padding: 10%;
-  // padding: 200px;
-  // padding-top: 250px;
   .fit-picture {
     height: auto;
     width: auto;
     width: 100%;
-    filter: brightness(50%);
   }
 }
 
@@ -23,7 +20,7 @@
 .home-articles {
   width: 100%;
   // padding: 150px;
-  padding: 10%;
+  padding: 5%;
 }
 
 .home-articles-container {
@@ -38,6 +35,10 @@
   color: white;
   padding-top: 20px;
   padding-bottom: 20px;
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-top: 5%;
 }
 
 a {
@@ -45,10 +46,67 @@ a {
 }
 
 .container-general {
-  margin-left: 230px;
+  margin-left: 25%;
 }
 
 a:hover {
   text-decoration: none;
   color: white;
+}
+
+.card-article-home {
+  border-radius: 0.5em;
+  // width: 350px;
+  text-align: center;
+  margin: 1%;
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 10%;
+}
+
+.card-article-home:hover {
+  border-radius: 0.5em;
+  // width: 350px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.card-title-home {
+  font-weight: bold;
+}
+
+.card p {
+  // padding: 10px;
+  font-size: 0.7em;
+  font-weight: 700;
+}
+
+.card-img-top-home {
+  width: 100%;
+  border-radius: 0.5em;
+  border-radius: 1em;
+  padding: 4%;
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+.reference-cards {
+  width:30%;
+  height: 2vw;
+  object-fit: cover;
+}
+
+.card-product-discover {
+  font-weight: bold;
+}
+
+.card-number-users {
+  font-size: 25px;
+  font-weight: bold;
+  font-stretch: extra-condensed;
+
 }

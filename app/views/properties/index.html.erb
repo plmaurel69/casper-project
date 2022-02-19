@@ -1,57 +1,51 @@
 <div class="header-index">
-  <H1>Dashboard</H1>
+  <H1 class="index-title">Dashboard</H1>
 </div>
-<div class = container>
+<div class = "container">
   <div class = dashboard>
-      <h1>Money money money... </h1>
 
-  <%= line_chart [
-  {name: "Property 1", data: @balance_data_property1},
-  {name: "Property 2", data: @balance_data_property2}
-  ]%>
-
+<div class="card-graph">
+  <div class="header-graph">
+    <h1 class="title-kpis"><ion-icon name="pie-chart-outline"></ion-icon></ion-icon> &nbsp; My KPIs </h1>
+    <div class="card-timeline">
+      <p class="card-timeline-item">Weekly</p>
+      <p class="card-timeline-item">Monthly</p>
+      <div class="selected-timeline"><p class="card-timeline-item">Semester</p></div>
     </div>
-
-      <%= @balances %>
-        <div class ="index-kpis">
-          <div class="card-kpis-container">
-            <div class="cards-kpi">
-              <div class="card-kpi">
-                <div>
-                  <%= column_chart(@data, xtitle: 'KPI') %>
-                </div>
-              </div>
-              <div class="card-kpi">
-                <div>
-                  <%= column_chart(@data, xtitle: 'KPI') %>
-                </div>
-              </div>
-              <div class="card-kpi">
-                <div>
-                  <%= column_chart(@data, xtitle: 'KPI') %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  </div>
+  <hr width="100%">
+    <%= line_chart [
+    {name: @property_1.property_name, data: @balance_data_property1},
+    {name: @property_2.property_name, data: @balance_data_property2},
+    {name: @property_3.property_name, data: @balance_data_property3}
+    ]%>
+</div>
+    </div>
       <div class="properties-calendar">
         <div class="properties-container">
-          <h1><ion-icon name="heart-half-outline"></ion-icon> Mes locations </h1>
+          <h2><ion-icon name="heart-half-outline"></ion-icon> Mes locations </h1>
           <hr width="100%">
           <div class = card-properties>
             <% @properties.each do |property| %>
               <div class="card-property">
+              <div class="card-property-content">
                 <div class="img-properties">
                   <img class="card-img-top" src="<%= image_path('Property1_Picture.jpg') %>" alt="Card image cap">
                 </div>
-                <div class="card-property-content">
                   <div class="element-card-2">
                     <div class="property-name">
-                        <%= property.property_name %>
+                        <%=link_to property.property_name, property_path(property) %>
                     </div>
-                    <div class="property-status">
+                  <% if property.rental_status == "Louée" %>
+                    <div class="property-status-1">
                       <ion-icon name="checkmark-outline"></ion-icon><%= property.rental_status%>
                     </div>
+                  <% else %>
+                    <div class="property-status-2">
+                      <ion-icon name="checkmark-outline"></ion-icon><%= property.rental_status%>
+                    </div>
+                  <% end %>
+                  </div>
                   </div>
                   <div class="element-card-3">
                     <div class="ROI-title">
@@ -60,7 +54,7 @@
                     <div class="property-ROI">
                       <%= "-7.7%"  %>
                     </div>
-                  </div>
+
                 </div>
               </div>
             <% end %>

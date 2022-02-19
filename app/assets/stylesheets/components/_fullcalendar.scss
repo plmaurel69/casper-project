@@ -1,12 +1,10 @@
 body {
-  margin: 40px 10px;
-  padding: 0;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;
 }
 
 #calendar {
-  margin-left: 20%;
+  margin-left: 10%;
 }
 
 .fc-daygrid{
@@ -14,11 +12,13 @@ body {
 }
 
 .fc-toolbar-title {
-  font-weight: lighter;
-  font-size: 15px;
+  font-size: 30px;
+    line-height: 40px;
+    font-weight: bolder;
+    font-family: 'ApercuFont', sans-serif;
 }
 
-.fc-today-button .fc-button .fc-button-primary{
+.fc-today-button {
   background-color: #081A51;
 }
 
@@ -34,4 +34,5 @@ body {
   background-color: white;
   border-radius:2%;
   padding:20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }

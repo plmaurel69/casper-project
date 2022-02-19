@@ -1,44 +1,154 @@
+<div class="header-index">
+  <div class="icon-back"><a class="fas fa-backspace" href="/properties"></a></div>
+
+  <div class="align-title-center"><h1> <%= @property.property_name %></h1></div>
+</div>
 <div class="container">
-<h1>Dashboard <%= @property.property_name %></h1>
-<div class="container">
-  <div class="card-kpis">
-    <div class="dashboard-card-stat">
-      <div class="card-kpi">
-        <p>Global ROI</p>
-        <h3>300€</h3>
+  <div class="kpis-actions">
+    <div class="card-kpis">
+
+
+        <div class="flex-in-card">
+          <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
+            <div class="no-flex-in-card">
+              <div class="title-show">My Expenses</div>
+              <div class="kpi-show"><%= @expense_data_property1 %></div>
+          </div>
+        </div>
+
+        <div class="flex-in-card">
+          <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
+            <div class="no-flex-in-card">
+            <div class="title-show">My incomes</div>
+            <div class="kpi-show"><%= @income_data_property1 %></div>
+        </div>
       </div>
-      <div class="card-kpi">
-        <p>Expenses trends (%)</p>
-        <h3>5%</h3>
-      </div>
-      <div class="card-kpi">
-        <p>Occupation rate (%)</p>
-        <h3>20%</h3>
+
+      <div class="flex-in-card">
+        <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
+          <div class="no-flex-in-card">
+          <div class="title-show">ROI</div>
+          <div class="kpi-show"><%= @roi %></div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="card-actions-stat">
-    <h2>Your important</h2>
-      <div class="action-property">
-        <div class="action-property-info">
-          <p>Rent due</p>
-            <%= render 'shared/chatroom' %>
-        </div>
+
+  <div class="calendar-flex">
+    <div class="card-kpis-action position-relative">
+      <div class="flex-img">
+        <img src=<%= image_path('bankruptcy.png') %> alt="" class="small-img-to">
+        <div class="align-important-center"><h2>Important info.</h2></div>
       </div>
-      <div class="action-property-refund">
-        <div class="action-property-info">
-            <% @balances.each do |balance| %>
-                <h2><% balance.expenses.each do |expense| %></h2>
-                <div></div>
-                  <% if expense.state == "pending" %>
-                    Refund <%= expense.type %>
-                  <p class= "btn-primary"><%= link_to 'Refund', checkout_expense_path(id: expense.id) %></p>
-                  <% end %>
-              <% end %>
+
+      <div class="bordure"></div>
+
+        <div class="dashboard-card-action">
+
+      <% @property.renters.each do |renter| %>
+      <% if renter.gender == "" %>
+        <div class="not-display">
+            <% @property.renters.each do |renter| %>
+              <% if renter.gender == "" %>
+                  <div class="flex-card-action action-property in-red">
+                    <div class="space-bet">
+                      <i class="fas fa-exclamation-triangle icon-font fa-2x"></i>
+                      <div class="action-explain">
+                              Nouveau contrat
+                              <% end %>
+                          <% end %>
+                      </div>
+                    </div>
+              <% @property.renters.each do |renter| %>
+              <% if renter.gender == "" %>
+                  <div class="action-to-do">
+                      <button type="button" class="action-to-do btn btn-danger">
+                        <%= link_to 'Créer', new_property_property_contract_path(@property.id) %>
+                      </button>
+                        <% end %>
+                      <% end %>
+                  </div>
+                </div>
+              </div>
             <% end %>
+          <% end %>
+
+
+      <% @property.property_contracts.each do |property_contract| %>
+      <% if property_contract.rent_payment_status == "false" %>
+        <div class="not-display">
+            <% @property.property_contracts.each do |property_contract| %>
+              <% if property_contract.rent_payment_status == "false" %>
+                  <div class="flex-card-action action-property in-red">
+                    <div class="space-bet">
+                      <i class="fas fa-exclamation-triangle icon-font fa-2x"></i>
+                      <div class="action-explain">
+                              Claim your rent
+                              <% end %>
+                          <% end %>
+                      </div>
+                    </div>
+              <% @property.property_contracts.each do |property_contract| %>
+              <% if property_contract.rent_payment_status == "false" %>
+                  <div class="action-to-do">
+                      <button type="button" class="action-to-do btn btn-danger" <%= render'shared/chatroom' %> </button>
+                        <% end %>
+                      <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+
+              <% @balances.each do |balance| %>
+                <% balance.expenses.each do |expense| %>
+                  <% if expense.state == "pending" %>
+                    <div class="not-display">
+                      <% @balances.each do |balance| %>
+                      <% balance.expenses.each do |expense| %>
+                        <% if expense.state == "pending" %>
+                        <div class="flex-card-action action-property in-red">
+                          <div class="space-bet">
+                            <i class="fas fa-exclamation-triangle icon-font fa-2x"></i>
+                            <div class="action-explain">
+                                    Pay the plumber
+                                  <% end %>
+                                <% end %>
+                              <% end %>
+                            </div>
+                          </div>
+                  <% @balances.each do |balance| %>
+                  <% balance.expenses.each do |expense| %>
+                    <% if expense.state == "pending" %>
+                      <div class="action-to-do">
+                      <button type="button" class="action-to-do btn btn-danger">
+                        <%= link_to 'Refund', checkout_expense_path(id: expense.id) %>
+                      </button>
+                        <% end %>
+                        <% end %>
+                        <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                  <% end %>
+                <% end %>
+
+
+
         </div>
+          <div class="add-an-info">
+            <button type="button" class="btn btn-primary btn-sm position-btn-bottom"></i>Add a task</button>
+          </div>
+        </div>
+
+      <div class="calendar-full-size">
+        <%= render 'shared/calendar-show' %>
       </div>
+    </div>
+
+
+  <div class="info-flat-full">
+    <%= render 'shared/flat-info' %>
   </div>
+
 </div>
-            <%= render 'shared/calendar-show' %>
-            <%= render 'shared/flat-info' %>

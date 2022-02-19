@@ -23,3 +23,59 @@
 .card-signup-illu {
   background-color: #167FFB;
 }
+
+.center-page {
+  place-content: center;
+}
+.center-button-form {
+  place-content: center;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+.btn-nice-proper {
+  width: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-width: 3px;
+}
+
+.btn-submit-right {
+  margin-right: 2em;
+  height: 3em;
+  border-radius: 0.5em;
+  margin-left: 2em;
+  font-weight: 900;
+}
+
+.box-shadow-white {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #E7E7E7;
+  background-color: #FFFFFF;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 50px;
+}
+
+.below-new-form {
+  justify-content: right;
+  height: 5.5em;
+  position:fixed;
+  bottom:0px;
+}
+
+.btn-cancel {
+  color: #9D9D9D;
+}
+
+.white-logo {
+  color: #fff;
+    background-color: #FD1015;
+    border-color: #FD1015;
+}
+
+.alive-card {
+  height: 0%;
+  width: 0%;
+}

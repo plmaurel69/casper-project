@@ -32,27 +32,55 @@
 .properties-calendar {
   display: flex;
   justify-content: space-between;
-  margin: 10% 0 0 0;
+  margin: 30px 0 0 0;
 }
 
 .properties-container {
   width: 50%;
   border-radius: 1em;
-  margin: 2%;
+  margin: 0 2%;
   background: #fff;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   padding: 2%;
 }
 
 .main-container {
-  background-color: #E1F0FF;
-  width: 100%;
+  background-color: #F7F7F7;
+  min-height: 100vh;
 }
 
 .header-index {
   background-color: white;
   height: 10%;
   width: 100%;
-  padding: 3%;
-  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
+  padding: 1%;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.25);
+}
+
+#titre-index-1 {
+  margin-top: 25px;
+}
+
+.container {
+  padding-bottom: 50px;
+}
+
+.property-name {
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+.index-title {
+  margin-left: 4%;
+}
+
+.ROI-title {
+  color: grey;
 }
