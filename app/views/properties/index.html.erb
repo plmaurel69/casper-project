@@ -6,7 +6,7 @@
 
 <div class="card-graph">
   <div class="header-graph">
-    <h1 class="title-kpis"><ion-icon name="pie-chart-outline"></ion-icon></ion-icon> &nbsp; My KPIs </h1>
+    <h2 class="title-kpis"><ion-icon name="pie-chart-outline"></ion-icon></ion-icon> &nbsp; My KPIs </h2>
     <div class="card-timeline">
       <p class="card-timeline-item">Weekly</p>
       <p class="card-timeline-item">Monthly</p>
@@ -23,7 +23,7 @@
     </div>
       <div class="properties-calendar">
         <div class="properties-container">
-          <h2><ion-icon name="heart-half-outline"></ion-icon> Mes locations </h1>
+          <h2><ion-icon name="heart-half-outline"></ion-icon> My Flats </h2>
           <hr width="100%">
           <div class = card-properties>
             <% @properties.each do |property| %>
@@ -36,7 +36,7 @@
                     <div class="property-name">
                         <%=link_to property.property_name, property_path(property) %>
                     </div>
-                  <% if property.rental_status == "Louée" %>
+                  <% if property.rental_status == "Rented" %>
                     <div class="property-status-1">
                       <ion-icon name="checkmark-outline"></ion-icon><%= property.rental_status%>
                     </div>
