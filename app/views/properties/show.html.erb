@@ -1,34 +1,47 @@
 <div class="header-index">
-  <div class="icon-back"><i class="fas fa-backspace" href="/"></i></div>
+  <div class="icon-back"><a class="fas fa-backspace" href="/properties"></a></div>
 
   <div class="align-title-center"><h1> <%= @property.property_name %></h1></div>
 </div>
 <div class="container">
+    <div class="card-timeline">
+      <p class="card-timeline-item">Weekly</p>
+      <p class="card-timeline-item">Monthly</p>
+      <p class="card-timeline-item">Semestre</p>
+    </div>
   <div class="kpis-actions">
     <div class="card-kpis">
 
+        <div class="flex-in-card">
+          <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
+            <div class="no-flex-in-card">
+              <h5>My incomes</h5>
+            <div class="kpi-show">
+              <div class="kpi-show">
+                <%= number_to_currency(@income_data_property1, precision: 0, unit: "€", delimiter: " ", format: "%n %u") %>
+              </div>
+            </div>
+        </div>
+      </div>
 
         <div class="flex-in-card">
           <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
             <div class="no-flex-in-card">
-              <div class="title-show">My Expenses</div>
-              <div class="kpi-show"><%= @expense_data_property1 %></div>
+                <h5>My Expenses</h5>
+              <div class="kpi-show">
+                <%= number_to_currency(@expense_data_property1, precision: 0, unit: "€", delimiter: " ", format: "%n %u") %>
+              </div>
           </div>
         </div>
 
-        <div class="flex-in-card">
-          <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
-            <div class="no-flex-in-card">
-            <div class="title-show">My incomes</div>
-            <div class="kpi-show"><%= @income_data_property1 %></div>
-        </div>
-      </div>
 
       <div class="flex-in-card">
         <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
           <div class="no-flex-in-card">
-          <div class="title-show">ROI</div>
-          <div class="kpi-show"><%= @roi %></div>
+            <h5>Earnings</h5>
+          <div class="kpi-show">
+            <%= number_to_currency(@roi, precision: 2, unit: "%", separator: ",", format: "%n %u") %>
+          </div>
         </div>
       </div>
     </div>
@@ -44,64 +57,109 @@
 
         <div class="dashboard-card-action">
 
-          <div class="flex-card-action action-property in-green">
-            <div class="space-bet">
-              <i class="fas fa-check-circle icon-font fa-2x"></i>
-              <div class="action-explain">Rent due</div>
-            </div>
-            <div class="action-to-do">
-              <%= render'shared/chatroom' %>
-            </div>
-          </div>
 
-          <div class="flex-card-action action-property in-red">
-            <div class="space-bet">
-              <i class="fas fa-check-circle icon-font fa-2x"></i>
-              <div class="action-explain">Rent due</div>
-            </div>
-            <div class="action-to-message">
-              <button type="button" class="action-to-do btn btn-danger" <%= render'shared/chatroom' %></button>
-            </div>
-          </div>
-
-          <div class="flex-card-action action-property in-red">
-            <div class="space-bet">
-              <i class="fas fa-exclamation-triangle icon-font fa-2x"></i>
-              <div class="action-explain">
-                <% @balances.each do |balance| %>
-                  <% balance.expenses.each do |expense| %>
-                    <% if expense.state == "pending" %>
-                      Refund <%= expense.type %>
+      <% @property.renters.each do |renter| %>
+      <% if renter.gender == "" %>
+        <div class="not-display">
+            <% @property.renters.each do |renter| %>
+              <% if renter.gender == "" %>
+                  <div class="flex-card-action action-property in-red">
+                    <div class="space-bet">
+                      <i class="fas fa-exclamation-triangle icon-font fa-2x"></i>
+                      <div class="action-explain">
+                              Nouveau contrat
+                              <% end %>
+                          <% end %>
+                      </div>
+                    </div>
+              <% @property.renters.each do |renter| %>
+              <% if renter.gender == "" %>
+                  <div class="action-to-do">
+                      <button type="button" class="action-to-do btn btn-danger">
+                        <%= link_to 'Créer', new_property_property_contract_path(@property.id) %>
+                      </button>
+                        <% end %>
                       <% end %>
-                  <% end %>
-                <% end %>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="action-to-do">
+            <% end %>
+          <% end %>
+
+
+      <% @property.property_contracts.each do |property_contract| %>
+      <% if property_contract.rent_payment_status == "false" %>
+        <div class="not-display">
+            <% @property.property_contracts.each do |property_contract| %>
+              <% if property_contract.rent_payment_status == "false" %>
+                  <div class="flex-card-action action-property in-red">
+                    <div class="space-bet">
+                      <i class="fas fa-exclamation-triangle icon-font fa-2x"></i>
+                      <div class="action-explain">
+                              Claim your rent
+                              <% end %>
+                          <% end %>
+                      </div>
+                    </div>
+              <% @property.property_contracts.each do |property_contract| %>
+              <% if property_contract.rent_payment_status == "false" %>
+                  <div class="action-to-do">
+                      <button type="button" class="action-to-do btn btn-danger" <%= render'shared/chatroom' %> </button>
+                        <% end %>
+                      <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+
               <% @balances.each do |balance| %>
                 <% balance.expenses.each do |expense| %>
                   <% if expense.state == "pending" %>
-                    <button type="button" class="action-to-do btn btn-danger">
-                      <%= link_to 'Refund', checkout_expense_path(id: expense.id) %>
-                    </button>
-                    <% end %>
+                    <div class="not-display">
+                      <% @balances.each do |balance| %>
+                      <% balance.expenses.each do |expense| %>
+                        <% if expense.state == "pending" %>
+                        <div class="flex-card-action action-property in-red">
+                          <div class="space-bet">
+                            <i class="fas fa-exclamation-triangle icon-font fa-2x"></i>
+                            <div class="action-explain">
+                                    Pay the plumber
+                                  <% end %>
+                                <% end %>
+                              <% end %>
+                            </div>
+                          </div>
+                  <% @balances.each do |balance| %>
+                  <% balance.expenses.each do |expense| %>
+                    <% if expense.state == "pending" %>
+                      <div class="action-to-do">
+                      <button type="button" class="action-to-do btn btn-danger">
+                        <%= link_to 'Refund', checkout_expense_path(id: expense.id) %>
+                      </button>
+                        <% end %>
+                        <% end %>
+                        <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                  <% end %>
                 <% end %>
-              <% end %>
-            </div>
 
-          </div>
 
 
         </div>
           <div class="add-an-info">
             <button type="button" class="btn btn-primary btn-sm position-btn-bottom"></i>Ajouter une tâche</button>
           </div>
-      </div>
+        </div>
 
       <div class="calendar-full-size">
         <%= render 'shared/calendar-show' %>
       </div>
     </div>
+
 
   <div class="info-flat-full">
     <%= render 'shared/flat-info' %>

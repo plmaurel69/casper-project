@@ -37,7 +37,6 @@ class PropertiesController < ApplicationController
       end
     end
 
-
     @contracts = PropertyContract.all
     @expenses = Expense.all
     @incomes = Income.all
@@ -64,10 +63,11 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @balance_sheet = PropertyContract.find_by(property: @property).balance_sheets.first
     @balances = BalanceSheet.all.where(property_contract_id: @property.id)
-    @expense_data_property1 = Expense.where(balance_sheet_id: 1, state: 'paid').sum(:amount)
-    @income_data_property1 = Income.where(balance_sheet_id: 1).sum(:amount)
-    @roi = @income_data_property1 - @expense_data_property1
+    @expense_data_property1 = Expense.where('extract(month from payment_date) = ?', Date.today.month).where(balance_sheet: @balance_sheet, state: 'paid').sum(:amount)
+    @income_data_property1 = Income.where('extract(month from payment_date) = ?', Date.today.month).where(balance_sheet: @balance_sheet).sum(:amount)
+    @roi = (@income_data_property1 - @expense_data_property1) / @income_data_property1 * 100
     @contracts = PropertyContract.all.where(property_id: @property.id)
     @expenses = Expense.all.where(property_contract_id: @property.id)
     # @users = PropertyContract.all.where(property_id: @property_contract.user.id)
