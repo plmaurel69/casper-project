@@ -12,13 +12,7 @@
           <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
             <div class="no-flex-in-card">
             <p>My Expenses</p>
-            <% @balances.each do |balance| %>
-            <% balance.expenses.each do |expense| %>
-              <% if expense.state == "paid" %>
-              <%= expense.amount %>
-              <% end %>
-            <% end %>
-          <% end %>
+            <%= @expense_data_property1 %>
           </div>
         </div>
 
@@ -26,25 +20,15 @@
           <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
             <div class="no-flex-in-card">
             <p>My incomes</p>
-            <% @balances.each do |balance| %>
-            <% balance.incomes.each do |income| %>
-              <%= income.amount %>
-            <% end %>
-          <% end %>
+            <%= @income_data_property1 %>
         </div>
       </div>
 
       <div class="flex-in-card">
         <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
           <div class="no-flex-in-card">
-          <p>My Expenses</p>
-          <% @balances.each do |balance| %>
-          <% balance.expenses.each do |expense| %>
-            <% if expense.state == "paid" %>
-            <%= expense.amount %>
-            <% end %>
-          <% end %>
-        <% end %>
+          <p>ROI</p>
+          <%= @roi %>
         </div>
       </div>
     </div>
