@@ -56,6 +56,7 @@
 
 .action-property {
   margin-right: 10px;
+  justify-content: space-between;
 }
 
 .calendar-full-size {
@@ -112,4 +113,81 @@
 
 .flex-card-action {
   display: flex;
+  height: 5em;
+}
+
+.really-small-img-to {
+  height: 10%;
+  width: 10%;
+}
+
+.align-info-center {
+  align-self: center;
+}
+
+.fa-plus-circle {
+  color: white;
+}
+
+.in-green {
+  background-color: #EFFCF6;
+
+}
+
+.in-red {
+  background-color: #FEEFEE;
+}
+
+.icon-font {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.fa-check-circle {
+  color: #42D34F;
+}
+
+.action-explain {
+  font-weight: bold;
+  font-size: large;
+}
+
+.fa-exclamation-triangle {
+  color: #FFCC00;
+}
+
+.space-bet {
+  display: flex;
+}
+
+.action-to-do {
+  margin-right: 0.5em;
+  border-radius: 0.5em;
+}
+
+#fc-dom-1 {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.position-btn-bottom {
+  position: absolute;
+  bottom: 18px;
+  right: 18px
+}
+
+.title-show {
+  color: #7F7F7F;
+  font-size: medium;
+}
+
+.kpi-show {
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.fa-backspace {
+  margin-left: 1em;
 }
