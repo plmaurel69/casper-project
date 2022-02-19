@@ -9,7 +9,7 @@
                 <%= f.input :property_name %>
                 <%= f.input :property_type %>
                 <%= f.input :address %>
-                <%= f.input :rental_status %>
+                <%= f.input :rental_status, :collection => [["Louée"],["Vacante"]], :label => "Est-ce que votre résidence est louée ?" %>
                 <%= f.input :size %>
                 <%= f.input :property_amount %>
                 <br>

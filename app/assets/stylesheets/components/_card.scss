@@ -7,10 +7,23 @@
   border-radius: 0.5em;
   // width: 350px;
   text-align: center;
-  margin: 2%;
+  margin-top: 0;
+  margin: 0 2% ;
   background: #fff;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: all 0.3s ease;
+}
+
+.card-graph {
+  border-radius: 0.5em;
+  // width: 350px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  padding: 2%;
+  margin-left: 2%;
+  margin-top: 2%;
 }
 
 .card-article:hover {
@@ -95,23 +108,38 @@
 }
 
 .element-card-2 {
+  display: inline-block;
   display: flex;
   flex-direction: column;
   padding: 5%;
   width: 60%;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .element-card-3 {
   display: flex;
   flex-direction: column;
-  margin-left: 20%;
   padding: 5%;
 }
 
-.property-status {
-  color: green;
+.property-status-1 {
+  color: rgb(255, 255, 255);
   background-color: lightgreen;
-  border-radius: 1em;
+  border-radius: 0.5em;
+  width: 10vh;
+  margin-top: 10%;
+  font-size: 12px;
+}
+
+.property-status-2 {
+  color: rgb(255, 255, 255);
+  background-color: rgb(190, 73, 57);
+  border-radius: 0.5em;
+  width: 10vh;
+  margin-top: 10%;
+  font-size: 12px;
 }
 
 .property-ROI {
