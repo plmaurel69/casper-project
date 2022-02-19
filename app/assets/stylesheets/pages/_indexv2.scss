@@ -32,7 +32,7 @@
 .properties-calendar {
   display: flex;
   justify-content: space-between;
-  margin: 10% 0 0 0;
+  margin: 30px 0 0 0;
 }
 
 .properties-container {
@@ -45,7 +45,7 @@
 }
 
 .main-container {
-  background-color: #E1F0FF;
+  background-color: #F7F7F7;
   min-height: 100vh;
 }
 
@@ -66,5 +66,13 @@
 }
 
 .property-name {
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
   color: black;
 }

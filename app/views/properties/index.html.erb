@@ -3,14 +3,16 @@
 </div>
 <div class = "container">
   <div class = dashboard>
-      <h1 id="titre-index-1">Money money money... 🤑 </h1>
 
+<div class="card-graph">
+<h1><ion-icon name="pie-chart-outline"></ion-icon></ion-icon> My KPIs </h1>
+<hr width="100%">
   <%= line_chart [
   {name: @property_1.property_name, data: @balance_data_property1},
   {name: @property_2.property_name, data: @balance_data_property2},
   {name: @property_3.property_name, data: @balance_data_property3}
   ]%>
-
+</div>
     </div>
       <div class="properties-calendar">
         <div class="properties-container">
@@ -25,11 +27,17 @@
                 </div>
                   <div class="element-card-2">
                     <div class="property-name">
-                        <%=link_to property.property_name, properties_path(property) %>
+                        <%=link_to property.property_name, property_path(property) %>
                     </div>
-                    <div class="property-status">
+                  <% if property.rental_status == "Louée" %>
+                    <div class="property-status-1">
                       <ion-icon name="checkmark-outline"></ion-icon><%= property.rental_status%>
                     </div>
+                  <% else %>
+                    <div class="property-status-2">
+                      <ion-icon name="checkmark-outline"></ion-icon><%= property.rental_status%>
+                    </div>
+                  <% end %>
                   </div>
                   </div>
                   <div class="element-card-3">
