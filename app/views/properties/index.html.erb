@@ -1,17 +1,24 @@
 <div class="header-index">
-  <H1>Dashboard</H1>
+  <H1 class="index-title">Dashboard</H1>
 </div>
 <div class = "container">
   <div class = dashboard>
 
 <div class="card-graph">
-<h1><ion-icon name="pie-chart-outline"></ion-icon></ion-icon> My KPIs </h1>
-<hr width="100%">
-  <%= line_chart [
-  {name: @property_1.property_name, data: @balance_data_property1},
-  {name: @property_2.property_name, data: @balance_data_property2},
-  {name: @property_3.property_name, data: @balance_data_property3}
-  ]%>
+  <div class="header-graph">
+    <h1 class="title-kpis"><ion-icon name="pie-chart-outline"></ion-icon></ion-icon> &nbsp; My KPIs </h1>
+    <div class="card-timeline">
+      <p class="card-timeline-item">Weekly</p>
+      <p class="card-timeline-item">Monthly</p>
+      <div class="selected-timeline"><p class="card-timeline-item">Semester</p></div>
+    </div>
+  </div>
+  <hr width="100%">
+    <%= line_chart [
+    {name: @property_1.property_name, data: @balance_data_property1},
+    {name: @property_2.property_name, data: @balance_data_property2},
+    {name: @property_3.property_name, data: @balance_data_property3}
+    ]%>
 </div>
     </div>
       <div class="properties-calendar">

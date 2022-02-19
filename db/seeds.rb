@@ -31,7 +31,7 @@ user3 = User.new(first_name: 'Emma', last_name: 'Schmidt', gender: 'Femme', prof
 user3.save!
 puts 'User 3 saved'
 
-property = Property.new(rental_status: 'Louée', size: '89', address: '4 Chemin du Bois, Caluire-et-Cuire', property_name: 'Maison en centre-ville de Caluire', property_type: 'Maison', property_amount: '370000', user_id: 1)
+property = Property.new(rental_status: 'À louer', size: '89', address: '4 Chemin du Bois, Caluire-et-Cuire', property_name: 'Maison en centre-ville de Caluire', property_type: 'Maison', property_amount: '370000', user_id: 1)
 property.save!
 puts "Property 1 saved"
 
@@ -39,7 +39,7 @@ property = Property.new(rental_status: 'Louée', size: '120', address: '6 Rue Mo
 property.save!
 puts "Property 2 saved"
 
-property = Property.new(rental_status: 'Louée', size: '100', address: '328 rue des pyrénées, 75020, Paris', property_name: 'Appartement 20eme', property_type: 'Appartement', property_amount: '300000', user_id: 1)
+property = Property.new(rental_status: 'À louer', size: '100', address: '328 rue des pyrénées, 75020, Paris', property_name: 'Appartement 20eme', property_type: 'Appartement', property_amount: '300000', user_id: 1)
 property.save!
 puts "Property 3 saved"
 

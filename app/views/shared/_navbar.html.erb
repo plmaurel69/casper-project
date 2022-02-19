@@ -1,8 +1,12 @@
     <div id="mySidenav" class="sidenav <%= 'navbar-home' if params[:controller] == 'pages' %>">
       <%= link_to "/", class: "navbar-brand" do %>
-
-      <div class="img-navbar"><%= image_tag "casper-seeklogo.com.png" %>
-      <% end %></div>
+        <div class="sidenav-header">
+          <div class="img-navbar"><%= image_tag "casper-seeklogo.com.png" %>
+          </div>
+          <div class="navbar-title">Casper Rent
+          </div>
+        </div>
+      <% end %>
 
       <br>
       <br>
