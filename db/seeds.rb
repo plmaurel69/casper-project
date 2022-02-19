@@ -27,7 +27,7 @@ user2 = User.new(first_name: 'Manon', last_name: 'Coulot', gender: 'Femme', prof
 user2.save!
 puts 'User 2 saved'
 
-user3 = User.new(first_name: 'Emma', last_name: 'Schmidt', gender: 'Femme', profession: 'Analyste', professional_status: 'Freelance', birth_date: '14/09/1984', user_type: 'Locataire', email: 'soeur@gmail.com', password: 'soeur@gmail.com' )
+user3 = User.new(first_name: '', last_name: '', gender: '', profession: '', professional_status: '', birth_date: '', user_type: '', email: 'soeur@gmail.com', password: 'soeur@gmail.com' )
 user3.save!
 puts 'User 3 saved'
 
@@ -43,11 +43,11 @@ property = Property.new(rental_status: 'À louer', size: '100', address: '328 ru
 property.save!
 puts "Property 3 saved"
 
-contract = PropertyContract.new(end_date: '12/12/2025', start_date: '12/12/2022', scheduled_payment_date: '12/12/2022', billing_frequency: 'monthly', rent_price: '2300', rent_payment_status: 'true', user_id: 1, property_id: 1)
+contract = PropertyContract.new(end_date: '12/12/2025', start_date: '12/12/2022', scheduled_payment_date: '12/12/2022', billing_frequency: 'monthly', rent_price: '2300', rent_payment_status: 'false', user_id: 2, property_id: 1)
 contract.save!
 puts "PropertyContract 1 saved"
 
-contract = PropertyContract.new(end_date: '19/05/2023', start_date: '19/05/2020', scheduled_payment_date: '19/05/2020', billing_frequency: 'weekly', rent_price: '1590', rent_payment_status: 'false', user_id: 1, property_id: 2)
+contract = PropertyContract.new(end_date: '19/05/2023', start_date: '19/05/2020', scheduled_payment_date: '19/05/2020', billing_frequency: 'weekly', rent_price: '1590', rent_payment_status: 'true', user_id: 3, property_id: 2)
 contract.save!
 puts "PropertyContract 2 saved"
 
