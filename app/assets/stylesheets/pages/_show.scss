@@ -41,12 +41,34 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 70px;
+  padding-top: 1px;
+  padding-right: 1em;
+  padding-left: 1em;
+  width: 90%;
   border: solid;
+  margin: 1em;
 }
 
 .petit-titre {
   padding-left: 20px;
-  background-color:#37B686;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  width: 70%;
+  border: solid;
+  background-color: #071B51;
+  opacity: 0.5;
+  color: white;
+}
+
+.titre {
+  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 80%;
+  background-color: #071B51;
+  opacity: 0.8;
+  color: white;
+  margin-bottom: 3px;
 }
 
 .calendar-flex {
@@ -190,4 +212,23 @@
 
 .fa-backspace {
   margin-left: 1em;
+}
+
+.show-full-white {
+  background-color: white;
+
+  border: groove
+}
+
+.preamnbule {
+  text-align-last: center;
+  margin-top: 1em;
+}
+
+.padding-for-you {
+  margin-left: 1em;
+}
+
+.btn-to-display-center {
+  margin-top: 2em;
 }

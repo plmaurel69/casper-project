@@ -1,58 +1,69 @@
-  <div class="row">
-  <div class="col-8">
-    <div>
-      <div class="préamnbule">
-        <h1>CONTRAT DE LOCATION/COLOCATION</h1>
-        <h3>LOGEMENT NON MEUBLÉ</h3>
-      </div>
-      <div class="titre"><h3>I. Désignation des parties</h3></div>
-        <p>Le présent contrat est conclu entre les soussignés :</p>
-        <div class="petit-titre"><h4>I.2. Bailleur</h4></div>
-        <p>Nom et prénom du bailleur : <strong> <%= @owner.first_name %> <%= @owner.last_name %></strong></p>
-        <p>Adresse email : <%= @owner.email %></p>
-        <div class="petit-titre"><h4>I.2. Locataire</h4></div>
-        <p>Nom et prénom : <strong><%= @user.first_name %> <%= @user.last_name %> </p></strong>
-        <p>Adresse email : <strong><%= @user.email %></p></strong>
-        <p>Profession : <strong><%= @user.profession %></p></strong>
-        <p>Statut employé : <strong><%= @user.professional_status %></p></strong>
-        </p> Il a été convenu ce qui suit entre le locataire et le propriétaire : <p>
-      <div class="titre"><h3>II.Objet du contrat</h3></div>
-      <p>Le présent contrat a pour objet la location d’un logement ainsi déterminé :</p>
-      <div class="petit-titre"> <h4> II.1. Consistance du logement</h4> </div>
-        <p>Adresse du logement (ex : adresse / bâtiment / étage / porte etc.) : <strong><%= @property.address %></strong> </p>
-        <p>Surface habitable : <strong><%= @property.size %>m2</strong> </p>
-      <div class="petit-titre"> <h4>II.2. Destination des locaux :</h4> </div>
-        <div class="box-a-cocher">
-          <p>Usage d’habitation</p>
-      </div>
-      <div class="titre">
-        <h3>III. Date de prise d’effet et durée du contrat</h3>
-      </div>
-      <p>La durée du contrat et sa date de prise d’effet sont ainsi définies :</p>
-      <p>Date de prise d’effet du contrat : <strong><%= @property_contract.start_date %></strong></p>
-      <div class="titre">
-        <h3>IV. Conditions financières</h3>
-      </div>
-      <p>Les parties conviennent des conditions financières suivantes :</p>
-      <div class="petit-titre"><h4>IV.1. Loyer : Fixation du loyer initial</h4></div>
-        <p>Montant du loyer mensuel :  <strong><%= @property_contract.rent_price %></strong></p>
-      <div class="petit-titre"><h4>IV.6. Modalités de paiement :</h4></div>
-        <p>Périodicité du paiement : <strong><%= @property_contract.billing_frequency %></strong> </p>
-        <p>Date ou période de paiement : <strong><%= @property_contract.scheduled_payment_date %></strong></p>
+  <div class="container remove-margin-paddin">
+    <div class="show-full-white">
+      <div>
+        <div class="preamnbule">
+          <h1>CONTRAT DE LOCATION/COLOCATION</h1>
+          <h3>LOGEMENT NON MEUBLÉ</h3>
+        </div>
+        <div class="titre"><h3>I. Désignation des parties</h3></div>
+          <p>Le présent contrat est conclu entre les soussignés :</p>
+          <div class="petit-titre"><h4>I.2. Bailleur</h4></div>
+          <div class="padding-for-you">
+          <p>Nom et prénom du bailleur : <strong> <%= @owner.first_name %> <%= @owner.last_name %></strong></p>
+          <p>Adresse email : <%= @owner.email %></p>
+          </div>
+          <div class="petit-titre"><h4>I.2. Locataire</h4></div>
+          <div class="padding-for-you">
+          <p>Nom et prénom : <strong><%= @user.first_name %> <%= @user.last_name %> </p></strong>
+          <p>Adresse email : <strong><%= @user.email %></p></strong>
+          <p>Profession : <strong><%= @user.profession %></p></strong>
+          <p>Statut employé : <strong><%= @user.professional_status %></p></strong>
+          </div>
+          </p> Il a été convenu ce qui suit entre le locataire et le propriétaire : <p>
+        <div class="titre"><h3>II.Objet du contrat</h3></div>
+        <p>Le présent contrat a pour objet la location d’un logement ainsi déterminé :</p>
+        <div class="petit-titre"> <h4> II.1. Consistance du logement</h4> </div>
+        <div class="padding-for-you">
+          <p>Adresse du logement (ex : adresse / bâtiment / étage / porte etc.) : <strong><%= @property.address %></strong> </p>
+          <p>Surface habitable : <strong><%= @property.size %>m2</strong> </p>
+          </div>
+        <div class="petit-titre"> <h4>II.2. Destination des locaux :</h4> </div>
+          <div class="box-a-cocher">
+            <p>Usage d’habitation</p>
+        </div>
+        <div class="titre">
+          <h3>III. Date de prise d’effet et durée du contrat</h3>
+        </div>
+        <div class="padding-for-you">
+        <p>La durée du contrat et sa date de prise d’effet sont ainsi définies :</p>
+        <p>Date de prise d’effet du contrat : <strong><%= @property_contract.start_date %></strong></p>
+        </div>
+        <div class="titre">
+          <h3>IV. Conditions financières</h3>
+        </div>
+        <p>Les parties conviennent des conditions financières suivantes :</p>
+        <div class="petit-titre"><h4>IV.1. Loyer : Fixation du loyer initial</h4></div>
+        <div class="padding-for-you">
+          <p>Montant du loyer mensuel :  <strong><%= @property_contract.rent_price %></strong></p>
+          </div>
+        <div class="petit-titre"><h4>IV.6. Modalités de paiement :</h4></div>
+        <div class="padding-for-you">
+          <p>Périodicité du paiement : <strong><%= @property_contract.billing_frequency %></strong> </p>
+          <p>Date ou période de paiement : <strong><%= @property_contract.scheduled_payment_date %></strong></p>
+          </div>
 
-      <div class="titre"><h3>V. Signatures</h3></div>
+        <div class="titre"><h3>V. Signatures</h3></div>
 
-      <div class="signature">
-        <p>Fait le à</p>
-        <p>Signature du bailleur</p>
-        <p>Fait le à</p>
-        <p>Signature du locataire</p>
-      </div>
-
+        <div class="signature">
+          <p>Fait le à</p>
+          <p>Signature du bailleur</p>
+          <p>Fait le à</p>
+          <p>Signature du locataire</p>
+        </div>
     </div>
   </div>
+
+<%= link_to 'Générer le PDF', property_contract_path(@property_contract, format: :pdf), target: '_blank', class:'btn btn-danger btn-to-display-center' %>
+
+
 </div>
-
-
-
-<%= link_to 'PDF', property_contract_path(@property_contract, format: :pdf), target: '_blank', class:'btn' %>
