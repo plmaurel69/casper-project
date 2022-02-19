@@ -1,34 +1,47 @@
 <div class="header-index">
-  <div class="icon-back"><i class="fas fa-backspace" href="/"></i></div>
+  <div class="icon-back"><a class="fas fa-backspace" href="/properties"></a></div>
 
   <div class="align-title-center"><h1> <%= @property.property_name %></h1></div>
 </div>
 <div class="container">
+    <div class="card-timeline">
+      <p class="card-timeline-item">Weekly</p>
+      <p class="card-timeline-item">Monthly</p>
+      <p class="card-timeline-item">Semestre</p>
+    </div>
   <div class="kpis-actions">
     <div class="card-kpis">
 
+        <div class="flex-in-card">
+          <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
+            <div class="no-flex-in-card">
+              <h5>My incomes</h5>
+            <div class="kpi-show">
+              <div class="kpi-show">
+                <%= number_to_currency(@income_data_property1, precision: 0, unit: "€", delimiter: " ", format: "%n %u") %>
+              </div>
+            </div>
+        </div>
+      </div>
 
         <div class="flex-in-card">
           <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
             <div class="no-flex-in-card">
-              <div class="title-show">My Expenses</div>
-              <div class="kpi-show"><%= @expense_data_property1 %></div>
+                <h5>My Expenses</h5>
+              <div class="kpi-show">
+                <%= number_to_currency(@expense_data_property1, precision: 0, unit: "€", delimiter: " ", format: "%n %u") %>
+              </div>
           </div>
         </div>
 
-        <div class="flex-in-card">
-          <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
-            <div class="no-flex-in-card">
-            <div class="title-show">My incomes</div>
-            <div class="kpi-show"><%= @income_data_property1 %></div>
-        </div>
-      </div>
 
       <div class="flex-in-card">
         <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
           <div class="no-flex-in-card">
-          <div class="title-show">ROI</div>
-          <div class="kpi-show"><%= @roi %></div>
+            <h5>Earnings</h5>
+          <div class="kpi-show">
+            <%= number_to_currency(@roi, precision: 2, unit: "%", separator: ",", format: "%n %u") %>
+          </div>
         </div>
       </div>
     </div>
@@ -43,6 +56,7 @@
       <div class="bordure"></div>
 
         <div class="dashboard-card-action">
+
 
       <% @property.renters.each do |renter| %>
       <% if renter.gender == "" %>
