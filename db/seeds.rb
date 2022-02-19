@@ -111,7 +111,7 @@ expense = Expense.new(balance_sheet_id: 1, amount: '18', type: 'Admin', paid: tr
 expense.save!
 puts "Expense 7 Property 1 saved"
 
-expense = Expense.new(balance_sheet_id: 1, amount: '549', type: 'plumber', paid: false, state: 'pending')
+expense = Expense.new(balance_sheet_id: 1, amount: '549', type: 'plumber', paid: false, state: 'pending', payment_date: '2022-02-26')
 expense.save!
 puts "Expense 1 Property 1 saved"
 

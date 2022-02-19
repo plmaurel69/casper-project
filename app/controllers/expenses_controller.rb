@@ -18,8 +18,8 @@ class ExpensesController < ApplicationController
         quantity: 1
       }],
       mode: 'payment',
-      success_url: "https://casper-rental.herokuapp.com/properties/1",
-      cancel_url: "https://casper-rental.herokuapp.com/properties/1",
+      success_url: "https://0ab3-89-3-77-113.ngrok.io/properties/1",
+      cancel_url: "https://0ab3-89-3-77-113.ngrok.io/properties/1",
     )
     expense.update(checkout_session_id: session.id)
     redirect_to new_expense_payment_path(expense)
