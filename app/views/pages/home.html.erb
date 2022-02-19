@@ -1,14 +1,25 @@
 <div class ="container-general-home">
-    <div class="home-banner">
-      <div class="home-banner-container">
-        <h1 class="home-description">Optimise the management of your properties</h1>
-        <button class="btn btn-primary"><%=link_to "Let's visit", properties_path %></button>
-      </div>
+  <div class="home-banner">
+    <div class="home-banner-container">
+      <h1 class="home-description">Optimise the management of your properties</h1>
+      <button class="btn nav-link"><%=link_to "Manage my properties", properties_path %></button>
     </div>
-
+  </div>
     <div class="home-articles">
       <div class="home-articles-container">
-        <h2>Last news</h2>
+        <h2>A complete interface, easy to control</h2>
+        <br>
+        <p class="card-product">Manage the arrivals and departures of your tenants, refunds and even manage tenant's contracts in a few clicks with complete peace of mind.</p>
+        <p class="card-product">Refund a tenant? Refund your tenant from your space.</p>
+        <p><%=link_to "Discover the platform to find out more.", properties_path %></p>
+      </div>
+
+      <%# <div class="home-articles-container">
+        <h3 class="card-number-users">100 000 members trust Casper Rent for their rent Management</h3>
+      </div> %>
+
+      <div class="home-articles-container">
+        <h2>Last news for landlords</h2>
         <br>
         <div class="cards-home">
           <div class="card-article-home">
@@ -34,23 +45,23 @@
         <div class="card-article-home">
             <div class="card-content">
               <img class="card-img-top-home" src="<%= image_path('loyer.jpg') %>" alt="Card image cap">
-              <div class="card-body" src="https://www.service-public.fr/particuliers/vosdroits/F31272">
-                <h5 class="card-title">Public Service</h5>
+              <div class="card-body">
+                <h5 class="card-title" >Public Service</h5>
                   <p class="card-text">Unpaid rent and tenant eviction</p>
-                </a>
+                  <a href="https://www.service-public.fr/particuliers/vosdroits/F31272"class="btn btn-primary">Read more</a>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="home-articles-container">
+        <h2>They talk about us</h2>
+        <br>
+        <div class="reference-cards">
+        <img src=<%= image_path('Le_Parisien_-_logo_2016.png') %> alt="Le Parisien" class="reference">
+        <img src=<%= image_path('figaro-logo.jpg') %> alt="Le Figaro" class="reference">
+        <img src=<%= image_path('ouest-france.jpg') %> alt="Ouest France" class="reference">
+        <img src=<%= image_path('TF1_(2013).svg.png') %> alt="TF1" class="reference">
+        </div>
       </div>
     </div>
-    <div class="home-articles-container">
-      <h1>They talk about us</h1>
-      <br>
-      <div class="reference-cards">
-      <img src=<%= image_path('Le_Parisien_-_logo_2016.png') %> alt="" class="reference">
-      <img src=<%= image_path('figaro-logo.jpg') %> alt="" class="reference">
-      <img src=<%= image_path('ouest-france.jpg') %> alt="" class="reference">
-      <img src=<%= image_path('TF1_(2013).svg.png') %> alt="" class="reference">
-      </div>
-    </div>
-</div>

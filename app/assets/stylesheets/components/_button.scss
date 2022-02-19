@@ -7,7 +7,8 @@
   color: white;
   padding: 8px 24px;
   border-radius: 0.5em;
-  background: #167FFB;
+  background: #081A51;
+  border-color: #081A51;
   transition: background 0.3s ease;
   text-decoration: none;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -18,7 +19,8 @@
   color: white;
   padding: 8px 24px;
   border-radius: 0.5em;
-  background: #167FFB;
+  background: #081A51;
+  border-color: #081A51;
   text-decoration: none;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   // width: 133px;
@@ -28,3 +30,29 @@
 // secondaire
 
 // tertiaire
+
+.nav-link {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 0.5em;
+  background: #081A51;
+  border-color: #081A51;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: all 0.5s ease;
+}
+
+.nav-link a{
+  color:white;
+}
+.nav-link:hover{
+  color: white;
+  padding: 8px 24px;
+  border-radius: 0.5em;
+  background: #081A51;
+  border-color: #081A51;
+  text-decoration: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  // width: 133px;
+}

@@ -5,7 +5,7 @@
   <div class = dashboard>
 
 <div class="card-graph">
-<h1><ion-icon name="pie-chart-outline"></ion-icon></ion-icon> My KPIs </h1>
+<h2><ion-icon name="pie-chart-outline"></ion-icon></ion-icon> My KPIs </h1>
 <hr width="100%">
   <%= line_chart [
   {name: @property_1.property_name, data: @balance_data_property1},
@@ -16,7 +16,7 @@
     </div>
       <div class="properties-calendar">
         <div class="properties-container">
-          <h1><ion-icon name="heart-half-outline"></ion-icon> Mes locations </h1>
+          <h2><ion-icon name="heart-half-outline"></ion-icon> Mes locations </h1>
           <hr width="100%">
           <div class = card-properties>
             <% @properties.each do |property| %>
