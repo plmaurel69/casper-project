@@ -56,12 +56,8 @@
   border-radius: 0.5em;
   height: 82px;
   width: auto;
+  background-image: cover;
 }
-
-// .cards-kpi {
-//   display: flex;
-//   justify-content: space-between;
-// }
 
 .card-kpis {
   justify-content: space-between;
@@ -128,7 +124,7 @@
 
 .property-status-1 {
   color: rgb(255, 255, 255);
-  background-color: lightgreen;
+  background-color: #6ED451;
   border-radius: 0.5em;
   width: 10vh;
   margin-top: 10%;
@@ -137,7 +133,7 @@
 
 .property-status-2 {
   color: rgb(255, 255, 255);
-  background-color: rgb(190, 73, 57);
+  background-color: #E63E33;
   border-radius: 0.5em;
   width: 10vh;
   margin-top: 10%;
@@ -149,6 +145,7 @@
   margin-bottom: 5%;
   margin-right: 2.5%;
   color: rgb(63, 63, 63);
+  font-weight: bold;
 }
 
 .title-card-element {
@@ -188,4 +185,50 @@
   padding: 1%;
   display: flex;
   justify-content: space-between;
+}
+
+// bandeau qui encadre graph
+.header-graph {
+  display: flex;
+  justify-content: space-between;
+}
+
+// alignement du header et de l'icone à gauche
+.title-kpis {
+  display: flex;
+  align-items: left;
+}
+
+// display flex de la timeline + backround
+.card-timeline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #F5F7FB;
+  align-items: center;
+  border-radius: 0.5rem;
+  height: 48px;
+  padding-right: 0.5%;
+  width: 328px;
+}
+
+
+.card-timeline-item {
+  margin-top: 6%;
+  padding: 5%;
+  color: #A9ABB0;
+}
+
+.selected-timeline {
+  border-radius: 0.5em;
+  text-align: center;
+  background: #fff;
+  margin: 10px 0;
+  height: 40px;
+  width: 107px;
+  .card-timeline-item {
+  margin-top: 6%;
+  padding: 4%;
+  color: #017EFA;
+  }
 }
