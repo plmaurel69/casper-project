@@ -12,7 +12,9 @@
           <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
             <div class="no-flex-in-card">
               <div class="title-show">My Expenses</div>
-              <div class="kpi-show"><%= @expense_data_property1 %></div>
+              <div class="kpi-show">
+              <%= number_to_currency(@expense_data_property1, precision: 0, unit: "€", delimiter: " ", format: "%n %u") %>
+              </div>
           </div>
         </div>
 
@@ -20,7 +22,9 @@
           <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
             <div class="no-flex-in-card">
             <div class="title-show">My incomes</div>
-            <div class="kpi-show"><%= @income_data_property1 %></div>
+            <div class="kpi-show">
+            <%= number_to_currency(@income_data_property1, precision: 0, unit: "€", delimiter: " ", format: "%n %u") %>
+            </div>
         </div>
       </div>
 
@@ -28,7 +32,9 @@
         <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
           <div class="no-flex-in-card">
           <div class="title-show">ROI</div>
-          <div class="kpi-show"><%= @roi %></div>
+          <div class="kpi-show">
+          <%= number_to_currency(@roi, precision: 2, unit: "%", separator: ",", format: "%n %u") %>
+          </div>
         </div>
       </div>
     </div>
