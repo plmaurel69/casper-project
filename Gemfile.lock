@@ -1,8 +1,8 @@
 GIT
-  remote: git://github.com/camdez/wkhtmltopdf-heroku.git
-  revision: 09f42e0fd9cf98361343738ccd7fdf6395df7dd0
+  remote: https://github.com/rposborne/wkhtmltopdf-heroku
+  revision: 0cd521e6cd6fadafed475cc5a8befcab686bcf18
   specs:
-    wkhtmltopdf-heroku (0.2.0)
+    wkhtmltopdf-heroku (2.12.6.0)
 
 GEM
   remote: https://rubygems.org/
