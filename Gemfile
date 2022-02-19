@@ -42,6 +42,8 @@ gem 'momentjs-rails'
 gem 'cloudinary', '~> 1.16.0'
 gem 'wicked_pdf'
 gem "wkhtmltopdf-heroku"
+gem "wkhtmltopdf-heroku", :git => 'git://github.com/camdez/wkhtmltopdf-heroku.git'
+
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
