@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/camdez/wkhtmltopdf-heroku.git
+  revision: 09f42e0fd9cf98361343738ccd7fdf6395df7dd0
+  specs:
+    wkhtmltopdf-heroku (0.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -279,7 +285,6 @@ GEM
     wicked_pdf (2.1.0)
       activesupport
     wkhtmltopdf-binary (0.12.6.5)
-    wkhtmltopdf-heroku (2.12.6.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.5.4)
@@ -326,7 +331,7 @@ DEPENDENCIES
   webpacker (~> 5.0)
   wicked_pdf
   wkhtmltopdf-binary
-  wkhtmltopdf-heroku
+  wkhtmltopdf-heroku!
 
 RUBY VERSION
    ruby 2.7.3p183
