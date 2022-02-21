@@ -41,7 +41,7 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'cloudinary', '~> 1.16.0'
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-heroku', git:'https://github.com/rposborne/wkhtmltopdf-heroku'
+# gem 'wkhtmltopdf-heroku', git:'https://github.com/rposborne/wkhtmltopdf-heroku'
 
 
 gem 'autoprefixer-rails', '10.2.5'
