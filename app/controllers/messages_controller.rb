@@ -11,14 +11,14 @@ class MessagesController < ApplicationController
     @message.user = current_user
     if @message.save!
       PropertyContractChannel.broadcast_to(
-      @property_contract,
-      render_to_string(partial: "messages/message.html.erb", locals: { message: @message })
-      )
-      respond_to do |format|
-        format.html {redirect_to property_path(@property_contract.property, anchor: "message-#{@message.id}")}
-        format.json
-      end
-    else
+        @property_contract,
+        render_to_string(partial: "messages/message.html.erb", locals: { message: @message })
+        )
+        respond_to do |format|
+          format.html {redirect_to property_path(@property_contract.property, anchor: "message-#{@message.id}")}
+          format.json
+        end
+      else
       respond_to do |format|
         format.html {render "properties/show"}
         format.json

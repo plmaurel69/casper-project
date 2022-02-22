@@ -19,7 +19,7 @@
         {name: @property_1.property_name, data: @balance_data_property1},
         {name: @property_2.property_name, data: @balance_data_property2},
         {name: @property_3.property_name, data: @balance_data_property3}
-        ]%>
+        ], colors: ["#017EFA", "#FD1F9B", "#30D987"]%>
     </div>
   </div>
 
@@ -54,10 +54,19 @@
                       </div>
                     <% end %>
                   </div>
-              </div>
-              <div class="element-card-3">
-                <div class="ROI-title">
-                  <%= "ROI" %>
+                  <div class="element-card-3">
+                    <div class="ROI-title">
+                    <%= "ROI" %>
+                    </div>
+                    <div class="property-ROI">
+                      <% if property.property_name == 'Flat in the heart of Roubaix' %>
+                      <%= number_to_currency(@roi_1, precision: 1, unit: "%", separator: ",", format: "%n%u") %>
+                      <% elsif property.property_name == 'Flat near Bordeaux' %>
+                      <%= number_to_currency(@roi_2, precision: 1, unit: "%", separator: ",", format: "%n%u") %>
+                      <% else %>
+                      <%= number_to_currency(@roi_3, precision: 1, unit: "%", separator: ",", format: "%n%u") %>
+                      <% end %>
+                    </div>
                 </div>
                   <div class="property-ROI">
                     <%= "-7.7%"  %>
