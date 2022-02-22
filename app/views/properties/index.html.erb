@@ -6,7 +6,7 @@
 
 <div class="card-graph">
   <div class="header-graph">
-    <h1 class="title-kpis"><ion-icon name="pie-chart-outline"></ion-icon></ion-icon> &nbsp; My KPIs </h1>
+    <h2 class="title-kpis"><ion-icon name="pie-chart-outline"></ion-icon></ion-icon> &nbsp; My KPIs </h2>
     <div class="card-timeline">
       <p class="card-timeline-item">Weekly</p>
       <p class="card-timeline-item">Monthly</p>
@@ -17,8 +17,8 @@
     <%= line_chart [
     {name: @property_1.property_name, data: @balance_data_property1},
     {name: @property_2.property_name, data: @balance_data_property2},
-    {name: @property_3.property_name, data: @balance_data_property3}
-    ]%>
+    {name: @property_3.property_name, data: @balance_data_property3},
+    ], colors: ["#017EFA", "#FD1F9B", "#30D987"]%>
 </div>
     </div>
       <div class="properties-calendar">
@@ -36,7 +36,7 @@
                     <div class="property-name">
                         <%=link_to property.property_name, property_path(property) %>
                     </div>
-                  <% if property.rental_status == "Louée" %>
+                  <% if property.rental_status == "Rented" %>
                     <div class="property-status-1">
                       <ion-icon name="checkmark-outline"></ion-icon><%= property.rental_status%>
                     </div>
@@ -52,9 +52,14 @@
                     <%= "ROI" %>
                     </div>
                     <div class="property-ROI">
-                      <%= "-7.7%"  %>
+                      <% if property.property_name == 'Maison en centre-ville de Caluire' %>
+                      <%= number_to_currency(@roi_1, precision: 1, unit: "%", separator: ",", format: "%n%u") %>
+                      <% elsif property.property_name == 'Appartement au dernier étage' %>
+                      <%= number_to_currency(@roi_2, precision: 1, unit: "%", separator: ",", format: "%n%u") %>
+                      <% else %>
+                      <%= number_to_currency(@roi_3, precision: 1, unit: "%", separator: ",", format: "%n%u") %>
+                      <% end %>
                     </div>
-
                 </div>
               </div>
             <% end %>

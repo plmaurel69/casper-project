@@ -31,15 +31,15 @@ user3 = User.new(first_name: '', last_name: '', gender: '', profession: '', prof
 user3.save!
 puts 'User 3 saved'
 
-property = Property.new(rental_status: 'Louée', size: '89', address: '4 Chemin du Bois, Caluire-et-Cuire', property_name: 'Maison en centre-ville de Caluire', property_type: 'Maison', property_amount: '370000', user_id: 1)
+property = Property.new(rental_status: 'Rented', size: '89', address: '4 Chemin du Bois, Caluire-et-Cuire', property_name: 'Maison en centre-ville de Caluire', property_type: 'Maison', property_amount: '370000', user_id: 1)
 property.save!
 puts "Property 1 saved"
 
-property = Property.new(rental_status: 'À louer', size: '120', address: '6 Rue Montcalm, 75018, Paris', property_name: 'Appartement au dernier étage', property_type: 'Appartement', property_amount: '240000', user_id: 1)
+property = Property.new(rental_status: 'To Rent', size: '120', address: '6 Rue Montcalm, 75018, Paris', property_name: 'Appartement au dernier étage', property_type: 'Appartement', property_amount: '240000', user_id: 1)
 property.save!
 puts "Property 2 saved"
 
-property = Property.new(rental_status: 'Louée', size: '100', address: '328 rue des pyrénées, 75020, Paris', property_name: 'Appartement 20eme', property_type: 'Appartement', property_amount: '300000', user_id: 1)
+property = Property.new(rental_status: 'Rented', size: '100', address: '328 rue des pyrénées, 75020, Paris', property_name: 'Appartement 20eme', property_type: 'Appartement', property_amount: '300000', user_id: 1)
 property.save!
 puts "Property 3 saved"
 
@@ -111,7 +111,7 @@ expense = Expense.new(balance_sheet_id: 1, amount: '18', type: 'Admin', paid: tr
 expense.save!
 puts "Expense 7 Property 1 saved"
 
-expense = Expense.new(balance_sheet_id: 1, amount: '549', type: 'plumber', paid: false, state: 'pending')
+expense = Expense.new(balance_sheet_id: 1, amount: '549', type: 'plumber', paid: false, state: 'pending', payment_date: '2022-02-26')
 expense.save!
 puts "Expense 1 Property 1 saved"
 

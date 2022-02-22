@@ -46,15 +46,15 @@
 .nav-link a{
   color:white;
 }
-.nav-link:hover{
+.nav-link:hover a{
   color: white;
-  padding: 8px 24px;
-  border-radius: 0.5em;
-  background: #081A51;
-  border-color: #081A51;
-  text-decoration: none;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  font-weight: bold;
   // width: 133px;
+}
+
+.nav-link:hover{
+  background: #1f3985;
+  border-color: #1f3985;
 }
 .action-to-do a{
   color:white;
@@ -101,4 +101,17 @@
 .ionicon-icon-important {
   padding: 2% 4% 4% 4%;
   size: 64px;
+}
+
+.fc-scrollgrid-liquid{
+  margin-top: 20px;
+}
+
+.btn-danger{
+  width: 140px;
+  font-size: 15px;
+}
+
+.btn-danger:hover a{
+  color: white;
 }

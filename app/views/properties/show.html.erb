@@ -13,7 +13,9 @@
          <ion-icon class="ionicon-icon" name="wallet-outline" size="large"></ion-icon>
             <div class="no-flex-in-card">
               <div class="title-show">My Expenses</div>
-              <div class="kpi-show"><%= @expense_data_property1 %></div>
+              <div class="kpi-show">
+              <%= number_to_currency(@expense_data_property1, precision: 0, unit: "€", delimiter: " ", format: "%n %u") %>
+              </div>
           </div>
         </div>
 
@@ -21,7 +23,9 @@
           <ion-icon class="ionicon-icon" name="cash-outline" size="large"></ion-icon>
             <div class="no-flex-in-card">
             <div class="title-show">My incomes</div>
-            <div class="kpi-show"><%= @income_data_property1 %></div>
+            <div class="kpi-show">
+            <%= number_to_currency(@income_data_property1, precision: 0, unit: "€", delimiter: " ", format: "%n %u") %>
+            </div>
         </div>
       </div>
 
@@ -29,7 +33,9 @@
         <ion-icon class="ionicon-icon-analytics" name="analytics-outline" size="large"></ion-icon>
           <div class="no-flex-in-card">
           <div class="title-show">ROI</div>
-          <div class="kpi-show"><%= @roi %></div>
+          <div class="kpi-show">
+          <%= number_to_currency(@roi, precision: 2, unit: "%", separator: ",", format: "%n %u") %>
+          </div>
         </div>
       </div>
     </div>
@@ -38,7 +44,7 @@
     <div  class="card-kpis-action position-relative">
       <div class="flex-img">
         <ion-icon class="ionicon-icon-important" name="search-outline" size="large"></ion-icon>
-        <div class="align-important-center"><h2>Key informations</h2></div>
+        <div class="align-important-center"><h2>Important tasks</h2></div>
       </div>
 
       <div class="bordure"></div>
