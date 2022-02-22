@@ -3,5 +3,7 @@
     <%= message.user.first_name %><div class="message-date">
     <%= message.created_at.strftime("%l:%M%p") %></div>
   </div>
-  <p class="message-content <%= message.user == current_user ? 'class-proprio' : 'class-locataire' %>"><%= message.content %></p>
+  <p class="message-content <%= message.user == current_user ? 'class-proprio' : 'class-locataire' %>"><%= message.content %>
+  <div class="message-file"><%= message.file.filename %>
+  </div></p>
 </div>
