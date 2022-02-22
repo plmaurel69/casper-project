@@ -59,3 +59,24 @@
 .action-to-do a{
   color:white;
 }
+
+.backspace {
+  padding: 1%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.backspace:hover {
+  padding: 1%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  color: grey;
+}
+
+.button-ionicon {
+  background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+	outline: inherit;
+}
