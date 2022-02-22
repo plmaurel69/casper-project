@@ -28,7 +28,7 @@ const setCalendarPropertyShow = () => {
         borderColor: '#081A51',
       },
       {
-        title: 'Construction Flat #2',
+        title: 'Plumber Flat #1',
         start: '2022-02-07',
         end: '2022-02-10',
         backgroundColor: '#081A51',
@@ -42,31 +42,13 @@ const setCalendarPropertyShow = () => {
       },
       {
         title: 'Conference Landlords',
-        start: '2022-02-14',
-        backgroundColor: '#081A51',
-      },
-      {
-        title: 'Buy new flat',
-        start: '2022-02-14',
-        backgroundColor: '#081A51',
-        borderColor: '#081A51',
-      },
-      {
-        title: 'OFF Vacation',
-        start: '2022-02-15',
-        end: '2022-02-25',
+        start: '2022-02-25',
         backgroundColor: '#081A51',
         borderColor: '#081A51',
       },
       {
         title: 'Pay Rent Day',
         start: '2022-03-09',
-        backgroundColor: '#081A51',
-        borderColor: '#081A51',
-      },
-      {
-        title: 'End of Contract Flat #3',
-        start: '2022-03-20',
         backgroundColor: '#081A51',
         borderColor: '#081A51',
       },
