@@ -1,5 +1,6 @@
 <div class="header-index">
-  <div class="icon-back"><a class="fas fa-backspace" href="/properties"></a></div>
+
+  <button class="button-ionicon" onclick='location.href="/properties"'><ion-icon class="backspace" name="chevron-back-outline" size="large"><a href="/properties"></a></ion-icon></button>
 
   <div class="align-title-center"><h1> <%= @property.property_name %></h1></div>
 </div>
@@ -9,7 +10,7 @@
 
 
         <div class="flex-in-card">
-          <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
+         <ion-icon class="ionicon-icon" name="wallet-outline" size="large"></ion-icon>
             <div class="no-flex-in-card">
               <div class="title-show">My Expenses</div>
               <div class="kpi-show">
@@ -19,7 +20,7 @@
         </div>
 
         <div class="flex-in-card">
-          <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
+          <ion-icon class="ionicon-icon" name="cash-outline" size="large"></ion-icon>
             <div class="no-flex-in-card">
             <div class="title-show">My incomes</div>
             <div class="kpi-show">
@@ -29,7 +30,7 @@
       </div>
 
       <div class="flex-in-card">
-        <img src=<%= image_path('bankruptcy.png') %> alt="" class="img-on-card">
+        <ion-icon class="ionicon-icon-analytics" name="analytics-outline" size="large"></ion-icon>
           <div class="no-flex-in-card">
           <div class="title-show">ROI</div>
           <div class="kpi-show">
@@ -40,9 +41,9 @@
     </div>
 
   <div class="calendar-flex">
-    <div class="card-kpis-action position-relative">
+    <div  class="card-kpis-action position-relative">
       <div class="flex-img">
-        <img src=<%= image_path('bankruptcy.png') %> alt="" class="small-img-to">
+        <ion-icon class="ionicon-icon-important" name="search-outline" size="large"></ion-icon>
         <div class="align-important-center"><h2>Important tasks</h2></div>
       </div>
 
@@ -59,7 +60,7 @@
                     <div class="space-bet">
                       <i class="fas fa-exclamation-triangle icon-font fa-2x"></i>
                       <div class="action-explain">
-                              Nouveau contrat
+                              New contract
                               <% end %>
                           <% end %>
                       </div>

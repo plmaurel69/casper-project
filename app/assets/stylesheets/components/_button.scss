@@ -60,6 +60,49 @@
   color:white;
 }
 
+.backspace {
+  padding: 1%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.backspace:hover {
+  padding: 1%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  color: grey;
+}
+
+.button-ionicon {
+  background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+	outline: inherit;
+}
+
+
+.ionicon-icon {
+  padding: 5%;
+  size: 64px;
+  margin-right: 10%;
+}
+
+.ionicon-icon-flat {
+  padding: 2%;
+  size: 64px;
+  margin-bottom: 1.5%;
+}
+
+.ionicon-icon-analytics {
+  size: 64px;
+}
+
+.ionicon-icon-important {
+  padding: 2% 4% 4% 4%;
+  size: 64px;
+}
+
 .fc-scrollgrid-liquid{
   margin-top: 20px;
 }
