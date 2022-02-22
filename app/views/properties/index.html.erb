@@ -1,70 +1,77 @@
 <div class="header-index">
-  <H1 class="index-title">Dashboard</H1>
+
+  <div class="icon-back"><a class="fas fa-backspace" href="/properties"></a></div>
+  <div class="align-title-center"><h1> Dashboard</h1></div>
 </div>
 <div class = "container">
   <div class = dashboard>
-
-<div class="card-graph">
-  <div class="header-graph">
-    <h2 class="title-kpis"><ion-icon name="pie-chart-outline"></ion-icon></ion-icon> &nbsp; My KPIs </h2>
-    <div class="card-timeline">
-      <p class="card-timeline-item">Weekly</p>
-      <p class="card-timeline-item">Monthly</p>
-      <div class="selected-timeline"><p class="card-timeline-item">Semester</p></div>
+    <div class="card-graph">
+      <div class="header-graph">
+        <h2 class="title-kpis"><ion-icon name="pie-chart-outline"></ion-icon></ion-icon> &nbsp; My KPIs </h2>
+          <div class="card-timeline">
+            <p class="card-timeline-item">Weekly</p>
+            <p class="card-timeline-item">Monthly</p>
+              <div class="selected-timeline"><p class="card-timeline-item">Semester</p></div>
+          </div>
+      </div>
+      <hr width="100%">
+        <%= line_chart [
+        {name: @property_1.property_name, data: @balance_data_property1},
+        {name: @property_2.property_name, data: @balance_data_property2},
+        {name: @property_3.property_name, data: @balance_data_property3}
+        ]%>
     </div>
   </div>
-  <hr width="100%">
-    <%= line_chart [
-    {name: @property_1.property_name, data: @balance_data_property1},
-    {name: @property_2.property_name, data: @balance_data_property2},
-    {name: @property_3.property_name, data: @balance_data_property3}
-    ]%>
-</div>
-    </div>
-      <div class="properties-calendar">
-        <div class="properties-container">
-          <h2><ion-icon name="heart-half-outline"></ion-icon> My Flats </h2>
-          <hr width="100%">
-          <div class = card-properties>
-            <% @properties.each do |property| %>
-              <div class="card-property">
+
+  <div class="properties-calendar">
+    <div class="properties-container">
+      <h2><ion-icon name="heart-half-outline"></ion-icon> My Flats </h2>
+      <hr width="100%">
+        <div class = card-properties>
+          <% @properties.each do |property| %>
+            <div class="card-property">
               <div class="card-property-content">
                 <div class="img-properties">
-                  <img class="card-img-top" src="<%= image_path('Property1_Picture.jpg') %>" alt="Card image cap">
+                    <% if property.property_name == 'Flat in the heart of Roubaix' %>
+                      <img src=<%= image_path('Flat1.png') %> alt="" class="img-on-card">
+                      <% elsif property.property_name == 'Flat near Bordeaux' %>
+                      <img src=<%= image_path('Flat2.png') %> alt="" class="img-on-card">
+                      <% else %>
+                      <img src=<%= image_path('Flat3.png') %> alt="" class="img-on-card">
+                      <% end %>
                 </div>
                   <div class="element-card-2">
                     <div class="property-name">
-                        <%=link_to property.property_name, property_path(property) %>
+                      <%=link_to property.property_name, property_path(property) %>
                     </div>
-                  <% if property.rental_status == "Rented" %>
+                    <% if property.rental_status == "Rented" %>
                     <div class="property-status-1">
                       <ion-icon name="checkmark-outline"></ion-icon><%= property.rental_status%>
                     </div>
-                  <% else %>
-                    <div class="property-status-2">
-                      <ion-icon name="checkmark-outline"></ion-icon><%= property.rental_status%>
-                    </div>
-                  <% end %>
+                    <% else %>
+                      <div class="property-status-2">
+                        <ion-icon name="checkmark-outline"></ion-icon><%= property.rental_status%>
+                      </div>
+                    <% end %>
                   </div>
-                  </div>
-                  <div class="element-card-3">
-                    <div class="ROI-title">
-                    <%= "ROI" %>
-                    </div>
-                    <div class="property-ROI">
-                      <%= "-7.7%"  %>
-                    </div>
-
-                </div>
               </div>
+              <div class="element-card-3">
+                <div class="ROI-title">
+                  <%= "ROI" %>
+                </div>
+                  <div class="property-ROI">
+                    <%= "-7.7%"  %>
+                  </div>
+              </div>
+            </div>
             <% end %>
-          </div>
-    </div>
-    <div class="calendar">
-      <%= render 'shared/calendar-show' %>
+        </div>
+      </div>
+      <div class="calendar-full-size">
+        <%= render 'shared/calendar-index' %>
+      </div>
     </div>
   </div>
 </div>
-
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

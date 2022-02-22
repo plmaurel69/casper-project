@@ -36,7 +36,7 @@ const setCalendarPropertyShow = () => {
       },
       {
         title: 'Pay Rent Day',
-        start: '2022-02-09',
+        start: '2022-02-23',
         backgroundColor: '#081A51',
         borderColor: '#081A51',
       },
@@ -46,9 +46,18 @@ const setCalendarPropertyShow = () => {
         backgroundColor: '#081A51',
         borderColor: '#081A51',
       },
+
+      {
+        title: 'Paintwork',
+        start: '2022-03-07',
+        end: '2022-03-10',
+        backgroundColor: '#081A51',
+        borderColor: '#081A51',
+      },
+
       {
         title: 'Pay Rent Day',
-        start: '2022-03-09',
+        start: '2022-03-23',
         backgroundColor: '#081A51',
         borderColor: '#081A51',
       },
