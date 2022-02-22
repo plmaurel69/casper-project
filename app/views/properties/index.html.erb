@@ -17,8 +17,8 @@
     <%= line_chart [
     {name: @property_1.property_name, data: @balance_data_property1},
     {name: @property_2.property_name, data: @balance_data_property2},
-    {name: @property_3.property_name, data: @balance_data_property3}
-    ]%>
+    {name: @property_3.property_name, data: @balance_data_property3},
+    ], colors: ["#017EFA", "#FD1F9B", "#30D987"]%>
 </div>
     </div>
       <div class="properties-calendar">
@@ -52,9 +52,14 @@
                     <%= "ROI" %>
                     </div>
                     <div class="property-ROI">
-                      <%= "-7.7%"  %>
+                      <% if property.property_name == 'Maison en centre-ville de Caluire' %>
+                      <%= number_to_currency(@roi_1, precision: 1, unit: "%", separator: ",", format: "%n%u") %>
+                      <% elsif property.property_name == 'Appartement au dernier étage' %>
+                      <%= number_to_currency(@roi_2, precision: 1, unit: "%", separator: ",", format: "%n%u") %>
+                      <% else %>
+                      <%= number_to_currency(@roi_3, precision: 1, unit: "%", separator: ",", format: "%n%u") %>
+                      <% end %>
                     </div>
-
                 </div>
               </div>
             <% end %>
