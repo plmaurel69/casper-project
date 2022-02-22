@@ -35,12 +35,12 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('calendar-property-show') != null) {
     setCalendarPropertyShow();
   }
-  else if (document.getElementById('calendar-properties-index') != null) {
-    setCalendarPropertiesIndex();
+  else if (document.getElementById('calendar-property-index') != null) {
+    setCalendarPropertyIndex();
   }
 });
 
-import { setCalendarPropertiesIndex } from '../packs/fullcalendar_properties_index.js';
+import { setCalendarPropertyIndex } from '../packs/fullcalendar_property_index.js';
 import { setCalendarPropertyShow } from '../packs/fullcalendar_property_show.js';
 
 $('#myModal').on('shown.bs.modal', function () {

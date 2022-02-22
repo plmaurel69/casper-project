@@ -108,7 +108,23 @@
 
               <% @balances.each do |balance| %>
                 <% balance.expenses.each do |expense| %>
-                  <% if expense.state == "pending" %>
+                  <% if expense.state == "paid" && expense.type == "plumber"%>
+                    <div class="not-display">
+                      <% @balances.each do |balance| %>
+                      <% balance.expenses.each do |expense| %>
+                        <% if expense.state == "pending" %>
+                        <div class="flex-card-action action-property in-green">
+                          <div class="space-bet">
+                            <i class="fas fa-check-circle icon-font fa-2x"></i>
+                            <div class="action-explain">
+                                    Plumber paid
+                                  <% end %>
+                                <% end %>
+                              <% end %>
+                            </div>
+                          </div>
+
+                  <% elsif expense.state == "pending" && expense.type == "plumber" %>
                     <div class="not-display">
                       <% @balances.each do |balance| %>
                       <% balance.expenses.each do |expense| %>
@@ -123,30 +139,29 @@
                               <% end %>
                             </div>
                           </div>
-                  <% @balances.each do |balance| %>
-                  <% balance.expenses.each do |expense| %>
-                    <% if expense.state == "pending" %>
-                      <div class="action-to-do">
-                      <button type="button" class="action-to-do btn btn-danger">
-                        <%= link_to 'Refund', checkout_expense_path(id: expense.id) %>
-                      </button>
-                        <% end %>
-                        <% end %>
-                        <% end %>
-                        </div>
-                      </div>
-                    </div>
-                  <% end %>
-                  <% end %>
-                <% end %>
 
-
-
-        </div>
+                    <% @balances.each do |balance| %>
+                      <% balance.expenses.each do |expense| %>
+                        <% if expense.state == "pending" %>
+                          <div class="action-to-do">
+                            <button type="button" class="action-to-do btn btn-danger">
+                              <%= link_to 'Refund', checkout_expense_path(id: expense.id) %>
+                            </button>
+                                <% end %>
+                                <% end %>
+                              <% end %>
+                              </div>
+                            </div>
+                          </div>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                  </div>
           <div class="add-an-info">
             <button type="button" class="btn btn-primary btn-sm position-btn-bottom"></i>Add a task</button>
           </div>
-        </div>
+                </div>
+
 
       <div class="calendar-full-size">
         <%= render 'shared/calendar-show' %>
