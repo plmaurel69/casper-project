@@ -22,29 +22,63 @@ const setCalendarPropertyIndex = () => {
     dayMaxEvents: true, // allow "more" link when too many events
     events: [
       {
-        title: 'All Day Event',
-        start: '2022-02-02',
-        backgroundColor: 'red',
-
+        title: 'Pay Rent Day',
+        start: '2022-02-14',
+        backgroundColor: '#30D986',
       },
       {
-        title: 'Long Event',
+        title: 'Submit Tax',
+        start: '2022-03-04',
+        backgroundColor: '#30D986',
+      },
+      {
+        title: 'Tenant leave',
+        start: '2022-02-01',
+        backgroundColor: '#FD209B',
+      },
+      {
+        title: 'Potential entry',
+        start: '2022-02-28',
+        backgroundColor: '#FD209B',
+      },
+      {
+        title: 'Clean Flat',
+        start: '2022-02-19',
+        backgroundColor: '#FD209B',
+      },
+      {
+        title: 'Plumber Flat',
+        start: '2022-02-02',
+        backgroundColor: '#037EFA',
+      },
+      {
+        title: 'Plumber Flat',
         start: '2022-02-07',
         end: '2022-02-10',
-        backgroundColor: '#378006',
-        borderColor: 'pink',
-        textColor: 'white',
+        backgroundColor: '#037EFA',
       },
       {
-        groupId: 999,
-        title: 'Repeating Event',
-        start: '2022-02-10T16:00:00'
+        title: 'Pay Rent Day',
+        start: '2022-02-23',
+        backgroundColor: '#037EFA',
       },
       {
-        groupId: 999,
-        title: 'Repeating Event',
-        start: '2022-14-02',
+        title: 'Landlords meeting',
+        start: '2022-02-25',
+        backgroundColor: '#037EFA',
+      },
 
+      {
+        title: 'Paintwork',
+        start: '2022-03-07',
+        end: '2022-03-10',
+        backgroundColor: '#037EFA',
+      },
+
+      {
+        title: 'Pay Rent Day',
+        start: '2022-03-23',
+        backgroundColor: '#037EFA',
       },
     ],
   });

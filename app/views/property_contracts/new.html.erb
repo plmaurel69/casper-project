@@ -1,12 +1,12 @@
 <div class="header-index">
   <div class="icon-back"><i class="fas fa-backspace" href="/"></i></div>
-  <div class="align-title-center"><h1>Générer mon contrat de location</h1></div>
+  <div class="align-title-center"><h1>Generate lease agreement</h1></div>
 </div>
 
 <div class="container position-relative">
     <div class="list-group flex-row center-button-form" id="list-tab" >
-      <a class="list-group-item list-group-item-action active btn btn-outline-primary btn-nice-proper rounded border-white" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Contrat</a>
-      <a class="list-group-item list-group-item-action btn btn-outline-primary btn-nice-proper rounded border-white" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Locataire</a>
+      <a class="list-group-item list-group-item-action active btn btn-outline-primary btn-nice-proper rounded border-white" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Contract</a>
+      <a class="list-group-item list-group-item-action btn btn-outline-primary btn-nice-proper rounded border-white" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Tenant</a>
     </div>
 
 <div>
@@ -17,28 +17,28 @@
     <div class="col-md-8 box-shadow-white">
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-        <h1>Contrat</h1>
+        <h1>Contract</h1>
             <%= f.input :start_date,      as: :date,
                                           start_year: Date.today.year - 0,
                                           end_year: Date.today.year + 5,
                                           order: [:day, :month, :year],
-                                          label: 'Début du contrat' %>
+                                          label: 'Start Date' %>
             <%= f.input :end_date,        as: :date, start_year: Date.today.year + 1,
                                           end_year: Date.today.year + 5,
                                           order: [:day, :month, :year],
-                                          label: 'Fin du contrat' %>
+                                          label: 'End Date' %>
             <%= f.input :billing_frequency, label: 'Paiement',
                                             prompt: :translate,
-                                            collection: ["Mensuel", "Hebdomadaire"] %>
-            <%= f.input :rent_price,  label: 'Prix du loyer',
+                                            collection: ["Monthly", "Weekly"] %>
+            <%= f.input :rent_price,  label: 'Rent Price',
                                       input_html: {value: '1450'} %></div>
         <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-        <h1>Locataire</h1>
-                      <%= p.input :first_name,  label: 'Prénom',
-                          placeholder: 'Prénom',
+        <h1>Tenant</h1>
+                      <%= p.input :first_name,  label: 'First Name',
+                          placeholder: 'First Name',
                           required: false %>
-            <%= p.input :last_name, label: 'Nom',
-                                    placeholder: 'Nom',
+            <%= p.input :last_name, label: 'Last Name',
+                                    placeholder: 'Last Name',
                                     required: false%>
           <%= p.input :email, placeholder: 'Email',
                               required: false%>
@@ -46,19 +46,19 @@
                                       start_year: Date.today.year - 20,
                                       end_year: Date.today.year - 90,
                                       order: [:day, :month, :year],
-                                      label: 'Date de Naissance',
+                                      label: 'Date of Birth',
                                       required: false %>
-          <%= p.input :gender,  label: 'Genre',
+          <%= p.input :gender,  label: 'Gender',
                                 as: :check_boxes,
-                                collection: ['Femme', "Homme", "Iel"],
+                                collection: ['she/her', "he/his", "they/them"],
                                 wrapper: :horizontal_collection_inline,
                                 required: false %>
           <%= p.input :profession,  label: 'Profession',
-                                    collection: ["Audit", "Comptabilité", "Gestion", "Bâtiment et travaux publics", "Commerce-distribution", "Environnement", "Hôtellerie restauration", "Paramédical", "Sport"],
+                                    collection: ["Audit", "Accounting", "Management", "Web Development", "sustainability", "Sport"],
                                     required: false,
                                     prompt: :translate %>
-          <%= p.input :professional_status, label: 'Statut professionel',
-                                            collection: ["CDI", "CDD", "Étudiant", "Retraité", "Chomeur"],
+          <%= p.input :professional_status, label: 'Professional Status',
+                                            collection: ["Full Time", "Part Time", "Student", "Retired", "unemployed"],
                                             required: false,
                                             prompt: :translate %>
         <% end %>
@@ -71,7 +71,7 @@
 </div>
 
 <div class="footer bg-white below-new-form">
-  <%= f.button :button, 'Annuler', type: :reset, class: 'btn btn-none btn-cancel' %>
-  <%= f.button :submit, "Visualiser mon contrat", class:"btn-outline-primary active btn-submit-right"%>
+  <%= f.button :button, 'Cancel', type: :reset, class: 'btn btn-none btn-cancel' %>
+  <%= f.button :submit, "Preview", class:"btn-outline-primary active btn-submit-right"%>
   <% end %>
 </div>

@@ -24,42 +24,36 @@ const setCalendarPropertyShow = () => {
       {
         title: 'Plumber Flat #1',
         start: '2022-02-02',
-        backgroundColor: '#081A51',
-        borderColor: '#081A51',
+        backgroundColor: '#037EFA',
       },
       {
         title: 'Plumber Flat #1',
         start: '2022-02-07',
         end: '2022-02-10',
-        backgroundColor: '#081A51',
-        borderColor: '#081A51',
+        backgroundColor: '#037EFA',
       },
       {
         title: 'Pay Rent Day',
         start: '2022-02-23',
-        backgroundColor: '#081A51',
-        borderColor: '#081A51',
+        backgroundColor: '#037EFA',
       },
       {
         title: 'Conference Landlords',
         start: '2022-02-25',
-        backgroundColor: '#081A51',
-        borderColor: '#081A51',
+        backgroundColor: '#037EFA',
       },
 
       {
         title: 'Paintwork',
         start: '2022-03-07',
         end: '2022-03-10',
-        backgroundColor: '#081A51',
-        borderColor: '#081A51',
+        backgroundColor: '#037EFA',
       },
 
       {
         title: 'Pay Rent Day',
         start: '2022-03-23',
-        backgroundColor: '#081A51',
-        borderColor: '#081A51',
+        backgroundColor: '#037EFA',
       },
     ],
   });

@@ -108,11 +108,11 @@
 
               <% @balances.each do |balance| %>
                 <% balance.expenses.each do |expense| %>
-                  <% if expense.state == "paid" && expense.type == "plumber"%>
+                  <% if expense.state == "paid" && expense.type == "plumber" %>
                     <div class="not-display">
                       <% @balances.each do |balance| %>
                       <% balance.expenses.each do |expense| %>
-                        <% if expense.state == "pending" %>
+                        <% if expense.state == "paid" && expense.type == "plumber"%>
                         <div class="flex-card-action action-property in-green">
                           <div class="space-bet">
                             <i class="fas fa-check-circle icon-font fa-2x"></i>
@@ -123,6 +123,8 @@
                               <% end %>
                             </div>
                           </div>
+                        </div>
+                      </div>
 
                   <% elsif expense.state == "pending" && expense.type == "plumber" %>
                     <div class="not-display">
@@ -164,7 +166,11 @@
 
 
       <div class="calendar-full-size">
+      <% if @property.property_name == 'Flat in the heart of Roubaix' %>
         <%= render 'shared/calendar-show' %>
+        <% else %>
+        <%= render 'shared/calendar-bordeaux' %>
+        <% end %>
       </div>
     </div>
 
