@@ -26,6 +26,11 @@
 @import "pages/new";
 @import "components/image";
 
+@import '@fullcalendar/core/main.css';
+@import '@fullcalendar/daygrid/main.css';
+@import '@fullcalendar/timegrid/main.css';
+@import '@fullcalendar/list/main.css';
+
 .main-container {
   max-width: calc(100vw - 150px);
   background-color: #F7F7F7;
