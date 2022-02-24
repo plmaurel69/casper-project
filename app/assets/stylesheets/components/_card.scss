@@ -115,7 +115,6 @@
   display: inline-block;
   display: flex;
   flex-direction: column;
-  padding: 5%;
   width: 60%;
   text-overflow: ellipsis;
   font-weight: 700;
@@ -189,6 +188,7 @@
   padding: 1%;
   display: flex;
   justify-content: space-between;
+  width: 320px;
 }
 
 // bandeau qui encadre graph
