@@ -41,8 +41,25 @@
   margin-top: 5%;
 }
 
+.home-card-text {
+  padding-top: 5px;
+}
 
+.home-product-container {
+  display:flex ;
+}
+.card-feature-home{
+  width: 100%;
+  border-radius: 0.5em;
+  width: 100%;
+  height: 25vw;
+  object-fit: cover;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
 
+.card-product p{
+  font-weight:lighter;
+}
 a {
   color: white;
 }
@@ -96,14 +113,23 @@ a:hover {
   object-fit: cover;
 }
 
+
+.reference-cards-container{
+  text-align: center;
+}
+
 .reference-cards {
-  width:30%;
-  height: 2vw;
+  width:40%;
+  height: 3vw;
   object-fit: cover;
 }
 
 .card-product-discover {
   font-weight: bold;
+}
+
+.home-article-container{
+  border:black;
 }
 
 .card-number-users {
@@ -113,7 +139,48 @@ a:hover {
 }
 
 .home-articles-quote {
-  border-color: grey;
+  border: solid;
+  border-color:#6088ff4f;
+  border-radius: 0.5em;
   padding: 2%;
-  align-items: center;
+  text-align: center;
+}
+
+.quote-name{
+  text-align: right;
+  font-style: italic;
+  font-size: 10px;
+}
+
+.home-kpis {
+  background-image: url("mobile-hand.jpg");
+  background-size: cover;
+  width: 100%;
+  margin: auto;
+  justify-content : space-around;
+  padding: 5%;
+  .fit-picture {
+    height: auto;
+    width: auto;
+    width: 100%;
+  }
+}
+
+.home-kpis img {
+  filter: brightness(90%);
+}
+
+.home-kpis-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.home-kpis-card{
+  color: #081a51;
+  text-align: center;
+  font-size:24px;
+}
+.home-kpis-text {
+  font-weight: bold;
 }
