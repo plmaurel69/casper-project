@@ -38,10 +38,14 @@ document.addEventListener('turbolinks:load', () => {
   else if (document.getElementById('calendar-property-index') != null) {
     setCalendarPropertyIndex();
   }
+  else if (document.getElementById('calendar-property-bordeaux') != null) {
+    setCalendarPropertyBordeaux();
+  }
 });
 
 import { setCalendarPropertyIndex } from '../packs/fullcalendar_property_index.js';
 import { setCalendarPropertyShow } from '../packs/fullcalendar_property_show.js';
+import { setCalendarPropertyBordeaux } from '../packs/fullcalendar_property_bordeaux.js';
 
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
