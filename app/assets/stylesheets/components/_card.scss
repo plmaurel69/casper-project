@@ -119,10 +119,13 @@
   text-overflow: ellipsis;
   font-weight: 700;
   font-size: 16px;
+  justify-content: space-between;
+  padding-bottom: 1em;
 }
 
 .element-card-3 {
   flex-direction: column;
+  align-self: center;
 }
 
 .property-status-1 {
@@ -187,7 +190,7 @@
   padding: 1%;
   display: flex;
   justify-content: space-between;
-  width: 320px;
+  width: 99%;
 }
 
 // bandeau qui encadre graph
