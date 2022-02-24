@@ -10,9 +10,9 @@
 
 
         <div class="flex-in-card">
-         <ion-icon class="ionicon-icon" name="wallet-outline" size="large"></ion-icon>
+         <ion-icon class="ionicon-icon" name="wallet-outline" ></ion-icon>
             <div class="no-flex-in-card">
-              <div class="title-show">My Expenses</div>
+              <div class="title-show"><h5>My Expenses</h5></div>
               <div class="kpi-show">
               <%= number_to_currency(@expense_data_property1, precision: 0, unit: "€", delimiter: " ", format: "%n %u") %>
               </div>
@@ -20,9 +20,9 @@
         </div>
 
         <div class="flex-in-card">
-          <ion-icon class="ionicon-icon" name="cash-outline" size="large"></ion-icon>
+          <ion-icon class="ionicon-icon" name="cash-outline"></ion-icon>
             <div class="no-flex-in-card">
-            <div class="title-show">My incomes</div>
+            <div class="title-show"><h5>My incomes</h5></div>
             <div class="kpi-show">
             <%= number_to_currency(@income_data_property1, precision: 0, unit: "€", delimiter: " ", format: "%n %u") %>
             </div>
@@ -30,9 +30,9 @@
       </div>
 
       <div class="flex-in-card">
-        <ion-icon class="ionicon-icon-analytics" name="analytics-outline" size="large"></ion-icon>
+        <ion-icon class="ionicon-icon" name="analytics-outline"></ion-icon>
           <div class="no-flex-in-card">
-          <div class="title-show">ROI</div>
+          <div class="title-show"><h5>My Earnings</h5></div>
           <div class="kpi-show">
           <%= number_to_currency(@roi, precision: 2, unit: "%", separator: ",", format: "%n %u") %>
           </div>
