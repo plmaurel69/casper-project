@@ -19,11 +19,11 @@ puts 'User destroyed'
 Expense.destroy_all
 puts 'Expense destroyed'
 
-user1 = User.new(first_name: 'Pierre', last_name: 'Dupond', gender: 'Homme', profession: 'Sales', professional_status: 'CDI', birth_date: '30/07/1991', user_type: 'Propriétaire', email: 'papa@gmail.com', password: 'papa@gmail.com' )
+user1 = User.new(first_name: 'Pierre', last_name: 'Dupond', gender: 'Male', profession: 'Sales', professional_status: 'CDI', birth_date: '30/07/1991', user_type: 'Propriétaire', email: 'papa@gmail.com', password: 'papa@gmail.com' )
 user1.save!
 puts 'User 1 saved'
 
-user2 = User.new(first_name: 'Manon', last_name: 'Coulot', gender: 'Femme', profession: 'Product', professional_status: 'CDD', birth_date: '23/11/1993', user_type: 'Locataire', email: 'maman@gmail.com', password: 'maman@gmail.com' )
+user2 = User.new(first_name: 'Manon', last_name: 'Coulot', gender: 'Female', profession: 'Product', professional_status: 'CDD', birth_date: '23/11/1993', user_type: 'Locataire', email: 'maman@gmail.com', password: 'maman@gmail.com' )
 user2.save!
 puts 'User 2 saved'
 
@@ -111,7 +111,7 @@ expense = Expense.new(balance_sheet_id: 1, amount: '18', type: 'Admin', paid: tr
 expense.save!
 puts "Expense 7 Property 1 saved"
 
-expense = Expense.new(balance_sheet_id: 1, amount: '675', type: 'plumber', paid: false, state: 'pending', payment_date: '2022-02-22')
+expense = Expense.new(balance_sheet_id: 1, amount: '1125', type: 'plumber', paid: false, state: 'pending', payment_date: '2022-02-22')
 expense.save!
 puts "Expense Plumber Pending Property 1 saved"
 
