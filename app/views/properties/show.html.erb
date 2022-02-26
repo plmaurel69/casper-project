@@ -51,33 +51,35 @@
 
         <div class="dashboard-card-action">
 
-      <% @property.renters.each do |renter| %>
-      <% if renter.gender == "" %>
+
+      <% if @property.renters.last.first_name == "Jérémy" %>
+        <div class="flex-card-action action-property in-green">
+          <div class="space-bet">
+            <i class="fas fa-check-circle icon-font fa-2x"></i>
+              <div class="action-explain">
+                Contract Generated
+              </div>
+          </div>
+        </div>
+
+      <% else %>
         <div class="not-display">
-            <% @property.renters.each do |renter| %>
-              <% if renter.gender == "" %>
                   <div class="flex-card-action action-property in-red">
                     <div class="space-bet">
                       <i class="fas fa-exclamation-triangle icon-font fa-2x"></i>
                       <div class="action-explain">
                               New contract
-                              <% end %>
-                          <% end %>
                       </div>
                     </div>
-              <% @property.renters.each do |renter| %>
-              <% if renter.gender == "" %>
                   <div class="action-to-do">
                       <button type="button" class="action-to-do btn btn-danger">
                         <%= link_to 'Create', new_property_property_contract_path(@property.id) %>
                       </button>
-                        <% end %>
-                      <% end %>
                   </div>
                 </div>
               </div>
             <% end %>
-          <% end %>
+
 
 
       <% @property.property_contracts.each do |property_contract| %>
