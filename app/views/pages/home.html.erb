@@ -7,25 +7,28 @@
     </div>
 
     <div class="home-articles">
-        <h2>A complete interface, easy to control</h2>
+        <div class="home-title">A complete interface, easy to control</div>
       <div class="home-product-container">
         <div class="home-product-text">
-        <br>
-        <p class="card-product">Manage the arrivals and departures of your tenants, refunds and even manage tenant's contracts in a few clicks with complete peace of mind.</p>
-        <p class="card-product">Refund a tenant? Refund your tenant from your space.</p>
-        <p><%=link_to "Discover the platform to find out more.", properties_path %></p>
+          <br>
+          <div class="card-product">Manage the arrivals and departures of your tenants, refunds and even manage tenant's contracts in a few clicks with complete peace of mind.</div>
+          <br>
+          <div class="card-product">Refund a tenant? Refund your tenant from your space.</div>
+          <br>
+          <div class="card-product"><span class="card-product-action"><%=link_to "Discover the platform to find out more.", properties_path %></span></div>
         </div>
-        <img src=<%= image_path('features.png') %> alt="" class="card-feature-home">
+        <div class="card-product-image">
+         <img src=<%= image_path('features.png') %> alt="" class="card-feature-home">
+        </div>
       </div>
 
       <div class="home-articles-container">
-        <h2>Lastest news on the market of property management</h2>
+        <div class="home-title">Lastest news on the market of property management</div>
         <br>
         <div class="cards-home">
           <div class="card-article-home">
             <div class="card-content">
-              <img src=<%= image_path('landlord.jpg') %> alt="" class="card-img-top-home">
-
+              <img class="card-img-top-home" src=<%= image_path('landlord.jpg') %> alt="">
               <div class="card-body">
                 <h5 class="card-title">French Property</h5>
                   <p class="card-text">Guide to Letting Property in France</p>
@@ -68,20 +71,20 @@
       </div>
   <div class="home-articles">
     <div class="home-articles-container">
-      <h2>They talk about us</h2>
+      <div class="home-title">They talk about us</div>
         <div class="home-article-container">
           <div class="home-articles-quote">
-          <p class="quote-text"> Casper Rent has created a completely new business model for property management. Very satisfied with their services, I decided to use their platform. I highly recommend Casper Rent!</p>
-          <p class="quote-name">Will Smith, Owner of 4 flats in Paris</p>
+          <div class="quote-text"> Casper Rent has created a completely new business model for property management. Very satisfied with their services, I decided to use their platform. I highly recommend Casper Rent!</div>
+          <div class="quote-name">Will Smith, Owner of 4 flats in Paris</div>
           </div>
         </div>
       <br>
       <div class="reference-cards-container">
         <div class="reference-cards">
-        <img src=<%= image_path('Le_Parisien_-_logo_2016.png') %> alt="" class="reference">
-        <img src=<%= image_path('figaro-logo.jpg') %> alt="" class="reference">
-        <img src=<%= image_path('ouest-france.jpg') %> alt="" class="reference">
-        <img src=<%= image_path('TF1_(2013).svg.png') %> alt="" class="reference">
+          <div class="reference"><img src=<%= image_path('Le_Parisien_-_logo_2016.png') %> alt=""></div>
+          <div class="reference"><img src=<%= image_path('figaro-logo.jpg') %> alt=""></div>
+          <div class="reference"><img src=<%= image_path('ouest-france.jpg') %> alt=""></div>
+          <div class="reference"><img src=<%= image_path('TF1_(2013).svg.png') %> alt=""></div>
         </div>
       </div>
     </div>
