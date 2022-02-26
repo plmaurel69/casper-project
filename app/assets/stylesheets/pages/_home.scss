@@ -93,6 +93,7 @@ a:hover {
 .card-article-home {
   border-radius: 0.5em;
   // width: 350px;
+  overflow: hidden;
   text-align: center;
   margin: 1%;
   background: #fff;
@@ -131,11 +132,14 @@ a:hover {
 .reference-cards {
   display:flex;
   justify-content: space-between;
+  width:500px;
+  margin: 0 auto;
+  align-items: center;
 }
 
-.reference {
-  width:20%;
+.reference img{
   height:auto;
+  width:100px;
 }
 
 
@@ -159,10 +163,12 @@ a:hover {
   text-align: center;
 }
 
-.quote-name{
+.card-product-name{
   text-align: right;
   font-style: italic;
-  font-size: 10px;
+  color:gray;
+  padding-top:2%;
+  font-size: 14px;
 }
 
 .home-kpis {
