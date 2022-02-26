@@ -68,6 +68,10 @@ message = Message.new(content: 'Molo mon coco quand même !', user_id: 1, proper
 message.save!
 puts "Message 3 saved"
 
+message = Message.new(content: 'Salut Pierre. Je paierai mon loyer lorsque tu auras rembourser le plombier. Merci beaucoup !', user_id: 2, property_contract_id: 1)
+message.save!
+puts "Message 4 saved"
+
 balance = BalanceSheet.new(property_contract_id: 1)
 balance.save!
 
