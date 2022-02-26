@@ -55,7 +55,9 @@ puts "PropertyContract 2 saved"
 contract = PropertyContract.new(end_date: '19/05/2023', start_date: '19/05/2020', scheduled_payment_date: '19/05/2020', billing_frequency: 'weekly', rent_price: '1600', rent_payment_status: 'true', user_id: 1, property_id: 3)
 contract.save!
 puts "PropertyContract 3 saved"
-
+message = Message.new(content: 'Molo mon coco quand même !', user_id: 1, property_contract_id: 1)
+message.save!
+puts "Message 3 saved"
 message = Message.new(content: 'Hello. Je viens de vous accepter pour habiter chez nous.', user_id: 1, property_contract_id: 1)
 message.save!
 puts "Message 1 saved"
@@ -68,7 +70,7 @@ message = Message.new(content: 'Molo mon coco quand même !', user_id: 1, proper
 message.save!
 puts "Message 3 saved"
 
-message = Message.new(content: 'Salut Pierre. Je paierai mon loyer lorsque tu auras rembourser le plombier. Merci beaucoup !', user_id: 2, property_contract_id: 1)
+message = Message.new(content: 'Salut Pierre. Je paierai mon loyer lorsque tu auras remboursé le plombier. Merci beaucoup !', user_id: 2, property_contract_id: 1)
 message.save!
 puts "Message 4 saved"
 
