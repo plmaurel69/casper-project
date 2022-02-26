@@ -20,20 +20,18 @@
       </div>
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-locataire" role="tabpanel" aria-labelledby="pills-locataire-tab">
-        <% @property.renters.each do |property| %>
           <br>
           <h5>Tenant name :</h5>
-          <h6><%= property.first_name %> <%= property.last_name %></h6>
+          <h6><%= @property.renters.last.first_name %> <%= @property.renters.last.last_name %></h6>
           <br>
           <h5>Profession :</h5>
-          <h6><%= property.profession%></h6>
+          <h6><%= @property.renters.last.profession%></h6>
           <br>
           <h5>Birth date :</h5>
-          <h6><%= property.birth_date%></h6>
+          <h6><%= @property.renters.last.birth_date%></h6>
           <br>
           <h5>Professionnal status :</h5>
-          <h6><%= property.professional_status%></h6>
-          <% end %>
+          <h6><%= @property.renters.last.professional_status%></h6>
       </div>
 
       <div class="tab-pane fade" id="pills-flat" role="tabpanel" aria-labelledby="pills-flat-tab">
