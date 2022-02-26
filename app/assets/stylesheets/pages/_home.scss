@@ -28,7 +28,9 @@
 }
 
 .home-title {
-  color: white;
+  color: #081A51;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .home-description {
@@ -41,6 +43,14 @@
   margin-top: 5%;
 }
 
+.card-content {
+  border-radius: 5%;
+}
+
+.img {
+  border-radius: 5%;
+}
+
 .home-card-text {
   padding-top: 5px;
 }
@@ -49,17 +59,24 @@
   display:flex ;
 }
 .card-feature-home{
-  width: 100%;
   border-radius: 0.5em;
-  width: 100%;
-  height: 25vw;
+  height: 20vw;
   object-fit: cover;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.card-product p{
-  font-weight:lighter;
+.card-product{
+  color:gray;
+  font-size:18px;
 }
+
+.card-product-action a{
+  font-weight:bold;
+  color:#081A51;
+  font-size:18px;
+  text-decoration: underline;
+}
+
 a {
   color: white;
 }
@@ -105,24 +122,22 @@ a:hover {
 
 .card-img-top-home {
   width: 100%;
-  border-radius: 0.5em;
-  border-radius: 1em;
-  padding: 4%;
   width: 100%;
   height: 15vw;
   object-fit: cover;
 }
 
 
-.reference-cards-container{
-  text-align: center;
+.reference-cards {
+  display:flex;
+  justify-content: space-between;
 }
 
-.reference-cards {
-  width:40%;
-  height: 3vw;
-  object-fit: cover;
+.reference {
+  width:20%;
+  height:auto;
 }
+
 
 .card-product-discover {
   font-weight: bold;
@@ -139,8 +154,6 @@ a:hover {
 }
 
 .home-articles-quote {
-  border: solid;
-  border-color:#6088ff4f;
   border-radius: 0.5em;
   padding: 2%;
   text-align: center;
@@ -183,4 +196,12 @@ a:hover {
 }
 .home-kpis-text {
   font-weight: bold;
+}
+
+.card-product-image{
+  padding:2%;
+}
+
+.home-product-text {
+  padding-top:5%;
 }
